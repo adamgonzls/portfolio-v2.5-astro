@@ -36,6 +36,11 @@ a {
   text-decoration: none;
 }
 
+:focus {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 3px;
+}
+
 .page-container {
   padding: 2em;
 }
@@ -51,21 +56,27 @@ a {
 
 .about__subtitle {
   padding: 0.5em 1em;
-  background-color: var(--caribbean-green);
+  background-color: var(--accent-color);
   font-family: var(--ff-secondary);
   letter-spacing: 0.1em;
 }
 
-.section--alternating-color:nth-child(even) {
-  color: var(--white);
+.home-section {
+  padding-right: 3em;
+  padding-left: 3em;
   padding-top: 4em;
   padding-bottom: 4em;
 }
 
-.section--alternating-color:nth-child(even) .section__title {
-  color: var(--caribbean-green);
+.home-section:nth-child(even) {
+  color: var(--white);
+  background-color: var(--mine-shaft);
 }
 
-.section--alternating-color:nth-child(odd) {
+.home-section:nth-child(odd) {
   background-color: cyan;
+}
+
+.home-section:nth-child(even) .section__title {
+  color: var(--accent-color);
 }
