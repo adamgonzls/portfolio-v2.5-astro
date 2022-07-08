@@ -1,0 +1,27 @@
+---
+const gitHubProjects = fetch(`https://api.github.com/users/adamgonzls`)
+  .then(res => res.json())
+  .then(data => console.log(data))
+---
+
+
+<section class="home-section section--alternating-color">
+  <h2 class="section__title">My Work</h2>
+  <div>
+    <img src="" alt="some work">
+    <h3>Quizzical</h3>
+    <p>Use this tool to get a color scheme based on a color you select</p>
+    <ul>
+      <li>CSS</li>
+      <li>JAVASCRIPT</li>
+      <li>ES6</li>
+      <li>JSON-API</li>
+      <li>LOCALSTORAGE</li>
+      <li>NETLIFY</li>
+      <li>REACT</li>
+      <li>VITE</li>
+    </ul>
+    <a href="">Visit Site</a>
+    <a href="">Visit Repo</a>
+  </div>
+</section>

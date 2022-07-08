@@ -6,41 +6,52 @@ import adamImage from '/images/2022-04-adam-purple-wall-1-800-1067.jpg'
   section {
     margin-right: auto;
     margin-left: auto;
-    margin-bottom: 4em;
-    display: grid;
-    align-items: center;
-    width: min-content;
-    grid-column-gap: 2em;
-    grid-template-areas: 
-      "img title"
-      "img subtitle";
-    grid-template-columns: min-content max-content;
+    margin-bottom: 2em;
   }
+
   img {
     position: relative;
     min-width: 250px;
     max-width: 100%;
     grid-area: img;
     z-index: 2;
-    box-shadow: .25em .25em .75em rgba(0, 0, 0, .25),
+    box-shadow: var(--brand-box-shadow),
       0.125em 0.125em .025em rgba(0, 0, 0, .15);
-    transition: transform .2s ease-in-out;
+    transition: transform 250ms ease-in-out;
   }
-  img:hover {
-    transform: skew(1deg);
-  }
+
   h1 {
     font-weight: var(--fw-reg);
   }
+
   p {
     margin-bottom: 1em;
-    align-self: start;
-    grid-column: -1 / 1;
-    grid-row: 2;
-    text-align: right;
-    position: relative;
-    left: -1.5em;
-    width: calc(100% + 1.5em);
+  }
+
+  @media screen and (min-width: 600px) {
+    section {
+      margin-bottom: 4em;
+      display: grid;
+      align-items: center;
+      width: min-content;
+      grid-column-gap: 2em;
+      grid-template-areas: 
+        "img title"
+        "img subtitle";
+      grid-template-columns: min-content max-content;
+    }
+    p {
+      align-self: start;
+      grid-column: -1 / 1;
+      grid-row: 2;
+      text-align: right;
+      position: relative;
+      left: -1.5em;
+      width: calc(100% + 1.5em);
+    }
+      img:hover {
+      transform: skew(.75deg);
+    }
   }
 </style>
 

@@ -5,16 +5,22 @@ const props = Astro.props
 
 <style>
   button {
-    padding: .5rem 1.25rem;
-    border-radius: 44px;
+    padding: .5em 1.25em;
+    border: 2px solid var(--accent-color);
+    border-radius: 9px;
     color: var(--mine-shaft);
-    background-color: var(--caribbean-green);
+    background-color: var(--accent-color);
     font-size: 1rem;
     cursor: pointer;
-    border: none;
+    transition: box-shadow 200ms ease-in-out;
+    box-shadow: var(--brand-box-shadow);
   }
-  button:hover {
-    background-color: green;
+  button:hover,
+  button:active {
+    box-shadow: var(--brand-box-shadow-hovered);
+  }
+  button:active {
+    box-shadow: none;
   }
 </style>
 

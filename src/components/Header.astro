@@ -4,26 +4,33 @@ import Button from '../components/Button.astro'
 
 <style>
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   font-size: 1rem;
-  margin-bottom: 4em;
+  margin-bottom: 2em;
 }
 
 .logo {
   margin-right: 2em;
 }
 
-nav {
-  display: flex;
-  align-items: center;
-}
-
 ul {
   list-style-type: none;
-  display: flex;
-  gap: 3rem;
+}
+
+@media screen and (min-width: 500px) {
+  header {
+    margin-bottom: 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+  }
+  ul {
+    display: flex;
+    gap: 3rem;
+  }
 }
 </style>
 
@@ -45,5 +52,5 @@ ul {
       </li>
     </ul>
   </nav>
-  <Button text="Contact Meeee" />
+  <Button text="Contact Adam" />
 </header>
