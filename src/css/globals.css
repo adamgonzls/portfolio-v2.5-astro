@@ -74,7 +74,7 @@ a {
 }
 
 .home-section:nth-child(odd) {
-  background-color: cyan;
+  border: 2px solid cyan;
 }
 
 .home-section:nth-child(even) .section__title {

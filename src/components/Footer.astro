@@ -5,6 +5,17 @@ import ghIcon from '../../public/images/github.svg'
 <style>
   footer {
     background-color: #303030;
+    display: flex;
+    justify-content: center;
+  }
+  .contact__link {
+    color: var(--white);
+  }
+  .social__row {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
   }
   svg {
     color: red;
@@ -13,8 +24,8 @@ import ghIcon from '../../public/images/github.svg'
 
 <footer>
   <div>
-    <a href="">adamgonzales1@gmail.com</a>
-    <ul>
+    <a class="contact__link" href="">adamgonzales1@gmail.com</a>
+    <ul class="social__row">
       <li>
         <a href="">
           <!-- todo: find a better way to include .svg's AND be able to control color with CSS -->

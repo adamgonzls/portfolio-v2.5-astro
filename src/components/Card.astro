@@ -1,0 +1,52 @@
+---
+const {item} = Astro.props
+console.log(item)
+
+const topicsArray = item.topics
+const filteredTopics = topicsArray.filter(value => value !== 'featured-repo')
+---
+
+<style>
+  .card {
+    width: 200px;
+  }
+  .card__title {
+    margin-bottom: .5em;
+  }
+  .card__desc {
+    font-size: .9rem;
+    margin-bottom: .75em;
+  }
+  .topic__row {
+    margin-bottom: 2em;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    font-size: .75rem;
+  }
+  .topic__badge {
+    border-radius: 9px;
+    padding: .25em .5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--accent-color);
+    font-weight: var(--fw-bold);
+    box-shadow: var(--brand-box-shadow);
+  }
+  .card__link {
+    font-size: 1rem;
+    font-weight: var(--fw-bold);
+  }
+</style>
+
+<div class="card">
+  <h3 class="card__title"><a href={item.html_url}>{item.name}</a></h3>
+  <p class="card__desc">{item.description}</p>
+  <ul class='topic__row'>
+    {filteredTopics.map(topic => <li class='topic__badge'>{topic}</li>)}
+  </ul>
+  <a class="card__link" target="_blank" href={item.homepage}>Visit Site</a><br />
+  <a class="card__link" target="_blank" href={item.html_url}>Visit Repo</a>
+</div>

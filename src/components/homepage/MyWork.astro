@@ -1,27 +1,43 @@
 ---
-const gitHubProjects = fetch(`https://api.github.com/users/adamgonzls`)
-  .then(res => res.json())
-  .then(data => console.log(data))
+import Card from '../Card.astro'
+const gitHubResponse = await fetch(`https://api.github.com/search/repositories?q=adamgonzls+in:name+topic:featured-repo`);
+const gitHubData = await gitHubResponse.json();
+
 ---
 
+<style>
+  .myWork__avatar-container {
+    margin-bottom: 2em;
+    text-align: center;
+  }
+  .myWork__avatar-container img {
+    border-radius: 50%;
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    background-image: url();
+    background-size: contain;
+  }
+  .myWork__row {
+    display: flex;
+    gap: 3em;
+  }
+</style>
 
-<section class="home-section section--alternating-color">
+
+<section class="home-section">
   <h2 class="section__title">My Work</h2>
-  <div>
-    <img src="" alt="some work">
-    <h3>Quizzical</h3>
-    <p>Use this tool to get a color scheme based on a color you select</p>
-    <ul>
-      <li>CSS</li>
-      <li>JAVASCRIPT</li>
-      <li>ES6</li>
-      <li>JSON-API</li>
-      <li>LOCALSTORAGE</li>
-      <li>NETLIFY</li>
-      <li>REACT</li>
-      <li>VITE</li>
-    </ul>
-    <a href="">Visit Site</a>
-    <a href="">Visit Repo</a>
+  <div class="myWork__avatar-container">
+    <a target="_blank" href="https://github.com/adamgonzls">
+      <img src="https://avatars.githubusercontent.com/u/13277437?v=4" alt="Adam's GitHub Avatar">
+    </a>
+  </div>
+  
+  <div class="myWork__row">
+    {gitHubData.items.map(item => {
+      return (
+        <Card {item} />
+      )
+    })}
   </div>
 </section>
