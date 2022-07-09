@@ -2,7 +2,7 @@
 
 Version 2.5 of my portfolio.
 
-<!-- Check it out: [Color Picker](https://color-scheme-picker.netlify.app/) -->
+Check it out: [Adam's Portfolio](https://adamgonzales.netlify.app/)
 
 ## About this Project
 
@@ -19,9 +19,7 @@ Version 2.5 of my portfolio.
 
 [Figma design file](https://www.figma.com/file/uMRRCvFNkalcPhBOtRyqXX/Portfolio-v2.5?node-id=2%3A3)
 
-<!-- Deployed via [netlify](https://www.netlify.com/) -->
-
-## Available Scripts
+Deployed via [netlify](https://www.netlify.com/)
 
 ## 🧞 Commands
 
@@ -34,10 +32,9 @@ All commands are run from the root of the project, from a terminal:
 
 ## 🚀 Deployment
 
-| Command           | Action                                       |
-| :---------------- | :------------------------------------------- |
-| `npm run build`   | Build your production site to `./dist/`      |
-| `npm run preview` | Preview your build locally, before deploying |
-
-<!-- | `ntl deploy`        | Deploy to a unique preview URL               | -->
-<!-- | `ntl deploy --prod` | Deploy the site into production              | -->
+| Command             | Action                                       |
+| :------------------ | :------------------------------------------- |
+| `npm run build`     | Build your production site to `./dist/`      |
+| `npm run preview`   | Preview your build locally, before deploying |
+| `ntl deploy`        | Deploy to a unique preview URL               |
+| `ntl deploy --prod` | Deploy the site into production              |

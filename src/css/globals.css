@@ -73,6 +73,10 @@ a {
   background-color: var(--mine-shaft);
 }
 
+.home-section:nth-child(even) a {
+  color: var(--white);
+}
+
 .home-section:nth-child(odd) {
   border: 2px solid cyan;
 }
