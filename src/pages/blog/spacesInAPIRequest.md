@@ -1,13 +1,19 @@
 ---
-layout: '../../layouts/Base.astro'
-title: I found out I could use spaces in API requests
-descritpion: While querying GitHub's API, I found out that I can use spaces in my URL string
+layout: '../../layouts/BlogPost.astro'
+title: I Learned I Could use Spaces in My API Request
+description: GitHub's example to query their API taught me something
+date: 2022-07-09
 ---
 
-Fugiat minim anim aliqua elit amet dolore minim excepteur enim culpa incididunt adipisicing cillum cupidatat. Enim cillum officia aute ut incididunt ipsum in.
+While I was working on a GitHub integration to feature some of my repos on my website, I found that I could use Topics ([I wrote about it](./gitHubTopics.md))
 
-Eiusmod ea dolor anim voluptate eiusmod ullamco irure ullamco dolor commodo eiusmod reprehenderit. In esse proident dolor mollit nulla occaecat labore culpa dolor eu esse.
+I was able to get all my repos and I could see a topics property:
 
-Laboris mollit officia ad ipsum non sunt. Quis sunt dolore magna cillum incididunt elit dolore consequat consectetur id velit amet consequat adipisicing. Minim nulla labore velit exercitation.
+```
+"topics": ["css","featured-repo","javascript-es6","json-api","localstorage","netlify","react","vite"],
+```
 
-Laboris reprehenderit duis aliquip duis. Id officia mollit enim id in occaecat culpa est nulla quis laborum et do ut. Sint non proident nulla qui nisi cupidatat. Voluptate et anim pariatur proident esse anim excepteur cillum aliqua veniam non sunt.
+I wasn't sure how to include `featured-repo` in my query.
+
+Luckily, I found an [article](https://fusebit.io/blog/github-search-api/?utm_source=www.google.com&utm_medium=referral&utm_campaign=none). In the article, the author gives an example: `q=siddhant in:name type:user`.
+That looks weird to me... So a quick google search later, I find that spaces can be used (I later changed spaces to the &plus; symbol). So my query now looked like this: `https://api.github.com/search/repositories?q=adamgonzls in:name topic:featured-repo` (I tried it in my newly installed VS Code extension [Thunder Client](https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client)) and success!

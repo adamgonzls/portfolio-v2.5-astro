@@ -6,6 +6,10 @@ const gitHubData = await gitHubResponse.json();
 ---
 
 <style>
+  section {
+    padding-left: 1em;
+    padding-right: 0;
+  }
   .myWork__avatar-container {
     margin-bottom: 2em;
     text-align: center;
@@ -17,10 +21,17 @@ const gitHubData = await gitHubResponse.json();
     height: 120px;
     background-image: url();
     background-size: contain;
+    transition: all .1s;
+    /* outline-offset: .2rem; */
+  }
+  .myWork__avatar-container img:hover {
+    transform: scale(1.05) translateY(-.25rem);
+    outline: .75rem solid var(--accent-color);
   }
   .myWork__row {
     display: flex;
     gap: 3em;
+    overflow: scroll;
   }
 </style>
 

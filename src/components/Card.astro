@@ -1,6 +1,6 @@
 ---
 const {item} = Astro.props
-console.log(item)
+// console.log(item)
 
 const topicsArray = item.topics
 const filteredTopics = topicsArray.filter(value => value !== 'featured-repo')
@@ -8,7 +8,7 @@ const filteredTopics = topicsArray.filter(value => value !== 'featured-repo')
 
 <style>
   .card {
-    width: 200px;
+    min-width: 200px;
   }
   .card__title {
     margin-bottom: .5em;
@@ -42,11 +42,11 @@ const filteredTopics = topicsArray.filter(value => value !== 'featured-repo')
 </style>
 
 <div class="card">
-  <h3 class="card__title"><a href={item.html_url}>{item.name}</a></h3>
+  <h3 class="card__title"><a class="brand-link" href={item.html_url}>{item.name}</a></h3>
   <p class="card__desc">{item.description}</p>
   <ul class='topic__row'>
     {filteredTopics.map(topic => <li class='topic__badge'>{topic}</li>)}
   </ul>
-  <a class="card__link" target="_blank" href={item.homepage}>Visit Site</a><br />
-  <a class="card__link" target="_blank" href={item.html_url}>Visit Repo</a>
+  <a class="card__link brand-link" target="_blank" href={item.homepage}>Visit Site</a><br />
+  <a class="card__link brand-link" target="_blank" href={item.html_url}>Visit Repo</a>
 </div>

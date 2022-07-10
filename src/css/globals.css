@@ -1,5 +1,7 @@
 @import './reset.css';
 @import './variables.css';
+@import './utilities.css';
+@import './layouts.css';
 
 body {
   font-family: var(--ff-primary);
@@ -26,6 +28,10 @@ h3 {
   font-size: var(--fs-h3);
 }
 
+p {
+  margin-bottom: 1em;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -39,48 +45,4 @@ a {
 :focus {
   outline: 3px solid var(--accent-color);
   outline-offset: 3px;
-}
-
-.page-container {
-  padding: 2em;
-}
-
-.section__title {
-  text-align: center;
-  margin-bottom: 0.75em;
-}
-
-.section__subtitle {
-  font-size: var(--fs-h3);
-}
-
-.about__subtitle {
-  padding: 0.5em 1em;
-  background-color: var(--accent-color);
-  font-family: var(--ff-secondary);
-  letter-spacing: 0.1em;
-}
-
-.home-section {
-  padding-right: 3em;
-  padding-left: 3em;
-  padding-top: 4em;
-  padding-bottom: 4em;
-}
-
-.home-section:nth-child(even) {
-  color: var(--white);
-  background-color: var(--mine-shaft);
-}
-
-.home-section:nth-child(even) a {
-  color: var(--white);
-}
-
-.home-section:nth-child(odd) {
-  border: 2px solid cyan;
-}
-
-.home-section:nth-child(even) .section__title {
-  color: var(--accent-color);
 }

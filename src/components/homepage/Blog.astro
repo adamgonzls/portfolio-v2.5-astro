@@ -1,10 +1,24 @@
+---
+import BlogArticle from "./BlogArticle.astro";
+const posts = await Astro.glob('../../pages/blog/*.md')
+---
+
+<style>
+  @media screen and (min-width: 800px) {
+    .blog__row {
+      display: flex;
+      gap: 3em;
+    }
+    .traits__card {
+      margin-bottom: 0;
+    }
+  }
+</style>
+
+
 <section class="home-section">
-  <h2 class="section__title">Blog</h2>
-  <div class="blog__row">
-    <div>
-      <h3>title</h3>
-      <p>Some description</p>
-      <a class="card__link" target="_blank" href="">Read More</a>
+  <h2 class="section__title">My Words</h2>  
+    <div class="blog__row">
+      {posts.map(post => <BlogArticle {post} />)}
     </div>
-  </div>
 </section>

@@ -2,12 +2,53 @@
 import adamImage from '/images/2022-04-adam-purple-wall-1-800-1067.jpg'
 ---
 
+<style>
+  img {
+    box-shadow: var(--brand-box-shadow);
+  }
+
+  @media screen and (min-width: 600px) {
+    section {
+      margin-right: auto;
+      margin-left: auto;
+      display: grid;
+      align-items: center;
+      grid-template-areas: 
+        "title       img"
+        "subtitle    img"
+        "description img";
+      grid-column-gap: 2em;
+      grid-template-columns: 1fr 250px;
+    }
+    h2 {
+      grid-area: title;
+      margin-bottom: 0;
+      text-align: start;
+    }
+    img {
+      position: relative;
+      grid-area: img;
+      min-width: 250px;
+      max-width: 100%;
+      z-index: 2;
+    }
+    .about__subtitle {
+      padding-left: 2em;
+      position: relative;
+      grid-column: 1 / -1;
+      grid-row: 2;
+      left: -2em;
+      width: calc(100% + 4em);
+    }
+  }
+</style>
+
+
 <section class="home-section">
   <h2 class="section__title">Who I am</h2>
   <p class="about__subtitle">Designer &amp; Developer</p>
   <div>
     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius nemo beatae eos fuga dicta ex odit odio aperiam praesentium placeat animi eveniet harum atque eligendi et fugit, inventore accusantium nam.</p>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas inventore eaque dolor facere quis, ad itaque debitis maxime officiis iusto vitae voluptas earum nobis sunt quo natus temporibus saepe tenetur!</p>
   </div>
   <img src={adamImage} alt="Adam">
 </section>
