@@ -1,6 +1,6 @@
 ---
 layout: '../../layouts/BlogPost.astro'
-title: Using GitHub topics for my Mebsite
+title: Using GitHub Topics for my Website
 description: I used GitHub Topics to query GitHub's API
 date: 2022-07-08
 ---

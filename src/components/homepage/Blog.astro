@@ -16,7 +16,7 @@ const posts = await Astro.glob('../../pages/blog/*.md')
 </style>
 
 
-<section class="home-section">
+<section id="myBlog" class="home-section">
   <h2 class="section__title">My Words</h2>  
     <div class="blog__row">
       {posts.map(post => <BlogArticle {post} />)}

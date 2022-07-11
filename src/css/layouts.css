@@ -41,3 +41,24 @@
 .home-section:nth-child(even) .section__title {
   color: var(--accent-color);
 }
+
+.brand-button {
+  padding: 0.5em 1.25em;
+  border: 2px solid var(--accent-color);
+  border-radius: 9px;
+  color: var(--mine-shaft);
+  background-color: var(--accent-color);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: box-shadow 200ms ease-in-out;
+  box-shadow: var(--brand-box-shadow);
+}
+
+.brand-button:hover,
+.brand-button:active {
+  box-shadow: var(--brand-box-shadow-hovered);
+}
+
+.brand-button:active {
+  box-shadow: none;
+}
