@@ -10,7 +10,7 @@ Check it out: [Adam's Portfolio](https://adamgonzales.netlify.app/)
 
 - Astro
 - JavaScript (ES6)
-  <!-- - JSON API -->
+- REST API
   <!-- - localStorage -->
 - CSS
 - npm
@@ -18,6 +18,8 @@ Check it out: [Adam's Portfolio](https://adamgonzales.netlify.app/)
 <!-- Colors and combinations returned via JSON API [Color Picker API](https://www.thecolorapi.com/) -->
 
 [Figma design file](https://www.figma.com/file/uMRRCvFNkalcPhBOtRyqXX/Portfolio-v2.5?node-id=2%3A3)
+
+Icons from [iconify](https://icon-sets.iconify.design/)
 
 Deployed via [netlify](https://www.netlify.com/)
 

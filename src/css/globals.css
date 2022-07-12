@@ -1,7 +1,12 @@
 @import './reset.css';
 @import './variables.css';
 @import './utilities.css';
-@import './layouts.css';
+@import './layout.css';
+@import './ui-components.css';
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: var(--ff-primary);

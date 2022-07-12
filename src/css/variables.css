@@ -1,6 +1,7 @@
 :root {
   --white: #fff;
   --accent-color: #14cfae;
+  --darkness: #141414;
   --mine-shaft: #303030;
 
   --ff-primary: 'Source Sans Pro', serif;
@@ -13,6 +14,7 @@
   --fs-h2: 2.25rem;
   --fs-h3: 1.25rem;
   --fs-body: 1rem;
+  --fs-small: 0.75rem;
 
   --brand-box-shadow: 3px 2px 4px rgba(0, 0, 0, 0.25);
   --brand-box-shadow-hovered: 2px 1px 2px rgba(0, 0, 0, 0.25);

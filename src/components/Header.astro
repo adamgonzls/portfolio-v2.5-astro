@@ -1,56 +1,78 @@
 ---
 import Button from '../components/Button.astro'
+
 ---
+
+<script>
+  const navToggle = document.querySelector('.nav-toggle')
+  const navLinks = document.querySelectorAll('.nav-items li')
+  const pageContainer = document.querySelector('.page-container')
+  navToggle.addEventListener('click', () => {
+    pageContainer.classList.toggle('nav-open')
+  })
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      pageContainer.classList.remove('nav-open')
+    })
+  })
+</script>
 
 <style>
 header {
   font-size: 1rem;
   margin-bottom: 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
   margin-right: 2em;
 }
 
-ul {
-  list-style-type: none;
+.brand-link {
+  color: var(--white);
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 700px) {
   header {
     margin-bottom: 2em;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    width: 100%;
+    justify-content: unset;
   }
-  nav {
-    display: flex;
-    align-items: center;
+  .brand-link {
+    position: relative;
+    padding: .5em .75em;
+    font-size: unset;
+    color: var(--mine-shaft);
   }
-  ul {
-    display: flex;
-    gap: 3rem;
+  .contact-link__container {
+    margin-left: auto;
   }
 }
 </style>
 
 <header>
-  <nav>
-    <span class="logo">adamg</span>
-    <ul>
+  <span class="logo">adamg</span>
+  <nav class="main-nav">
+    <ul class="nav-items">
       <li>
-        <a href="/">Home</a>
+        <a class="brand-link brand-link--callout" href="/">Home</a>
       </li>
       <li>
-        <a href="#myWork">Work</a>
+        <a class="brand-link brand-link--callout" href="#myWork">Work</a>
       </li>
       <li>
-        <a href="#myBlog">Blog</a>
+        <a class="brand-link brand-link--callout" href="#myBlog">Blog</a>
       </li>
       <li>
-        <a href="#myAbout">About</a>
+        <a class="brand-link brand-link--callout" href="#myAbout">About</a>
+      </li>
+      <li class="contact-link__container">
+        <a class="brand-button" href="mailto:adamgonzales1@gmail.com?subject=Hi%20Adam">Contact Adam</a>
       </li>
     </ul>
   </nav>
-  <a class="brand-button" href="mailto:adamgonzales1@gmail.com?subject=Hi%20Adam">Contact Adam</a>
+  
+  <button class="nav-toggle" aria-label="toggle navigation"><span class="hamburger"></span></button>
 </header>

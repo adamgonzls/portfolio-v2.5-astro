@@ -5,8 +5,10 @@ const {title, description} = post.frontmatter
 ---
 
 <style>
-  .articleCard {
-    width: 200px;
+  @media screen and (min-width: 550px) {
+    .articleCard {
+      width: 200px;
+    }
   }
   .articleCard__title {
     margin-bottom: .5em;
@@ -20,5 +22,5 @@ const {title, description} = post.frontmatter
 <article class="articleCard">
   <h3 class="articleCard__title"><a class="brand-link" href={post.url}>{title}</a></h3>
   <p class="articleCard__description">{description}</p>
-  <a class="brand-link" href={post.url}>Read More</a>
+  <a class="brand-link brand-link--callout" href={post.url}>Read More</a>
 </article>

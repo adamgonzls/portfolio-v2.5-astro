@@ -7,8 +7,8 @@ const gitHubData = await gitHubResponse.json();
 
 <style>
   section {
-    padding-left: 1em;
-    padding-right: 0;
+    /* padding-left: 1em;
+    padding-right: 0; */
   }
   .myWork__avatar-container {
     margin-bottom: 2em;
@@ -28,10 +28,15 @@ const gitHubData = await gitHubResponse.json();
     transform: scale(1.05) translateY(-.25rem);
     outline: .75rem solid var(--accent-color);
   }
-  .myWork__row {
+  /* .myWork__row {
     display: flex;
     gap: 3em;
     overflow: scroll;
+  } */
+  .myWork__portfolio {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1em;
   }
 </style>
 
@@ -44,7 +49,7 @@ const gitHubData = await gitHubResponse.json();
     </a>
   </div>
   
-  <div class="myWork__row">
+  <div class="myWork__portfolio">
     {gitHubData.items.map(item => {
       return (
         <Card {item} />

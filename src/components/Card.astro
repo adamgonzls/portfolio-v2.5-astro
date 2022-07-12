@@ -8,7 +8,14 @@ const filteredTopics = topicsArray.filter(value => value !== 'featured-repo')
 
 <style>
   .card {
+    border-radius: 9px;
+    padding: 1em;
     min-width: 200px;
+    transition: box-shadow 200ms ease-in-out;
+    box-shadow: var(--brand-box-shadow);
+  }
+  .card:hover {
+    box-shadow: var(--brand-box-shadow-hovered);
   }
   .card__title {
     margin-bottom: .5em;
@@ -35,18 +42,18 @@ const filteredTopics = topicsArray.filter(value => value !== 'featured-repo')
     font-weight: var(--fw-bold);
     box-shadow: var(--brand-box-shadow);
   }
-  .card__link {
+  /* .card__link {
     font-size: 1rem;
     font-weight: var(--fw-bold);
-  }
+  } */
 </style>
 
 <div class="card">
-  <h3 class="card__title"><a class="brand-link" href={item.html_url}>{item.name}</a></h3>
+  <h3 class="card__title"><a class="brand-link" target="_blank" href={item.html_url}>{item.name}</a></h3>
   <p class="card__desc">{item.description}</p>
   <ul class='topic__row'>
     {filteredTopics.map(topic => <li class='topic__badge'>{topic}</li>)}
   </ul>
   <a class="card__link brand-link" target="_blank" href={item.homepage}>Visit Site</a><br />
-  <a class="card__link brand-link" target="_blank" href={item.html_url}>Visit Repo</a>
+  <a class="card__link brand-link brand-link--callout" target="_blank" href={item.html_url}>Visit Repo</a>
 </div>
