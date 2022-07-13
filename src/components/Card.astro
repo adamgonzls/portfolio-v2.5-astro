@@ -1,7 +1,5 @@
 ---
 const {item} = Astro.props
-// console.log(item)
-
 const topicsArray = item.topics
 const filteredTopics = topicsArray.filter(value => value !== 'featured-repo')
 ---
@@ -42,10 +40,6 @@ const filteredTopics = topicsArray.filter(value => value !== 'featured-repo')
     font-weight: var(--fw-bold);
     box-shadow: var(--brand-box-shadow);
   }
-  /* .card__link {
-    font-size: 1rem;
-    font-weight: var(--fw-bold);
-  } */
 </style>
 
 <div class="card">
