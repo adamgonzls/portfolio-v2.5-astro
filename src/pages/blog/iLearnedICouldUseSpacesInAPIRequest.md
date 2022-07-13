@@ -3,6 +3,7 @@ layout: '../../layouts/BlogPost.astro'
 title: I Learned I Could use Spaces in My API Request
 description: GitHub's example to query their API taught me something
 date: 2022-07-09
+published: true
 ---
 
 While I was working on a GitHub integration to feature some of my repos on my website, I found that I could use Topics ([I wrote about it](./gitHubTopics.md))

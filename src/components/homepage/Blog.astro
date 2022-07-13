@@ -1,18 +1,20 @@
 ---
-import BlogArticle from "./BlogArticle.astro";
+import BlogArticle from "./BlogArticle.astro"
+import {sortPosts, getPublishedPosts} from '../../js/utilities'
+
 const posts = await Astro.glob('../../pages/blog/*.md')
+const publishedPosts = getPublishedPosts(posts)
+const sortedPosts = sortPosts(publishedPosts)
+const threeMostRecentPosts = sortedPosts.slice(0, 3)
 ---
 
 <style>
   @media screen and (min-width: 550px) {
-    .home-section {
-      padding-right: 0;
-    }
     .blog__row {
-      display: flex;
-      gap: 3em;
-      overflow: scroll;
-      /* width: 100%; */
+      display: grid;
+      gap: 1em;
+      justify-content: space-between;
+      grid-template-columns: repeat(auto-fit,minmax(200px,1fr))
     }
     .traits__card {
       margin-bottom: 0;
@@ -24,6 +26,6 @@ const posts = await Astro.glob('../../pages/blog/*.md')
 <section id="myBlog" class="home-section">
   <h2 class="section__title">My Words</h2>  
     <div class="blog__row">
-      {posts.map(post => <BlogArticle {post} />)}
+      {threeMostRecentPosts.map(post => <BlogArticle {post} />)}
     </div>
 </section>

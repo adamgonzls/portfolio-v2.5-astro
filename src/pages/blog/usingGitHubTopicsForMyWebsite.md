@@ -1,8 +1,9 @@
 ---
 layout: '../../layouts/BlogPost.astro'
-title: Upgraded the SSD on my 2015 MBP
-description: Better performance in less than 20 minutes
-date: 2022-06-20
+title: Using GitHub Topics for my Website
+description: I used GitHub Topics to query GitHub's API
+date: 2022-07-08
+published: true
 ---
 
 I was working on my website and I wanted to add a feature to query my GitHub repos but, I didn't want ALL of my repos to be returned.
