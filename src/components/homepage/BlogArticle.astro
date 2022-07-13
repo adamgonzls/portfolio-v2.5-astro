@@ -1,7 +1,8 @@
 ---
+import {readableDate} from '../../js/utilities'
 const {post} = Astro.props
 // console.log(post.frontmatter)
-const {title, description} = post.frontmatter
+const {title, description, date} = post.frontmatter
 ---
 
 <style>
@@ -13,6 +14,9 @@ const {title, description} = post.frontmatter
   }
   .articleCard__title {
     margin-bottom: .5em;
+  }
+  .articleCard__date {
+    color: var(--off-white);
   }
   .articleCard__description {
     font-size: .9rem;
@@ -28,6 +32,7 @@ const {title, description} = post.frontmatter
 
 <article class="articleCard">
   <h3 class="articleCard__title"><a class="brand-link" href={post.url}>{title}</a></h3>
+  <small class="articleCard__date">{readableDate(date)}</small>
   <p class="articleCard__description">{description}</p>
   <a class="brand-link brand-link--callout" href={post.url}>Read More</a>
 </article>
