@@ -1,9 +1,9 @@
 ---
-import adamImage from '/images/2022-04-adam-purple-wall-1-800-1067.jpg'
+import adamImage from '/images/2022-04-adam-purple-wall-662-756.jpg'
 ---
 
 <style>
-  section {
+  .intro {
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 2em;
@@ -29,7 +29,7 @@ import adamImage from '/images/2022-04-adam-purple-wall-1-800-1067.jpg'
   }
 
   @media screen and (min-width: 600px) {
-    section {
+    .intro {
       margin-bottom: 4em;
       display: grid;
       align-items: center;
@@ -55,8 +55,10 @@ import adamImage from '/images/2022-04-adam-purple-wall-1-800-1067.jpg'
   }
 </style>
 
-<section>
-  <h1>Hi, I'm <br><strong>Adam</strong></h1>
-  <p class="about__subtitle">Frontend Developer</p>
-  <img src={adamImage} alt="Adam">
+<section class="home-section" >
+  <div class="intro container--max-width">
+    <h1 class="intro__title">Hi, I'm <br><strong>Adam</strong></h1>
+    <p class="about__subtitle">Frontend Developer</p>
+    <img src={adamImage} alt="Adam">
+  </div>
 </section>

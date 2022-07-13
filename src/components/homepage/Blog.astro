@@ -22,10 +22,11 @@ const threeMostRecentPosts = sortedPosts.slice(0, 3)
   }
 </style>
 
-
 <section id="myBlog" class="home-section">
-  <h2 class="section__title">My Words</h2>  
+  <div class="container--max-width">
+    <h2 class="section__title">My Words</h2>
     <div class="blog__row">
       {threeMostRecentPosts.map(post => <BlogArticle {post} />)}
     </div>
+  </div>
 </section>

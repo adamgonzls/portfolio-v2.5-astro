@@ -2,14 +2,9 @@
 import Card from '../Card.astro'
 const gitHubResponse = await fetch(`https://api.github.com/search/repositories?q=adamgonzls+in:name+topic:featured-repo`);
 const gitHubData = await gitHubResponse.json();
-
 ---
 
 <style>
-  section {
-    /* padding-left: 1em;
-    padding-right: 0; */
-  }
   .myWork__avatar-container {
     margin-bottom: 2em;
     text-align: center;
@@ -22,17 +17,11 @@ const gitHubData = await gitHubResponse.json();
     background-image: url();
     background-size: contain;
     transition: all .1s;
-    /* outline-offset: .2rem; */
   }
   .myWork__avatar-container img:hover {
     transform: scale(1.05) translateY(-.25rem);
     outline: .75rem solid var(--accent-color);
   }
-  /* .myWork__row {
-    display: flex;
-    gap: 3em;
-    overflow: scroll;
-  } */
   .myWork__portfolio {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -42,18 +31,20 @@ const gitHubData = await gitHubResponse.json();
 
 
 <section id="myWork" class="home-section">
-  <h2 class="section__title">My Work</h2>
-  <div class="myWork__avatar-container">
-    <a target="_blank" href="https://github.com/adamgonzls">
-      <img src="https://avatars.githubusercontent.com/u/13277437?v=4" alt="Adam's GitHub Avatar">
-    </a>
-  </div>
-  
-  <div class="myWork__portfolio">
-    {gitHubData.items.map(item => {
-      return (
-        <Card {item} />
-      )
-    })}
+  <div class="container--max-width">
+    <h2 class="section__title">My Work</h2>
+    <div class="myWork__avatar-container">
+      <a target="_blank" href="https://github.com/adamgonzls">
+        <img src="https://avatars.githubusercontent.com/u/13277437?v=4" alt="Adam's GitHub Avatar">
+      </a>
+    </div>
+    
+    <div class="myWork__portfolio">
+      {gitHubData.items.map(item => {
+        return (
+          <Card {item} />
+        )
+      })}
+    </div>
   </div>
 </section>
