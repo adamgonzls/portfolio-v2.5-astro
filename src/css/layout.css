@@ -118,3 +118,17 @@
 .home-section:nth-child(even) .section__title {
   color: var(--accent-color);
 }
+
+.blogPost h1 {
+  margin-bottom: 1em;
+}
+
+pre code {
+  display: block;
+  background: none;
+  white-space: pre;
+  overflow-x: scroll;
+  max-width: 100%;
+  min-width: 100px;
+  padding: 0;
+}
