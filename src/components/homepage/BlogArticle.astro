@@ -1,8 +1,10 @@
 ---
 import {readableDate} from '../../js/utilities'
+import fallbackImage from '/images/simple-mac-desktop-640-360.jpg'
 const {post} = Astro.props
+
 // console.log(post.frontmatter)
-const {title, description, date} = post.frontmatter
+const {title, description, date, featuredImage} = post.frontmatter
 ---
 
 <style>
@@ -31,6 +33,7 @@ const {title, description, date} = post.frontmatter
 </style>
 
 <article class="articleCard">
+  <img src={featuredImage ? featuredImage : fallbackImage} alt="">
   <h3 class="articleCard__title"><a class="brand-link" href={post.url}>{title}</a></h3>
   <small class="articleCard__date">{readableDate(date)}</small>
   <p class="articleCard__description">{description}</p>

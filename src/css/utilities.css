@@ -3,3 +3,10 @@
   margin-left: auto;
   max-width: 1200px;
 }
+
+.container--base-padding {
+  padding-right: 3em;
+  padding-left: 3em;
+  padding-top: 2em;
+  padding-bottom: 2em;
+}

@@ -1,9 +1,10 @@
 ---
-layout: '../../layouts/BlogPost.astro'
+layout: '../../layouts/BlogSingle.astro'
 title: I learned I could use spaces in my API request
 description: GitHub's example to query their API taught me something
 date: 2022-07-09
-published: true
+draft: false
+featuredImage: ''
 ---
 
 While I was working on a GitHub integration to feature some of my repos on my website, I found that I could use Topics (<a class="brand-link brand-link--callout" href="./2022-07-08-using-github-topics">I wrote about it</a>).

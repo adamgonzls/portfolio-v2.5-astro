@@ -1,9 +1,9 @@
 ---
-layout: '../../layouts/BlogPost.astro'
+layout: '../../layouts/BlogSingle.astro'
 title: Using GitHub Topics for my Website
 description: I used GitHub Topics to query GitHub's API
 date: 2022-07-08
-published: true
+draft: false
 ---
 
 I was working on my website and I wanted to add a feature to query my GitHub repos but, I didn't want ALL of my repos to be returned.

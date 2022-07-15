@@ -1,9 +1,9 @@
 ---
-layout: '../../layouts/BlogPost.astro'
+layout: '../../layouts/BlogSingle.astro'
 title: Upgraded the SSD on my 2015 MBP
 description: Better performance in less than 20 minutes
 date: 2022-06-20
-published: true
+draft: false
 ---
 
 I was working on my website and I wanted to add a feature to query my GitHub repos but, I didn't want ALL of my repos to be returned.

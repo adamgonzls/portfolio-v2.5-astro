@@ -10,7 +10,7 @@ export function sortPosts(posts) {
 }
 
 export function getPublishedPosts(posts) {
-  return posts.filter((post) => post.frontmatter.published)
+  return posts.filter((post) => !post.frontmatter.draft)
 }
 
 export function readableDate(date) {

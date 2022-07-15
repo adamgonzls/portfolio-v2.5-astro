@@ -1,0 +1,20 @@
+---
+import Base from '../layouts/Base.astro'
+import BlogArticle from '../components/homepage/BlogArticle.astro'
+import {sortPosts, getPublishedPosts} from '../js/utilities'
+
+const posts = await Astro.glob('./blog/*.md')
+const publishedPosts = getPublishedPosts(posts)
+const sortedPosts = sortPosts(publishedPosts)
+// const threeMostRecentPosts = sortedPosts.slice(0, 3)
+---
+
+<Base>
+  <div class="container--base-padding">
+    <h1 class="page__title">My Words</h1>
+    <h2>My experiences in my own words</h2>
+    <div class="blog__row">
+      {sortedPosts.map(post => <BlogArticle {post} />)}
+    </div>
+  </div>
+</Base>
