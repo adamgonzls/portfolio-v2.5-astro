@@ -1,0 +1,15 @@
+---
+const props = Astro.props
+const{path,text} = props
+console.log(props)
+---
+
+<style>
+  .pageLink {
+    text-align: center;
+  }
+</style>
+
+<div class="pageLink">
+  <a class="brand-button" href={path}>{text}</a>
+</div>

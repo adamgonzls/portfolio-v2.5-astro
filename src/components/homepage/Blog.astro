@@ -1,5 +1,6 @@
 ---
 import BlogArticle from "./BlogArticle.astro"
+import PageLink from "./PageLink.astro"
 import {sortPosts, getPublishedPosts} from '../../js/utilities'
 
 const posts = await Astro.glob('../../pages/blog/*.md')
@@ -11,6 +12,7 @@ const threeMostRecentPosts = sortedPosts.slice(0, 3)
 <style>
   @media screen and (min-width: 550px) {
     .blog__row {
+      margin-bottom: 1em;
       display: grid;
       gap: 1em;
       justify-content: space-between;
@@ -29,4 +31,5 @@ const threeMostRecentPosts = sortedPosts.slice(0, 3)
       {threeMostRecentPosts.map(post => <BlogArticle {post} />)}
     </div>
   </div>
+  <PageLink path='/blog' text='See all blogs' />
 </section>

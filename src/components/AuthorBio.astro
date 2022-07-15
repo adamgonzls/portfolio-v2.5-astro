@@ -1,10 +1,12 @@
 ---
 import avatarImg from '/images/2022-04-adam-purple-wall-662-756.jpg'
+import data from '../js/adamFacts.json'
+const randomFact = data.facts[Math.floor(Math.random() * data.facts.length)]
 ---
 
 <div class="avatar__row">
   <img class="avatar__img" src={avatarImg} alt="Adam">
   <div>
-    <p class="avatar__fact">Adam is a Web Developer in Arizona</p>
+    <p class="avatar__fact">{randomFact ? randomFact : "Adam is a Web Developer in Arizona"}</p>
   </div>
 </div>

@@ -1,10 +1,11 @@
 ---
 layout: '../../layouts/BlogSingle.astro'
-title: I presented my new portfolio to fellow developers
+title: I presented my new portfolio to my fellow devs
 description: I had to have something worthy of their time
 date: 2022-07-15
 draft: false
 featuredImage: '/images/zoom-meeting-640.jpg'
+featuredImageAlt: 'An online meeting'
 ---
 
 <!-- need to figure out how to use frontmatter featured image in markdown image tag... or just use html image tag
@@ -33,5 +34,7 @@ From the beginning, I've had a good experience with web developers. I've felt th
 ```
 Just a little feedback, aligning the cards so that the title, description, date, hyperlinks start and end at the same height would make it more clean.
 ```
+
+Noted, now back to work 😉
 
 <!-- <a class="brand-link brand-link--callout" href="./2022-07-08-using-github-topics">I wrote about it</a> -->
