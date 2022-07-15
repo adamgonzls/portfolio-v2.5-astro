@@ -1,5 +1,6 @@
 ---
 layout: '../../layouts/BlogSingle.astro'
+setup: import AuthorBio from '../../components/AuthorBio.astro'
 title: Keyboard shortcuts
 description: Some important keyboard shortcuts
 date: 2022-07-14
@@ -27,3 +28,4 @@ While working on a layout for a blog page, I decided I should start making note 
 `⌘ command + g` - group
 
 <!-- <a class="brand-link brand-link--callout" href="./2022-07-08-using-github-topics">I wrote about it</a> -->
+<AuthorBio />

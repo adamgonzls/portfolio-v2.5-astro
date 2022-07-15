@@ -89,3 +89,20 @@
 .brand-link--callout:hover::after {
   height: 100%;
 }
+
+.avatar__row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+.avatar__img {
+  border-radius: 50%;
+  height: 80px;
+}
+
+.blogPost .avatar__img {
+  margin-right: unset;
+  margin-left: unset;
+}
