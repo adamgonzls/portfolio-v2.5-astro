@@ -44,9 +44,9 @@ const firstPost = sortedPosts.shift()
     <div class="blogFeature">
       <img class="blogFeature__img" src={firstPost.frontmatter.featuredImage} alt={firstPost.frontmatter.featuredImageAlt}/>
       <div class="blogFeature__text">
-        <h3><a class="brand-link" href="firstPost.frontmatter.url">{firstPost.frontmatter.title}</a></h3>
+        <h3><a class="brand-link" href={firstPost.url}>{firstPost.frontmatter.title}</a></h3>
         <p>{firstPost.frontmatter.description}</p>
-        <a class="brand-link brand-link--callout" href={firstPost.frontmatter.url}>Read More</a>
+        <a class="brand-link brand-link--callout" href={firstPost.url}>Read More</a>
       </div>
       
       <div class="blog__row">
