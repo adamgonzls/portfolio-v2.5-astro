@@ -29,7 +29,6 @@
   cursor: pointer;
   position: absolute;
   right: 3em;
-  /* top: 2em; */
   z-index: 4;
 }
 
@@ -127,6 +126,10 @@
 }
 
 .blogPost h1 {
+  margin-bottom: 0.5em;
+}
+
+.blogPost h1 + img {
   margin-bottom: 1em;
 }
 
@@ -142,9 +145,13 @@
 pre code {
   display: block;
   background: none;
-  white-space: pre;
   overflow-x: scroll;
   max-width: 100%;
   min-width: 100px;
   padding: 0;
+  word-wrap: break-word;
+}
+
+pre {
+  white-space: pre-wrap;
 }

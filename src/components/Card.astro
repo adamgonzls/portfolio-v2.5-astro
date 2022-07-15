@@ -45,6 +45,7 @@ const filteredTopics = topicsArray.filter(value => value !== 'featured-repo')
   <ul class='topic__row'>
     {filteredTopics.map(topic => <li class='topic__badge'>{topic}</li>)}
   </ul>
-  <a class="card__link brand-link" target="_blank" href={item.homepage}>Visit Site</a><br />
+  {item.homepage && <a class="card__link brand-link" target="_blank" href={item.homepage}>Visit Site</a><br />}
+  
   <a class="card__link brand-link brand-link--callout" target="_blank" href={item.html_url}>Visit Repo</a>
 </div>

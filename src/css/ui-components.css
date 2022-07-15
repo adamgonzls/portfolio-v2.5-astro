@@ -91,6 +91,7 @@
 }
 
 .avatar__row {
+  margin-bottom: 2em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -99,10 +100,20 @@
 
 .avatar__img {
   border-radius: 50%;
-  height: 80px;
+  height: 70px;
+  width: 70px;
+  object-fit: cover;
+}
+
+.avatar__fact {
+  margin-bottom: 0;
 }
 
 .blogPost .avatar__img {
   margin-right: unset;
   margin-left: unset;
+}
+
+.blogPost > :last-child {
+  margin-bottom: 0;
 }
