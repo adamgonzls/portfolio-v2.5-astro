@@ -1,20 +1,58 @@
 ---
 import Base from '../layouts/Base.astro'
 import BlogArticle from '../components/homepage/BlogArticle.astro'
+import AuthorBio from '../components/AuthorBio.astro'
 import {sortPosts, getPublishedPosts} from '../js/utilities'
-
 const posts = await Astro.glob('./blog/*.md')
 const publishedPosts = getPublishedPosts(posts)
 const sortedPosts = sortPosts(publishedPosts)
-// const threeMostRecentPosts = sortedPosts.slice(0, 3)
+const firstPost = sortedPosts.shift()
 ---
 
+<style>
+  .blogFeature__text {
+    margin-bottom: 1em;
+  }
+
+  @media screen and (min-width: 600px) {
+    .blogFeature {
+      display: grid;
+      gap: 1em;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas:
+        "featureImage featureText"
+        "blogRow      blogRow";
+    }
+    .blogFeature__img {
+      grid-area: featureImage;
+    }
+    .blogFeature__text {
+      margin-bottom: unset;
+      grid-area: featureText;
+    }
+    .blog__row {
+      grid-area: blogRow;
+    }
+  }
+  
+</style>
+
 <Base>
-  <div class="container--base-padding">
+  <div class="container--max-width container--base-padding">
     <h1 class="page__title">My Words</h1>
     <h2>My experiences in my own words</h2>
-    <div class="blog__row">
-      {sortedPosts.map(post => <BlogArticle {post} />)}
+    <div class="blogFeature">
+      <img class="blogFeature__img" src={firstPost.frontmatter.featuredImage} alt={firstPost.frontmatter.featuredImageAlt}/>
+      <div class="blogFeature__text">
+        <h3><a class="brand-link" href="firstPost.frontmatter.url">{firstPost.frontmatter.title}</a></h3>
+        <p>{firstPost.frontmatter.description}</p>
+        <a class="brand-link brand-link--callout" href={firstPost.frontmatter.url}>Read More</a>
+      </div>
+      
+      <div class="blog__row">
+        {sortedPosts.map(post => <BlogArticle {post} />)}
+      </div>
     </div>
   </div>
+  <AuthorBio />
 </Base>

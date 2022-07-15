@@ -2,8 +2,6 @@
 import {readableDate} from '../../js/utilities'
 import fallbackImage from '/images/simple-mac-desktop-640-360.jpg'
 const {post} = Astro.props
-
-// console.log(post.frontmatter)
 const {title, description, date, featuredImage, featuredImageAlt} = post.frontmatter
 ---
 
@@ -11,8 +9,6 @@ const {title, description, date, featuredImage, featuredImageAlt} = post.frontma
   .articleCard {
     margin-bottom: 1em;
     border-radius: 9px;
-    padding: 1em;
-    background-color: var(--darkness);
   }
   .articleCard__title {
     margin-bottom: .5em;
