@@ -29,7 +29,9 @@ const {title, description, date, featuredImage, featuredImageAlt} = post.frontma
 </style>
 
 <article class="articleCard">
-  <img class="articleCard__image" src={featuredImage ? featuredImage : fallbackImage} alt={featuredImageAlt ? featuredImageAlt : "A laptop workstation"}>
+  <a href={post.url}>
+    <img class="articleCard__image" src={featuredImage ? featuredImage : fallbackImage} alt={featuredImageAlt ? featuredImageAlt : "A laptop workstation"}>
+  </a>
   <h3 class="articleCard__title"><a class="brand-link" href={post.url}>{title}</a></h3>
   <small class="articleCard__date">{readableDate(date)}</small>
   <p class="articleCard__description">{description}</p>

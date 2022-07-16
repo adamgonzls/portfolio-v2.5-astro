@@ -13,7 +13,7 @@ featuredImageAlt: 'An online meeting'
 ![Keyboard](frontmatter.featuredImage)
 -->
 
-<img src={frontmatter.featuredImage} alt="meeting" />
+<img src={frontmatter.featuredImage} alt={frontmatter.featuredImageAlt} />
 
 ## {frontmatter.description}
 

@@ -1,10 +1,16 @@
 ---
 layout: '../../layouts/BlogSingle.astro'
-title: Using GitHub Topics for my Website
+title: Using GitHub Topics to my website's desire
 description: I used GitHub Topics to query GitHub's API
 date: 2022-07-08
 draft: false
+featuredImage: '/images/github-octocat-640.jpg'
+featuredImageAlt: 'Octocat figurine next to Groot figurine'
 ---
+
+<img src={frontmatter.featuredImage} alt={frontmatter.featuredImageAlt} />
+
+## {frontmatter.description}
 
 I was working on my website and I wanted to add a feature to query my GitHub repos but, I didn't want ALL of my repos to be returned.
 
