@@ -11,6 +11,7 @@ Check it out: [Adam's Portfolio](https://adamgonzales.netlify.app/)
 - Astro
 - JavaScript (ES6)
 - REST API
+- Markdown
   <!-- - localStorage -->
 - CSS
 - npm
