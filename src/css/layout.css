@@ -104,8 +104,8 @@
 .home-section {
   padding-right: 3em;
   padding-left: 3em;
-  padding-top: 4em;
-  padding-bottom: 4em;
+  padding-top: 2em;
+  padding-bottom: 2em;
 }
 
 .home-section:nth-child(even) {
@@ -119,6 +119,15 @@
 
 .home-section:nth-child(even) .section__title {
   color: var(--accent-color);
+}
+
+.home-section .blog__row {
+  margin-bottom: 2em;
+}
+
+.home-section .blog__row .articleCard {
+  background-color: var(--darkness);
+  padding: 1em;
 }
 
 .page__title {

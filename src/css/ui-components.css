@@ -98,7 +98,6 @@
 }
 
 .avatar__row {
-  margin-bottom: 2em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -127,7 +126,6 @@
 
 @media screen and (min-width: 550px) {
   .blog__row {
-    margin-bottom: 1em;
     display: grid;
     gap: 1em;
     justify-content: space-between;

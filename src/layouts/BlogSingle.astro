@@ -5,10 +5,18 @@ const props = Astro.props.content
 const {title} = props
 ---
 
+<style>
+.blogPost {
+  margin-bottom: 2em;
+}
+</style>
+
 <Base {...props}>
-  <article class="container--max-width container--base-padding blogPost">
-    <h1 class="page__title">{title}</h1>
-    <slot>Default Blog Content</slot>
-  </article>
-  <AuthorBio />
+  <div class="container--max-width container--base-padding">
+    <article class="blogPost">
+      <h1 class="page__title">{title}</h1>
+      <slot>Default Blog Content</slot>
+    </article>
+    <AuthorBio />
+  </div>
 </Base>
