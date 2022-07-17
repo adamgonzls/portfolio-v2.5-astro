@@ -1,4 +1,5 @@
 ---
+import PageLink from './PageLink.astro'
 import adamImage from '/images/2022-04-adam-purple-wall-1-800-1067.jpg'
 ---
 
@@ -7,16 +8,19 @@ import adamImage from '/images/2022-04-adam-purple-wall-1-800-1067.jpg'
     box-shadow: var(--brand-box-shadow);
   }
 
+  .outro {
+    margin-bottom: 2em;
+  }
+
   @media screen and (min-width: 600px) {
-    .container--max-width {
-      /* margin-right: auto; */
+    .outro {
       margin-left: auto;
       display: grid;
       align-items: center;
       grid-template-areas: 
-        "title       img"
-        "subtitle    img"
-        "description img";
+        "title        img"
+        "subtitle     img"
+        "description  img";
       grid-column-gap: 2em;
       grid-template-columns: 1fr 250px;
     }
@@ -40,6 +44,7 @@ import adamImage from '/images/2022-04-adam-purple-wall-1-800-1067.jpg'
       left: -2em;
       width: calc(100% + 4em);
     }
+
   }
   @media screen and (min-width: 1000px) {
     .container--max-width {
@@ -48,15 +53,17 @@ import adamImage from '/images/2022-04-adam-purple-wall-1-800-1067.jpg'
   }
 </style>
 
-
 <section id="myAbout" class="home-section">
   <div class="container--max-width">
-    <h2 class="section__title">Who I am</h2>
-    <p class="about__subtitle">Developer &amp; Designer</p>
-    <div>
-      <p>Hi I'm Adam, I'm a web developer who is passionate for web development, user experience, and continuous learning.</p>
-      <p>I appreciate good design, nature, and stimulating conversation.</p>
+    <div class="outro">
+      <h2 class="section__title">Who I am</h2>
+      <p class="about__subtitle">Developer &amp; Designer</p>
+      <div>
+        <p>Hi I'm Adam, I'm a web developer who is passionate for web development, user experience, and continuous learning.</p>
+        <p>I appreciate good design, nature, and stimulating conversation.</p>
+      </div>
+      <img src={adamImage} alt="Adam">
     </div>
-    <img src={adamImage} alt="Adam">
+    <PageLink class="pageLink" path='/about' text='About Me'/>
   </div>
 </section>
