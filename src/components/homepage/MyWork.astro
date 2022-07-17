@@ -1,5 +1,6 @@
 ---
 import Card from '../Card.astro'
+import PageLink from './PageLink.astro'
 const gitHubResponse = await fetch(`https://api.github.com/search/repositories?q=adamgonzls+in:name+topic:featured-repo`);
 const gitHubData = await gitHubResponse.json();
 ---
@@ -22,7 +23,8 @@ const gitHubData = await gitHubResponse.json();
     transform: scale(1.05) translateY(-.25rem);
     outline: .75rem solid var(--accent-color);
   }
-  .myWork__portfolio {
+  .myWork__gitHub {
+    margin-bottom: 2em;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1em;
@@ -38,12 +40,13 @@ const gitHubData = await gitHubResponse.json();
       </a>
     </div>
     
-    <div class="myWork__portfolio">
+    <div class="myWork__gitHub">
       {gitHubData.items.map(item => {
         return (
           <Card {item} />
         )
       })}
     </div>
+    <PageLink path='/work' text='See my work experience'/>
   </div>
 </section>

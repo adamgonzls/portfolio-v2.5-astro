@@ -1,0 +1,68 @@
+---
+import Base from '../layouts/Base.astro'
+import AuthorBio from '../components/AuthorBio.astro'
+import Resume from '../assets/adamgonzales-resume.pdf'
+---
+
+<style>
+  section {
+    margin-bottom: 2em;
+  }
+  .experience__button-container {
+    margin-bottom: 2em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1em;
+  }
+  .experience__button-container h2 {
+    margin-bottom: 0;
+  }
+  .experience__item {
+    margin-bottom: 1em;
+  }
+  .responsibilities__list {
+    list-style-type: none;
+  }
+</style>
+
+<Base>
+  <div class="container--max-width container--base-padding">
+    <h1 class="page__title">My Experience</h1>
+    <section>
+      <div class="experience__button-container">
+        <h2>Work History</h2>
+        <a class="brand-button" href={Resume} download>Download Resume</a>
+      </div>
+      <div class="experience__item">
+        <h3>Lead Web Developer</h3>
+        <h4>Tether Tools</h4>
+        <ul class="responsibilities__list">
+          <li>Research, test, and implement features to improve user experience and increase sales; Increased web sales by 280% over a two-year period.</li>
+          <li>Utilize HTML, CSS, JavaScript and PHP to add content and features to websites. Features added included adding and consuming API's, creating dashboards to allow website updates by non-developers, and centralizing certain UI elements for visual continuity and better maintenance.</li>
+          <li>Manage and migrate multiple web properties. Management of sites includes code optimization, researching and updating plugins, adding new features, utilizing GitLab for version control. </li>
+        </ul>
+      </div>
+      <div class="experience__item">
+        <h3>Web Developer</h3>
+        <h4>atmosol</h4>
+        <ul class="responsibilities__list">
+          <li>Worked with a team to develop aesthetically pleasing, functional ecommerce websites for SMB and enterprise clients.</li>
+          <li>Technologies used include: HTML, Liquid, CSS (SCSS), JavaScript, jQuery, and various third-party APIs.</li>
+          <li>In a span of 6 months, learned and mastered the Shopify platform and became atmosol's subject expert.</li>
+        </ul>
+      </div>
+    </section>
+    <section>
+      <h2>GitHub Projects</h2>
+    </section>
+    <section>
+      <h2>Education</h2>
+      <h3>Rockit Bootcamp</h3>
+      <p>Certificate of Completion - Front-End Web Development</p>
+      <h3>Collins College</h3>
+      <p>Bachelor of Arts - Visual Communication</p>
+    </section>
+    <AuthorBio />
+  </div>
+</Base>
