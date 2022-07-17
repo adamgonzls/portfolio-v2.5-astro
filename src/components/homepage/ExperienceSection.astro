@@ -1,8 +1,7 @@
 ---
+import GitHubSection from '../GitHubSection.astro';
 import Card from '../Card.astro'
 import PageLink from './PageLink.astro'
-const gitHubResponse = await fetch(`https://api.github.com/search/repositories?q=adamgonzls+in:name+topic:featured-repo`);
-const gitHubData = await gitHubResponse.json();
 ---
 
 <style>
@@ -23,30 +22,17 @@ const gitHubData = await gitHubResponse.json();
     transform: scale(1.05) translateY(-.25rem);
     outline: .75rem solid var(--accent-color);
   }
-  .myWork__gitHub {
-    margin-bottom: 2em;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1em;
-  }
 </style>
 
 <section id="myWork" class="home-section">
   <div class="container--max-width">
-    <h2 class="section__title">My Work</h2>
+    <h2 class="section__title">My Experience</h2>
     <div class="myWork__avatar-container">
       <a target="_blank" href="https://github.com/adamgonzls">
         <img src="https://avatars.githubusercontent.com/u/13277437?v=4" alt="Adam's GitHub Avatar">
       </a>
     </div>
-    
-    <div class="myWork__gitHub">
-      {gitHubData.items.map(item => {
-        return (
-          <Card {item} />
-        )
-      })}
-    </div>
-    <PageLink path='/work' text='See my work experience'/>
+    <GitHubSection requestedPostAmount={3} />
+    <PageLink path='/experience' text='See my experience'/>
   </div>
 </section>

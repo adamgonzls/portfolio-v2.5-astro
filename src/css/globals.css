@@ -58,6 +58,20 @@ pre {
   margin-bottom: 1em;
 }
 
+pre code {
+  display: block;
+  background: none;
+  overflow-x: scroll;
+  max-width: 100%;
+  min-width: 100px;
+  padding: 0;
+  word-wrap: break-word;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
 code {
   font-size: inherit;
 }

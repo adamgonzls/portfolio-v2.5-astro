@@ -150,16 +150,9 @@
   margin-left: auto;
 }
 
-pre code {
-  display: block;
-  background: none;
-  overflow-x: scroll;
-  max-width: 100%;
-  min-width: 100px;
-  padding: 0;
-  word-wrap: break-word;
-}
-
-pre {
-  white-space: pre-wrap;
+.myWork__gitHub {
+  margin-bottom: 2em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1em;
 }
