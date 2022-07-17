@@ -20,6 +20,8 @@ While working on a layout for a blog page, I decided I should start making note 
 
 `shift + option + ↓` - duplicate current line down
 
+`⌘ command + alt + ↓` - add another cursor below
+
 ## Figma
 
 `⌘ command + d` - duplicate current selection
