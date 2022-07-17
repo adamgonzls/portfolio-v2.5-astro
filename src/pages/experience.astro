@@ -9,21 +9,33 @@ import GitHubSection from '../components/GitHubSection.astro';
   section {
     margin-bottom: 2em;
   }
-  .experience__button-container {
-    margin-bottom: 2em;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 1em;
+  
+  .brand-button {
+    margin-bottom: 1em;
   }
-  .experience__button-container h2 {
-    margin-bottom: 0;
-  }
+
   .experience__item {
     margin-bottom: 1em;
   }
+
   .responsibilities__list {
     list-style-type: none;
+  }
+
+  @media screen and (min-width: 500px) {
+    .experience__button-container {
+      margin-bottom: 2em;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 1em;
+    }
+    .experience__button-container h2 {
+      margin-bottom: 0;
+    }
+    .brand-button {
+      margin-bottom: 0;
+    }
   }
 </style>
 

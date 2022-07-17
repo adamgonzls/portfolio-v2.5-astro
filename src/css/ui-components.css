@@ -119,9 +119,15 @@
 
 .avatar__row {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   gap: 1em;
+}
+
+@media screen and (min-width: 500px) {
+  .avatar__row {
+    justify-content: center;
+  }
 }
 
 .avatar__img {
