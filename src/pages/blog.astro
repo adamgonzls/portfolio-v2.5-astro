@@ -38,7 +38,6 @@ const firstPost = sortedPosts.shift()
       grid-area: blogRow;
     }
   }
-  
 </style>
 
 <Base>
@@ -46,13 +45,12 @@ const firstPost = sortedPosts.shift()
     <h1 class="page__title">My Words</h1>
     <h2>My experiences in my own words</h2>
     <div class="blogFeature">
-      <img class="blogFeature__img" src={firstPost.frontmatter.featuredImage} alt={firstPost.frontmatter.featuredImageAlt}/>
+      <a href={firstPost.url}><img class="blogFeature__img" src={firstPost.frontmatter.featuredImage} alt={firstPost.frontmatter.featuredImageAlt}/></a>
       <div class="blogFeature__text">
         <h3><a class="brand-link" href={firstPost.url}>{firstPost.frontmatter.title}</a></h3>
         <p>{firstPost.frontmatter.description}</p>
         <a class="brand-link brand-link--callout" href={firstPost.url}>Read More</a>
       </div>
-      
       <div class="blog__row">
         {sortedPosts.map(post => <BlogArticle {post} />)}
       </div>
