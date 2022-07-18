@@ -4,8 +4,8 @@ title: I learned I could use spaces in my API request
 description: GitHub's example to query their API taught me something
 date: 2022-07-09
 draft: false
-featuredImage: '/images/github-octocat-640.jpg'
-featuredImageAlt: 'Octocat figurine next to Groot figurine'
+featuredImage: '/images/open-space-640.jpg'
+featuredImageAlt: 'A person laying in a desolate landscape'
 ---
 
 <img src={frontmatter.featuredImage} alt={frontmatter.featuredImageAlt} />
