@@ -86,7 +86,7 @@
   object-fit: cover;
 }
 
-.avatar__row {
+.fact__row {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -94,23 +94,23 @@
 }
 
 @media screen and (min-width: 500px) {
-  .avatar__row {
+  .fact__row {
     justify-content: center;
   }
 }
 
-.avatar__img {
+.fact__img {
   border-radius: 50%;
   height: 70px;
   width: 70px;
   object-fit: cover;
 }
 
-.avatar__fact {
+.fact__text {
   margin-bottom: 0;
 }
 
-.blogPost .avatar__img {
+.blogPost .fact__img {
   margin-right: unset;
   margin-left: unset;
 }

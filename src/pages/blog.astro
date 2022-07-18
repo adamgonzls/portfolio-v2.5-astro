@@ -1,7 +1,7 @@
 ---
 import Base from '../layouts/Base.astro'
 import BlogArticle from '../components/homepage/BlogArticle.astro'
-import AuthorBio from '../components/AuthorBio.astro'
+import AuthorFact from '../components/AuthorFact.astro'
 import {sortPosts, getPublishedPosts} from '../js/utilities'
 const posts = await Astro.glob('./blog/*.md')
 const publishedPosts = getPublishedPosts(posts)
@@ -12,6 +12,10 @@ const firstPost = sortedPosts.shift()
 <style>
   .blogFeature {
     margin-bottom: 2em;
+  }
+
+  .blogFeature__img {
+    margin-bottom: 1em;
   }
   
   .blogFeature__text {
@@ -28,6 +32,7 @@ const firstPost = sortedPosts.shift()
         "blogRow      blogRow";
     }
     .blogFeature__img {
+      margin-bottom: unset;
       grid-area: featureImage;
     }
     .blogFeature__text {
@@ -55,6 +60,6 @@ const firstPost = sortedPosts.shift()
         {sortedPosts.map(post => <BlogArticle {post} />)}
       </div>
     </div>
-    <AuthorBio />
+    <AuthorFact />
   </div>
 </Base>

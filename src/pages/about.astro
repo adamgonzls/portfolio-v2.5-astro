@@ -4,23 +4,24 @@ import Socials from '../components/Socials.astro'
 import adamImage from '/images/2022-04-adam-purple-wall-662-756.jpg'
 ---
 
-<style>
-  .about__content {
-    display: grid;
-    grid-template-areas: 
-      "copy img"
-    ;
-    gap: 1em;
+<style>  
+  @media screen and (min-width: 600px) {
+    .about__content {
+      display: grid;
+      grid-template-areas: 
+        "copy img"
+      ;
+      gap: 1em;
+    }
+  
+    .about__copy {
+      grid-area: copy;
+    }
+  
+    .about__img {
+      grid-area: img;
+    }
   }
-
-  .about__copy {
-    grid-area: copy;
-  }
-
-  .about__img {
-    grid-area: img;
-  }
-
 </style>
 
 <Base title="About">

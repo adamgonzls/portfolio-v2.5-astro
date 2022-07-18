@@ -1,6 +1,6 @@
 ---
 import Base from './Base.astro'
-import AuthorBio from '../components/AuthorBio.astro'
+import AuthorFact from '../components/AuthorFact.astro'
 const props = Astro.props.content
 const {title} = props
 ---
@@ -17,6 +17,6 @@ const {title} = props
       <h1 class="page__title">{title}</h1>
       <slot>Default Blog Content</slot>
     </article>
-    <AuthorBio />
+    <AuthorFact />
   </div>
 </Base>
