@@ -41,6 +41,37 @@
   gap: 1em;
 }
 
+.hamburger {
+  display: block;
+  position: relative;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  background-color: var(--accent-color);
+  width: 2em;
+  height: 3px;
+  border-radius: 1em;
+  transition: transform 0.2s ease-in-out;
+}
+
+.hamburger::before {
+  top: 6px;
+}
+
+.hamburger::after {
+  bottom: 6px;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
 .nav-open .main-nav {
   transform: translateX(0);
 }
