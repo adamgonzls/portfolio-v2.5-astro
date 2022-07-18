@@ -6,12 +6,11 @@ import GitHubSection from '../components/GitHubSection.astro';
 ---
 
 <style>
-  section:nth-child(odd) {
+  .section--dark {
     color: var(--white);
     background-color: var(--darkness);
   }
-
-  section:nth-child(odd) h2 {
+  .section--dark h2 {
     color: var(--accent-color);
   }
   
@@ -75,7 +74,7 @@ import GitHubSection from '../components/GitHubSection.astro';
       </ul>
     </div>
   </section>
-  <section>
+  <section class="section--dark">
     <div class="container--max-width container--base-padding">
       <div class="experience__button-container">
         <h2>Work History</h2>
@@ -107,7 +106,7 @@ import GitHubSection from '../components/GitHubSection.astro';
       <GitHubSection cardTheme="light" />
     </div>
   </section>
-  <section>
+  <section class="section--dark">
     <div class="container--max-width container--base-padding">
       <h2>Education</h2>
       <h3>Rockit Bootcamp</h3>
