@@ -6,8 +6,13 @@ import GitHubSection from '../components/GitHubSection.astro';
 ---
 
 <style>
-  section {
-    margin-bottom: 2em;
+  section:nth-child(odd) {
+    color: var(--white);
+    background-color: var(--darkness);
+  }
+
+  section:nth-child(odd) h2 {
+    color: var(--accent-color);
   }
   
   .brand-button {
@@ -20,6 +25,10 @@ import GitHubSection from '../components/GitHubSection.astro';
 
   .responsibilities__list {
     list-style-type: none;
+  }
+
+  .author-container {
+    padding-top: unset;
   }
 
   @media screen and (min-width: 500px) {
@@ -40,9 +49,9 @@ import GitHubSection from '../components/GitHubSection.astro';
 </style>
 
 <Base>
-  <div class="container--max-width container--base-padding">
-    <h1 class="page__title">My Experience</h1>
-    <section>
+  <section>
+    <div class="container--max-width container--base-padding">
+      <h1 class="page__title">My Experience</h1>
       <h2>Skills</h2>
       <h3>Languages:</h3>
       <ul class="topic__row">
@@ -68,8 +77,10 @@ import GitHubSection from '../components/GitHubSection.astro';
         <li class="topic__badge">Git</li>
         <li class="topic__badge">Gulp</li>
       </ul>
-    </section>
-    <section>
+    </div>
+  </section>
+  <section>
+    <div class="container--max-width container--base-padding">
       <div class="experience__button-container">
         <h2>Work History</h2>
         <a class="brand-button" href={Resume} download>Download Resume</a>
@@ -92,18 +103,24 @@ import GitHubSection from '../components/GitHubSection.astro';
           <li>In a span of 6 months, learned and mastered the Shopify platform and became atmosol's subject expert.</li>
         </ul>
       </div>
-    </section>
-    <section>
+    </div>
+  </section>
+  <section>
+    <div class="container--max-width container--base-padding">
       <h2>GitHub Projects</h2>
-      <GitHubSection />
-    </section>
-    <section>
+      <GitHubSection cardTheme="light" />
+    </div>
+  </section>
+  <section>
+    <div class="container--max-width container--base-padding">
       <h2>Education</h2>
       <h3>Rockit Bootcamp</h3>
       <p>Certificate of Completion - Front-End Web Development</p>
       <h3>Collins College</h3>
       <p>Bachelor of Arts - Visual Communication</p>
-    </section>
+    </div>
+  </section>
+  <div class="author-container container--max-width container--base-padding">
     <AuthorFact />
   </div>
 </Base>

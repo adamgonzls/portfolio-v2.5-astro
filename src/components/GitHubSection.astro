@@ -1,7 +1,7 @@
 ---
 import Card from '../components/Card.astro'
 const props = Astro.props
-
+const {cardTheme} = props
 const gitHubResponse = await fetch(`https://api.github.com/search/repositories?q=adamgonzls+in:name+topic:featured-repo`);
 const gitHubData = await gitHubResponse.json();
 const requestedPosts = props.requestedPostAmount ? gitHubData.items.slice(0, props.requestedPostAmount) : gitHubData.items
@@ -10,7 +10,7 @@ const requestedPosts = props.requestedPostAmount ? gitHubData.items.slice(0, pro
 <div class="myWork__gitHub">
   {requestedPosts.map(item => {
     return (
-      <Card {item} />
+      <Card {item} cardTheme={cardTheme} />
     )
   })}
 </div>
