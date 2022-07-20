@@ -3,6 +3,8 @@ import Base from '../layouts/Base.astro'
 import AuthorFact from '../components/AuthorFact.astro'
 import Resume from '../assets/adamgonzales-resume.pdf'
 import GitHubSection from '../components/GitHubSection.astro';
+import data from '../js/experience.json'
+const {topics} = data.experience
 ---
 
 <style>
@@ -20,6 +22,29 @@ import GitHubSection from '../components/GitHubSection.astro';
 
   .experience__item {
     margin-bottom: 1em;
+  }
+
+  .technology__list {
+    margin-bottom: 1em;
+    list-style-type: none;
+    display: flex;
+    gap: 1em;
+  }
+
+  .technology__item {
+    font-size: .9em;
+  }
+
+  .technology__image {
+    margin-right: auto;
+    margin-left: auto;
+    height: 2em;
+  }
+
+  .technology__list > li {
+    /* padding: 1em; */
+    display: inline-block;
+    text-align: center;
   }
 
   .responsibilities__list {
@@ -47,31 +72,25 @@ import GitHubSection from '../components/GitHubSection.astro';
   <section>
     <div class="container--max-width container--base-padding">
       <h1 class="page__title">My Experience</h1>
-      <h2>Skills</h2>
-      <h3>Languages:</h3>
-      <ul class="topic__row">
-        <li class="topic__badge">JavaScript</li>
-        <li class="topic__badge">CSS</li>
-        <li class="topic__badge">HTML</li>
-        <li class="topic__badge">Markdown</li>
-        <li class="topic__badge">PHP</li>
-        <li class="topic__badge">SCSS</li>
-      </ul>
-      <h3>Frameworks:</h3>
-      <ul class="topic__row">
-        <li class="topic__badge">React</li>
-        <li class="topic__badge">Vite</li>
-        <li class="topic__badge">Astro</li>
-      </ul>
-      <h3>Tools:</h3>
-      <ul class="topic__row">
-        <li class="topic__badge">Figma</li>
-        <li class="topic__badge">Photoshop</li>
-        <li class="topic__badge">npm</li>
-        <li class="topic__badge">MySQL</li>
-        <li class="topic__badge">Git</li>
-        <li class="topic__badge">Gulp</li>
-      </ul>
+      {
+       topics.map(topic => {
+          return (
+            <h2>{topic.topic}</h2>
+            <ul class="technology__list">
+            {topic.languages.map(language => {
+              const {icon, technology, yearsExperience} = language
+              return (
+                <li class="technology__item">
+                  <img class="technology__image" src={icon} alt="">
+                  <span>{technology}</span><br />
+                  <span>{yearsExperience && `${yearsExperience} years experience`}</span>
+                </li>
+              )
+            })}
+            </ul>
+          )
+        })
+      }
     </div>
   </section>
   <section class="section--dark">
