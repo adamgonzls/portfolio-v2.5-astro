@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro'
 import BlogArticle from '../components/homepage/BlogArticle.astro'
 import AuthorFact from '../components/AuthorFact.astro'
 import {sortPosts, getPublishedPosts} from '../js/utilities'
+
 const posts = await Astro.glob('./blog/*.md')
 const publishedPosts = getPublishedPosts(posts)
 const sortedPosts = sortPosts(publishedPosts)

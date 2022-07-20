@@ -1,5 +1,6 @@
 ---
 import Card from '../components/Card.astro'
+
 const props = Astro.props
 const {cardTheme} = props
 const gitHubResponse = await fetch(`https://api.github.com/search/repositories?q=adamgonzls+in:name+topic:featured-repo`);

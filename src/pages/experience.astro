@@ -4,14 +4,25 @@ import AuthorFact from '../components/AuthorFact.astro'
 import Resume from '../assets/adamgonzales-resume.pdf'
 import GitHubSection from '../components/GitHubSection.astro';
 import data from '../js/experience.json'
+import jobData from '../js/workHistory.json'
+
 const {topics} = data.experience
+const {jobs} = jobData.experience
 ---
 
 <style>
+  .in-page-nav {
+    margin-bottom: 2.25em;
+    list-style-type: none;
+    display: flex;
+    gap: 1em;
+  }
+  
   .section--dark {
     color: var(--white);
     background-color: var(--darkness);
   }
+  
   .section--dark h2 {
     color: var(--accent-color);
   }
@@ -20,35 +31,57 @@ const {topics} = data.experience
     margin-bottom: 1em;
   }
 
-  .experience__item {
+  .work-history__technology {
+    margin-bottom: .5em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5em;
+    list-style-type: none;
+  }
+
+  .work-history__item {
     margin-bottom: 1em;
+    border-radius: 9px;
+    padding: 1em;
+    background: var(--mine-shaft);
+  }
+
+  .work-history__tenure {
+    display: flex;
+    align-items: baseline;
+    gap: .75em;
   }
 
   .technology__list {
     margin-bottom: 1em;
     list-style-type: none;
     display: flex;
+    flex-wrap: wrap;
     gap: 1em;
   }
 
   .technology__item {
     font-size: .9em;
+    display: inline-block;
+    text-align: center;
   }
 
   .technology__image {
     margin-right: auto;
     margin-left: auto;
-    height: 2em;
+    height: 3em;
   }
 
-  .technology__list > li {
-    /* padding: 1em; */
-    display: inline-block;
-    text-align: center;
-  }
-
-  .responsibilities__list {
+  .work-history__responsibilities {
     list-style-type: none;
+  }
+  
+  .work-history__responsibilities > li {
+    margin-bottom: .75em;
+  }
+
+  .work-history__responsibilities > li:last-child {
+    margin-bottom: 0;
   }
 
   @media screen and (min-width: 500px) {
@@ -68,10 +101,15 @@ const {topics} = data.experience
   }
 </style>
 
-<Base>
+<Base title="Experience">
   <section>
     <div class="container--max-width container--base-padding">
       <h1 class="page__title">My Experience</h1>
+      <ul class="in-page-nav">
+        <li><a class="brand-link" href="#workHistory">Work History</a></li>
+        <li><a class="brand-link" href="#gitHubProjects">GitHub Projects</a></li>
+        <li><a class="brand-link" href="#education">Education</a></li>
+      </ul>
       {
        topics.map(topic => {
           return (
@@ -81,9 +119,8 @@ const {topics} = data.experience
               const {icon, technology, yearsExperience} = language
               return (
                 <li class="technology__item">
-                  <img class="technology__image" src={icon} alt="">
-                  <span>{technology}</span><br />
-                  <span>{yearsExperience && `${yearsExperience} years experience`}</span>
+                  <img class="technology__image" src={icon} alt={technology}>
+                  <span>{technology}</span>
                 </li>
               )
             })}
@@ -93,47 +130,53 @@ const {topics} = data.experience
       }
     </div>
   </section>
+  
   <section class="section--dark">
     <div class="container--max-width container--base-padding">
       <div class="experience__button-container">
-        <h2>Work History</h2>
+        <h2 id="workHistory">Work History</h2>
         <a class="brand-button" href={Resume} download>Download Resume</a>
       </div>
-      <div class="experience__item">
-        <h3>Lead Web Developer</h3>
-        <h4>Tether Tools</h4>
-        <ul class="responsibilities__list">
-          <li>Research, test, and implement features to improve user experience and increase sales; Increased web sales by 280% over a two-year period.</li>
-          <li>Utilize HTML, CSS, JavaScript and PHP to add content and features to websites. Features added included adding and consuming API's, creating dashboards to allow website updates by non-developers, and centralizing certain UI elements for visual continuity and better maintenance.</li>
-          <li>Manage and migrate multiple web properties. Management of sites includes code optimization, researching and updating plugins, adding new features, utilizing GitLab for version control. </li>
-        </ul>
-      </div>
-      <div class="experience__item">
-        <h3>Web Developer</h3>
-        <h4>atmosol</h4>
-        <ul class="responsibilities__list">
-          <li>Worked with a team to develop aesthetically pleasing, functional ecommerce websites for SMB and enterprise clients.</li>
-          <li>Technologies used include: HTML, Liquid, CSS (SCSS), JavaScript, jQuery, and various third-party APIs.</li>
-          <li>In a span of 6 months, learned and mastered the Shopify platform and became atmosol's subject expert.</li>
-        </ul>
-      </div>
+      {jobs.map(job => {
+        const {jobTitle, companyName, technologyUsed, responsibilities, timeEmployed} = job
+        return (
+          <div class="work-history__item">
+            <h3>{jobTitle}</h3>
+            <div class="work-history__tenure">
+              <h4>{companyName}</h4>
+              <span>{timeEmployed}</span>
+            </div>
+            <h5>Technologies Used:</h5>
+            <ul class="work-history__technology">
+              {technologyUsed.map(tech => <li>{tech}</li>)}
+            </ul>
+            <h5>Responsibilities:</h5>
+            <ul class="work-history__responsibilities">
+              {responsibilities.map(responsibility => <li>{responsibility}</li>)}
+            </ul>
+          </div>
+        )
+      })}
     </div>
   </section>
+
   <section>
     <div class="container--max-width container--base-padding">
-      <h2>GitHub Projects</h2>
+      <h2 id="gitHubProjects">GitHub Projects</h2>
       <GitHubSection cardTheme="light" />
     </div>
   </section>
+
   <section class="section--dark">
     <div class="container--max-width container--base-padding">
-      <h2>Education</h2>
+      <h2 id="education">Education</h2>
       <h3>Rockit Bootcamp</h3>
       <p>Certificate of Completion - Front-End Web Development</p>
       <h3>Collins College</h3>
       <p>Bachelor of Arts - Visual Communication</p>
     </div>
   </section>
+
   <div class="author-container container--max-width container--base-padding">
     <AuthorFact />
   </div>

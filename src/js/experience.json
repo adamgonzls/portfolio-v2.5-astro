@@ -17,16 +17,34 @@
             "yearStarted": 2015
           },
           {
+            "technology": "HTML",
+            "icon": "./images/icons/html.svg",
+            "yearsExperience": 5,
+            "yearStarted": 2015
+          },
+          {
+            "technology": "Responsive/Mobile Design",
+            "icon": "./images/icons/responsive.svg",
+            "yearsExperience": 5,
+            "yearStarted": 2015
+          },
+          {
             "technology": "PHP",
             "icon": "./images/icons/php.svg",
             "yearsExperience": 5,
             "yearStarted": 2016
           },
           {
-            "technology": "HTML",
-            "icon": "./images/icons/html.svg",
+            "technology": "WordPress",
+            "icon": "./images/icons/wordpress.svg",
             "yearsExperience": 5,
-            "yearStarted": 2015
+            "yearStarted": 2016
+          },
+          {
+            "technology": "WooCommerce",
+            "icon": "./images/icons/woocommerce.svg",
+            "yearsExperience": 5,
+            "yearStarted": 2016
           },
           {
             "technology": "Markdown",
@@ -89,6 +107,12 @@
           {
             "technology": "SQL",
             "icon": "./images/icons/sql.svg",
+            "yearsExperience": 5,
+            "yearStarted": 2015
+          },
+          {
+            "technology": "JSON",
+            "icon": "./images/icons/json.svg",
             "yearsExperience": 5,
             "yearStarted": 2015
           },

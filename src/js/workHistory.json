@@ -1,0 +1,52 @@
+{
+  "experience": {
+    "jobs": [
+      {
+        "companyName": "Tether Tools",
+        "timeEmployed": "November 2016 - May 2022",
+        "jobTitle": "Lead Web Developer",
+        "technologyUsed": [
+          "PHP",
+          "WooCommerce",
+          "WordPress",
+          "JavaScript",
+          "jQuery",
+          "HTML",
+          "CSS/SCSS",
+          "Gulp",
+          "SQL",
+          "API's",
+          "Photoshop",
+          "Salesforce",
+          "Google Analytics",
+          "Google Optimize"
+        ],
+        "responsibilities": [
+          "Research, test, and implement features to improve user experience and increase sales; Increased web sales by 280% over a two-year period.",
+          "Utilize HTML, CSS, JavaScript and PHP to add content and features to websites. Features added included adding and consuming API's, creating dashboards to allow website updates by non-developers, and centralizing certain UI elements for visual continuity and better maintenance.",
+          "Manage and migrate multiple web properties. Management of sites includes code optimization, researching and updating plugins, adding new features, utilizing GitLab for version control."
+        ]
+      },
+      {
+        "companyName": "atmosol",
+        "timeEmployed": "March - November 2016",
+        "jobTitle": "Web Developer",
+        "technologyUsed": [
+          "Shopify",
+          "JavaScript",
+          "Liquid",
+          "jQuery",
+          "HTML",
+          "CSS/SCSS",
+          "Gulp",
+          "API's"
+        ],
+        "responsibilities": [
+          "Worked with a team to develop aesthetically pleasing, functional ecommerce websites for SMB and enterprise clients.",
+          "Technologies used include: HTML, Liquid, CSS (SCSS), JavaScript, jQuery, and various third-party APIs.",
+          "In a span of 6 months, learned and mastered the Shopify platform and became atmosol's subject expert."
+        ]
+      }
+    ]
+  }
+}
