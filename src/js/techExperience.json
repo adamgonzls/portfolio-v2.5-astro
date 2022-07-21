@@ -5,121 +5,121 @@
       "languages": [
         {
           "technology": "JavaScript",
-          "icon": "./images/icons/javascript.svg",
+          "icon": "/images/icons/javascript.svg",
           "yearsExperience": 5,
           "yearStarted": 2015
         },
         {
           "technology": "React",
-          "icon": "./images/icons/react.svg",
+          "icon": "/images/icons/react.svg",
           "yearsExperience": 1,
           "yearStarted": 2021
         },
         {
           "technology": "CSS",
-          "icon": "./images/icons/css.svg",
+          "icon": "/images/icons/css.svg",
           "yearsExperience": 5,
           "yearStarted": 2015
         },
         {
           "technology": "SCSS",
-          "icon": "./images/icons/scss.svg",
+          "icon": "/images/icons/scss.svg",
           "yearsExperience": 5,
           "yearStarted": 2015
         },
         {
           "technology": "HTML",
-          "icon": "./images/icons/html.svg",
+          "icon": "/images/icons/html.svg",
           "yearsExperience": 5,
           "yearStarted": 2015
         },
         {
           "technology": "Markdown",
-          "icon": "./images/icons/markdown.svg",
+          "icon": "/images/icons/markdown.svg",
           "yearsExperience": 5,
           "yearStarted": 2015
         },
         {
           "technology": "PHP",
-          "icon": "./images/icons/php.svg",
+          "icon": "/images/icons/php.svg",
           "yearsExperience": 5,
           "yearStarted": 2016
         },
         {
           "technology": "WordPress",
-          "icon": "./images/icons/wordpress.svg",
+          "icon": "/images/icons/wordpress.svg",
           "yearsExperience": 5,
           "yearStarted": 2016
         },
         {
           "technology": "WooCommerce",
-          "icon": "./images/icons/woocommerce.svg",
+          "icon": "/images/icons/woocommerce.svg",
           "yearsExperience": 5,
           "yearStarted": 2016
         },
         {
           "technology": "Vite",
-          "icon": "./images/icons/vite.svg",
+          "icon": "/images/icons/vite.svg",
           "yearsExperience": 1,
           "yearStarted": 2022
         },
         {
           "technology": "Astro",
-          "icon": "./images/icons/astro.svg",
+          "icon": "/images/icons/astro.svg",
           "yearsExperience": 1,
           "yearStarted": 2022
         },
         {
           "technology": "Responsive/Mobile Design",
-          "icon": "./images/icons/responsive.svg",
+          "icon": "/images/icons/responsive.svg",
           "yearsExperience": 5,
           "yearStarted": 2015
         },
         {
           "technology": "Figma",
-          "icon": "./images/icons/figma.svg",
+          "icon": "/images/icons/figma.svg",
           "yearsExperience": 1,
           "yearStarted": 2022
         },
         {
           "technology": "Photoshop",
-          "icon": "./images/icons/photoshop.svg",
+          "icon": "/images/icons/photoshop.svg",
           "yearsExperience": 5,
           "yearStarted": 2016
         },
         {
           "technology": "SQL",
-          "icon": "./images/icons/sql.svg",
+          "icon": "/images/icons/sql.svg",
           "yearsExperience": 5,
           "yearStarted": 2015
         },
         {
           "technology": "JSON",
-          "icon": "./images/icons/json.svg",
+          "icon": "/images/icons/json.svg",
           "yearsExperience": 5,
           "yearStarted": 2015
         },
         {
           "technology": "Git",
-          "icon": "./images/icons/git.svg",
+          "icon": "/images/icons/git.svg",
           "yearsExperience": 5,
           "yearStarted": 2015
         },
         {
           "technology": "npm",
-          "icon": "./images/icons/npm.svg",
+          "icon": "/images/icons/npm.svg",
           "yearsExperience": 5,
           "yearStarted": 2015
         },
         {
           "technology": "Gulp",
-          "icon": "./images/icons/gulp.svg",
+          "icon": "/images/icons/gulp.svg",
           "yearsExperience": 5,
           "yearStarted": 2015
         },
         {
           "technology": "jQuery",
-          "icon": "./images/icons/jquery.svg",
+          "icon": "/images/icons/jquery.svg",
           "yearsExperience": 5,
           "yearStarted": 2015
         }
