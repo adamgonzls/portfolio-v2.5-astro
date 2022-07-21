@@ -15,6 +15,7 @@ const {jobs} = jobData.experience
     margin-bottom: 2.25em;
     list-style-type: none;
     display: flex;
+    text-align: center;
     gap: 1em;
   }
   
@@ -31,12 +32,18 @@ const {jobs} = jobData.experience
     margin-bottom: 1em;
   }
 
+  .technology__title {
+    margin-bottom: .25em;
+  }
+
+  .technology__tagline {
+    margin-bottom: 1.75em;
+  }
+
   .technology__list {
-    margin-bottom: 1em;
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
-    /* gap: 1em; */
   }
 
   .technology__item {
@@ -44,7 +51,7 @@ const {jobs} = jobData.experience
     text-align: center;
     font-size: .9em;
     width: 50%;
-    height: 150px;
+    height: 125px;
   }
   
   .technology__image {
@@ -53,13 +60,14 @@ const {jobs} = jobData.experience
     margin-left: auto;
     height: 4.5rem;
   }
-
+  
   .technology__image + span {
     font-size: 1rem;
   }
-
+  
   @media screen and (min-width: 600px) {
     .technology__item {
+      height: 150px;
       width: 25%;
     }
   }
@@ -70,13 +78,13 @@ const {jobs} = jobData.experience
     }
   }
 
-
   .work-history__technology {
     margin-bottom: .5em;
     display: flex;
     flex-wrap: wrap;
-    gap: .5em;
     list-style-type: none;
+    gap: .25em;
+    /* gap: .5em; */
   }
 
   .work-history__item {
@@ -87,9 +95,22 @@ const {jobs} = jobData.experience
   }
 
   .work-history__tenure {
-    display: flex;
-    align-items: baseline;
     gap: .75em;
+  }
+
+  .work-history__company-name {
+    margin-bottom: 0;
+  }
+  
+  @media screen and (min-width: 500px) {
+    .work-history__tenure {
+      display: flex;
+      align-items: baseline;
+    }
+  }
+
+  .work-history__section {
+    margin-bottom: 1em;
   }
 
   .work-history__responsibilities {
@@ -126,7 +147,7 @@ const {jobs} = jobData.experience
     <div class="container--max-width container--base-padding">
       <h1 class="page__title">My Experience</h1>
       <ul class="in-page-nav">
-        <li><a class="brand-link" href="#technologies">Technologies</a></li>
+        <li><a class="brand-link" href="#technologies">Technical Toolbox</a></li>
         <li><a class="brand-link" href="#workHistory">Work History</a></li>
         <li><a class="brand-link" href="#gitHubProjects">GitHub Projects</a></li>
         <li><a class="brand-link" href="#education">Education</a></li>
@@ -134,8 +155,8 @@ const {jobs} = jobData.experience
       {
        technologies.map(topic => {
           return (
-            <h2 id="technologies">{topic.topic}</h2>
-            <p>Languages, technologies, and skills I can use for our success:</p>
+            <h2 id="technologies" class="technology__title">{topic.topic}</h2>
+            <p class="technology__tagline">Languages, technologies, and skills I use to build successful projects:</p>
             <ul class="technology__list">
             {topic.languages.map(language => {
               const {icon, technology, yearsExperience} = language
@@ -163,19 +184,25 @@ const {jobs} = jobData.experience
         const {jobTitle, companyName, technologyUsed, responsibilities, timeEmployed} = job
         return (
           <div class="work-history__item">
-            <h3>{jobTitle}</h3>
-            <div class="work-history__tenure">
-              <h4>{companyName}</h4>
-              <span>{timeEmployed}</span>
+            <div class="work-history__section">
+              <h3 class="text--underline">{jobTitle}</h3>
+              <div class="work-history__tenure">
+                <h4 class="work-history__company-name">{companyName}</h4>
+                <span>{timeEmployed}</span>
+              </div>
             </div>
-            <h5>Technologies Used:</h5>
-            <ul class="work-history__technology">
-              {technologyUsed.map(tech => <li>{tech}</li>)}
-            </ul>
-            <h5>Responsibilities:</h5>
-            <ul class="work-history__responsibilities">
-              {responsibilities.map(responsibility => <li>{responsibility}</li>)}
-            </ul>
+            <div class="work-history__section">
+              <h5 class="text--underline">Technologies Used:</h5>
+              <ul class="work-history__technology">
+                {technologyUsed.map(tech => <li>{tech}</li>)}
+              </ul>
+            </div>
+            <div class="work-history__section">
+              <h5 class="text--underline">Responsibilities:</h5>
+              <ul class="work-history__responsibilities">
+                {responsibilities.map(responsibility => <li>{responsibility}</li>)}
+              </ul>
+            </div>
           </div>
         )
       })}

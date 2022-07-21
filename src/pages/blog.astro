@@ -16,7 +16,10 @@ const firstPost = sortedPosts.shift()
   }
 
   .blogFeature__img {
-    margin-bottom: 1em;
+    margin-bottom: .75em;
+    height: 130px;
+    width: 100%;
+    object-fit: cover;
   }
   
   .blogFeature__text {
@@ -33,6 +36,7 @@ const firstPost = sortedPosts.shift()
         "blogRow      blogRow";
     }
     .blogFeature__img {
+      height: unset;
       margin-bottom: unset;
       grid-area: featureImage;
     }

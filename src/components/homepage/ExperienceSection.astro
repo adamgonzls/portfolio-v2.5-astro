@@ -4,6 +4,15 @@ import PageLink from './PageLink.astro'
 ---
 
 <style>
+  .section__title::after {
+    content: '';
+    display: block;
+    width: 3em;
+    height: 1px;
+    margin: .75em auto .75em;
+    background: var(--darkness);
+    opacity: 0.25;
+  }
   #myExperience p {
     text-align: center;
   }
@@ -29,7 +38,7 @@ import PageLink from './PageLink.astro'
 <section id="myExperience" class="home-section">
   <div class="container--max-width">
     <h2 class="section__title">My Experience</h2>
-    <p>In my 5&plus; years of web development experience, I've worked on a variety of projects. In my different experiences, I've worked with languages such as JavaScript, CSS, and PHP and technologies including Shopify and WooCommerce.</p>
+    <p>Through my years of web development experience, I've worked on a variety of projects. In my varied experiences, I've worked with languages such as JavaScript, CSS, and PHP and technologies including React, Shopify, and WooCommerce.</p>
     <div class="myExperience__avatar-container">
       <a target="_blank" href="https://github.com/adamgonzls">
         <img src="https://avatars.githubusercontent.com/u/13277437?v=4" alt="Adam's GitHub Avatar">

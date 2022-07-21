@@ -9,6 +9,19 @@ const sortedPosts = sortPosts(publishedPosts)
 const threeMostRecentPosts = sortedPosts.slice(0, 3)
 ---
 
+<style>
+  .section__title::after {
+    content: '';
+    display: block;
+    width: 3em;
+    height: 1px;
+    margin: .75em auto .75em;
+    background: var(--white);
+    opacity: 0.25;
+  }
+</style>
+
+
 <section id="myBlog" class="home-section">
   <div class="container--max-width">
     <h2 class="section__title">My Thoughts</h2>

@@ -10,11 +10,13 @@ import adamImage from '/images/2022-04-adam-purple-wall-1-800-1067.jpg'
 
   .outro {
     margin-bottom: 2em;
+    text-align: center;
   }
 
   @media screen and (min-width: 600px) {
     .outro {
       margin-left: auto;
+      text-align: unset;
       display: grid;
       align-items: center;
       grid-template-areas: 
@@ -46,11 +48,6 @@ import adamImage from '/images/2022-04-adam-purple-wall-1-800-1067.jpg'
     }
 
   }
-  @media screen and (min-width: 1000px) {
-    .container--max-width {
-      /* width: 70%; */
-    }
-  }
 </style>
 
 <section id="myAbout" class="home-section">
@@ -59,7 +56,7 @@ import adamImage from '/images/2022-04-adam-purple-wall-1-800-1067.jpg'
       <h2 class="section__title">Who I am</h2>
       <p class="about__subtitle">Developer &amp; Designer</p>
       <div>
-        <p>Hi I'm Adam, I'm a web developer who is passionate for web development, user experience, and continuous learning.</p>
+        <p>Hi I'm Adam, I'm a web developer who is passionate for web development, user experience, and continuous growth.</p>
         <p>I appreciate good design, nature, and stimulating conversation.</p>
       </div>
       <img src={adamImage} alt="Adam">
