@@ -3,10 +3,10 @@ import Base from '../layouts/Base.astro'
 import AuthorFact from '../components/AuthorFact.astro'
 import Resume from '../assets/adamgonzales-resume.pdf'
 import GitHubSection from '../components/GitHubSection.astro';
-import data from '../js/experience.json'
+import data from '../js/techExperience.json'
 import jobData from '../js/workHistory.json'
 
-const {topics} = data.experience
+const {technologies} = data
 const {jobs} = jobData.experience
 ---
 
@@ -31,6 +31,46 @@ const {jobs} = jobData.experience
     margin-bottom: 1em;
   }
 
+  .technology__list {
+    margin-bottom: 1em;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    /* gap: 1em; */
+  }
+
+  .technology__item {
+    margin-bottom: 1em;
+    text-align: center;
+    font-size: .9em;
+    width: 50%;
+    height: 150px;
+  }
+  
+  .technology__image {
+    margin-right: auto;
+    margin-bottom: 1em;
+    margin-left: auto;
+    height: 4.5rem;
+  }
+
+  .technology__image + span {
+    font-size: 1rem;
+  }
+
+  @media screen and (min-width: 600px) {
+    .technology__item {
+      width: 25%;
+    }
+  }
+
+  @media screen and (min-width: 1000px) {
+    .technology__item {
+      width: 12.5%;
+    }
+  }
+
+
   .work-history__technology {
     margin-bottom: .5em;
     display: flex;
@@ -50,26 +90,6 @@ const {jobs} = jobData.experience
     display: flex;
     align-items: baseline;
     gap: .75em;
-  }
-
-  .technology__list {
-    margin-bottom: 1em;
-    list-style-type: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1em;
-  }
-
-  .technology__item {
-    font-size: .9em;
-    display: inline-block;
-    text-align: center;
-  }
-
-  .technology__image {
-    margin-right: auto;
-    margin-left: auto;
-    height: 3em;
   }
 
   .work-history__responsibilities {
@@ -106,14 +126,16 @@ const {jobs} = jobData.experience
     <div class="container--max-width container--base-padding">
       <h1 class="page__title">My Experience</h1>
       <ul class="in-page-nav">
+        <li><a class="brand-link" href="#technologies">Technologies</a></li>
         <li><a class="brand-link" href="#workHistory">Work History</a></li>
         <li><a class="brand-link" href="#gitHubProjects">GitHub Projects</a></li>
         <li><a class="brand-link" href="#education">Education</a></li>
       </ul>
       {
-       topics.map(topic => {
+       technologies.map(topic => {
           return (
-            <h2>{topic.topic}</h2>
+            <h2 id="technologies">{topic.topic}</h2>
+            <p>Languages, technologies, and skills I can use for our success:</p>
             <ul class="technology__list">
             {topic.languages.map(language => {
               const {icon, technology, yearsExperience} = language
