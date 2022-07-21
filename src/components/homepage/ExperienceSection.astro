@@ -1,15 +1,26 @@
 ---
 import GitHubSection from '../GitHubSection.astro';
-import Card from '../Card.astro'
 import PageLink from './PageLink.astro'
 ---
 
 <style>
-  .myWork__avatar-container {
+  .section__title::after {
+    content: '';
+    display: block;
+    width: 3em;
+    height: 1px;
+    margin: .75em auto .75em;
+    background: var(--darkness);
+    opacity: 0.25;
+  }
+  #myExperience p {
+    text-align: center;
+  }
+  .myExperience__avatar-container {
     margin-bottom: 2em;
     text-align: center;
   }
-  .myWork__avatar-container img {
+  .myExperience__avatar-container img {
     border-radius: 50%;
     display: inline-block;
     width: 120px;
@@ -18,16 +29,17 @@ import PageLink from './PageLink.astro'
     background-size: contain;
     transition: all .1s;
   }
-  .myWork__avatar-container img:hover {
+  .myExperience__avatar-container img:hover {
     transform: scale(1.05) translateY(-.25rem);
     outline: .75rem solid var(--accent-color);
   }
 </style>
 
-<section id="myWork" class="home-section">
+<section id="myExperience" class="home-section">
   <div class="container--max-width">
     <h2 class="section__title">My Experience</h2>
-    <div class="myWork__avatar-container">
+    <p>Through my years of web development experience, I've worked on a variety of projects. In my varied experiences, I've worked with languages such as JavaScript, CSS, and PHP and technologies including React, Shopify, and WooCommerce.</p>
+    <div class="myExperience__avatar-container">
       <a target="_blank" href="https://github.com/adamgonzls">
         <img src="https://avatars.githubusercontent.com/u/13277437?v=4" alt="Adam's GitHub Avatar">
       </a>
