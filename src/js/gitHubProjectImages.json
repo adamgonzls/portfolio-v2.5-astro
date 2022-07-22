@@ -1,0 +1,16 @@
+{
+  "projects": [
+    {
+      "projectName": "color-picker",
+      "imageURL": "/images/project-images/color-scheme.jpg"
+    },
+    {
+      "projectName": "quizzical",
+      "imageURL": "/images/project-images/quizzical.jpg"
+    },
+    {
+      "projectName": "portfolio-v2.5-astro",
+      "imageURL": "/images/project-images/portfolio.jpg"
+    }
+  ]
+}
