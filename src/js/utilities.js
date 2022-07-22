@@ -16,3 +16,7 @@ export function getPublishedPosts(posts) {
 export function readableDate(date) {
   return dateFns.format(new Date(date), 'do MMM yyyy')
 }
+
+export function normalizeGitHubRepoName(name) {
+  return name.replace(/-/g, ' ').replace(/^./, (x) => x.toUpperCase())
+}

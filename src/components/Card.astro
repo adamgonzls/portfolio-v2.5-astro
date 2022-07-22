@@ -1,5 +1,6 @@
 ---
 import gitHubPlaceholder from '/images/project-images/github-placeholder.jpg'
+import {normalizeGitHubRepoName} from '../js/utilities'
 
 const {item, cardTheme} = Astro.props
 const theme = cardTheme ? cardTheme : ""
@@ -39,7 +40,7 @@ const filteredTopics = topicsArray.filter(value => value !== 'featured-repo')
 </style>
 
 <div class="card" data-theme={theme}>
-  <h3 class="card__title"><a class="brand-link" target="_blank" href={item.html_url}>{item.name}</a></h3>
+  <h3 class="card__title"><a class="brand-link" target="_blank" href={item.html_url}>{normalizeGitHubRepoName(item.name)}</a></h3>
   <a href={item.homepage ? item.homepage : item.html_url}><img class="card__image" src={item.featureImage ? item.featureImage: gitHubPlaceholder} alt=""></a>
   <p class="card__desc">{item.description}</p>
   <ul class='topic__row'>

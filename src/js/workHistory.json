@@ -46,6 +46,26 @@
           "Technologies used include: HTML, Liquid, CSS (SCSS), JavaScript, jQuery, and various third-party APIs.",
           "In a span of 6 months, learned and mastered the Shopify platform and became atmosol's subject expert."
         ]
+      },
+      {
+        "companyName": "Experience Scottsdale",
+        "timeEmployed": "June 2007 - September 2015",
+        "jobTitle": "Technical Support Specialist",
+        "technologyUsed": [
+          "MacOS",
+          "Microsoft Windows",
+          "Windows Server",
+          "CMS",
+          "PowerShell",
+          "Patch Management",
+          "Microsoft Active Directory",
+          "Microsoft Exchange Server"
+        ],
+        "responsibilities": [
+          "Support all levels of staff with technical issues. Issues range in a wide variety of scope as any hardware or software problems would be referred to me for further investigation.",
+          "Trained staff on any and all hardware and software utilized by the organization. Training sessions were taught live with written material to accompany session.",
+          "Manage and maintain network security. Responsible for setting up, updating, and removing users privileges on our network in a timely manner."
+        ]
       }
     ]
   }
