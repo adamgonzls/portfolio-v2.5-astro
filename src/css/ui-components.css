@@ -20,7 +20,8 @@
   box-shadow: none;
 }
 
-.brand-link {
+.brand-link,
+.blogPost a {
   /* border-bottom: 0px solid var(--accent-color);
   line-height: 1.25;
   transition: border 0.1s linear; */
@@ -30,7 +31,8 @@
   line-height: 1.25;
 }
 
-.brand-link::after {
+.brand-link::after,
+.blogPost a::after {
   content: '';
   position: absolute;
   left: 0;
@@ -42,11 +44,13 @@
   transition: height 0.2s cubic-bezier(0.6, 0, 0.4, 1);
 }
 
-.brand-link {
+.brand-link,
+.blogPost a {
   font-weight: var(--fw-bold);
 }
 
-.brand-link:hover::after {
+.brand-link:hover::after,
+.blogPost a:hover::after {
   height: 0.2em;
 }
 
