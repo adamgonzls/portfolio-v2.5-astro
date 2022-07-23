@@ -79,13 +79,6 @@
   box-shadow: var(--brand-box-shadow);
 }
 
-.articleCard__image {
-  margin-bottom: 0.75em;
-  height: 130px;
-  width: 100%;
-  object-fit: cover;
-}
-
 .fact__row {
   display: flex;
   justify-content: flex-start;
@@ -119,7 +112,7 @@
   margin-bottom: 0;
 }
 
-@media screen and (min-width: 550px) {
+@media screen and (min-width: 500px) {
   .blog__row {
     display: grid;
     gap: 1em;

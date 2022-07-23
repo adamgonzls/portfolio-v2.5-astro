@@ -170,6 +170,32 @@
   color: var(--accent-color);
 }
 
+.card__image {
+  border-radius: 9px;
+  margin-bottom: 0.75em;
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+@media screen and (min-width: 500px) {
+  .card__image {
+    height: 130px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .card__image {
+    height: 170px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .card__image {
+    height: 200px;
+  }
+}
+
 .blogPost h1 + img {
   height: 400px;
   width: 100%;

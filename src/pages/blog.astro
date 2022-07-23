@@ -15,18 +15,18 @@ const firstPost = sortedPosts.shift()
     margin-bottom: 2em;
   }
 
-  .blogFeature__img {
+  /* .blogFeature__img {
     margin-bottom: .75em;
     height: 130px;
     width: 100%;
     object-fit: cover;
-  }
+  } */
   
   .blogFeature__text {
     margin-bottom: 1em;
   }
 
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 500px) {
     .blogFeature {
       display: grid;
       gap: 1em;
@@ -55,7 +55,7 @@ const firstPost = sortedPosts.shift()
     <h1 class="page__title">My Thoughts</h1>
     <h2>My experiences in my own words</h2>
     <div class="blogFeature">
-      <a href={firstPost.url}><img class="blogFeature__img" src={firstPost.frontmatter.featuredImage} alt={firstPost.frontmatter.featuredImageAlt}/></a>
+      <a href={firstPost.url}><img class="blogFeature__img card__image" src={firstPost.frontmatter.featuredImage} alt={firstPost.frontmatter.featuredImageAlt}/></a>
       <div class="blogFeature__text">
         <h3><a class="brand-link" href={firstPost.url}>{firstPost.frontmatter.title}</a></h3>
         <p>{firstPost.frontmatter.description}</p>
