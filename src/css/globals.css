@@ -50,6 +50,11 @@ p {
   margin-bottom: 1em;
 }
 
+ul,
+ol {
+  padding-left: 1.25em;
+}
+
 img {
   display: block;
   max-width: 100%;

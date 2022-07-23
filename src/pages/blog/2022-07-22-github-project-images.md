@@ -1,35 +1,61 @@
 ---
 layout: '../../layouts/BlogSingle.astro'
 title: How I got image previews for GitHub projects on my portfolio
-description: Problem-solving for something that I think should be a feature
+description: Out-of-the-box problem-solving for programmatically getting images
 date: 2022-07-22
-draft: true
-featuredImage: '/images/zoom-meeting-640.jpg'
-featuredImageAlt: 'An online meeting'
+draft: false
+featuredImage: '/images/concerned-dog-640.jpg'
+featuredImageAlt: 'A dog wearing a jean jacket'
 ---
 
 <img src={frontmatter.featuredImage} alt={frontmatter.featuredImageAlt} />
 
 ## {frontmatter.description}
 
-I've been taking [Zell Liew's](https://zellwk.com/blog/) Build and Deploy workshop on the [Astro](https://astro.build/) Static Site Generator. During the course, we discussed showing what we had built with our newly acquired knowledge. I decided to build this portfolio site and have at least a v1 available for review.
+In v1 and v2 of my portfolio, I was querying repo data from GitHub and displaying it- with one major (to me) omission... I didn't have any sort of "preview image" (or, "feature image"- still working on the name). GitHub offers a lot of information when querying repos including `name`, `homepage`, `topics`, and a ton of other stuff. But no "project image" (still working on the name).
 
-### I worked hard to prepare
+I searched and there is a `Social Preview` described as `an image to customize your repository’s social media preview`. Unfortunately, through my searching and this [Stack Overflow question](https://stackoverflow.com/questions/60381683/how-to-get-the-social-preview-of-a-github-project) and this [GitHub Community Forum post](https://github.community/t/github-api-how-to-get-social-image/138890), there isn't a way to get the image via API.
 
-From start to v1, I had about a week to [prototype](https://www.figma.com/file/uMRRCvFNkalcPhBOtRyqXX/Portfolio-v2.5?node-id=0%3A1), write content, learn and build. I wanted to have something that looked well-developed; I didn't want to disappoint as in this class, we have an audience from around the world and some of my peers were up **very late**.
+### I searched for potential solutions
 
-### I presented my site
+I found a way to [fetch images using GitHub's API](https://stackoverflow.com/questions/59689516/is-there-any-way-to-fetch-images-using-githubs-api). This would result in me having to put a preview image at the same location on all my repos and make separate API calls for each individual repo. Seems like a lot of moving parts for an image.
 
-After our lesson, Zell handed over the reigns to me and I presented my portfolio site to my peers. I showed them what I created in Figma (another tool I recently started to take seriously). Then, showed them the home page and pointed out some of the technical aspects, such as the GitHub integration.
+### Then I had an idea - maybe JSON?
 
-### Everything was good
+Why NOT create a JSON file? I could control the images' data within my portfolio, saving me extra API calls and saving me the trouble of having to drill through multiple levels of data. I could add a property to my JSON file that matches the repo name, compare the names and if they match, add a property to the GitHub data for `featureImage`.
 
-From the beginning, I've had a good experience with web developers. I've felt that our community is welcoming and this experience was no different. Everybody was very supportive of my presentation and I received some valuable input:
+My JSON:
 
 ```
-Just a little feedback, aligning the cards so that the title, description, date, hyperlinks start and end at the same height would make it more clean.
+{
+  "projects": [
+    {
+      "projectName": "color-picker",
+      "imageURL": "/images/project-images/color-scheme.jpg"
+    },
+    ...
+  ]
+}
+
 ```
 
-Noted, now back to work 😉
+### I used a .map() and .filter() to find my way to success
 
-<!-- <a class="brand-link brand-link--callout" href="./2022-07-08-using-github-topics">I wrote about it</a> -->
+To complete my plan, I used .map() to iterate through the data retrieved from the GitHub API. I then used .filter() to find a match in the "name" between the current repo and the .json file. If there's a match, I update the data for that repo and add a new field called "featureImage" with the value from the .json file.
+
+The solution:
+
+```
+const postsWithImages = requestedPosts.map(postObject => {
+  gitHubProjectImages.projects.filter(imageObject => {
+    if (imageObject.projectName === postObject.name) {
+      postObject.featureImage = imageObject.imageURL
+    }
+  });
+  return postObject
+})
+```
+
+### Satisfied with my solution
+
+I'm happy with the way my solution turned out and best of all, I now have images for my GitHub projects! Best of all, I just need to update my .json file with new data as it comes available.

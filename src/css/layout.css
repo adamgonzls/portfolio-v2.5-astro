@@ -207,6 +207,10 @@
   margin-bottom: 0.75em;
 }
 
+.blogPost ul {
+  margin-bottom: 1em;
+}
+
 .blogPost img {
   margin-right: auto;
   margin-left: auto;

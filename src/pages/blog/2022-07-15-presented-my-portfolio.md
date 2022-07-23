@@ -17,19 +17,37 @@ featuredImageAlt: 'An online meeting'
 
 ## {frontmatter.description}
 
-I've been taking [Zell Liew's](https://zellwk.com/blog/) Build and Deploy workshop on the [Astro](https://astro.build/) Static Site Generator. During the course, we discussed showing what we had built with our newly acquired knowledge. I decided to build this portfolio site and have at least a v1 available for review.
+I've been taking [Zell Liew's](https://zellwk.com/blog/) Build and Deploy workshop on the [Astro](https://astro.build/) Static Site Generator. _(Aside: this course was a great value as it was an 8-week live workshop with 1 hour instructional time, followed by discussions which could range from 30 minutes to an hour)._ During the course, we started talking about showing what we had built with our newly acquired knowledge. That's when I decided to build this portfolio site and have at least a v1 available for review.
 
-### I worked hard to prepare
+### I worked HARD to prepare
 
-From start to v1, I had about a week to [prototype](https://www.figma.com/file/uMRRCvFNkalcPhBOtRyqXX/Portfolio-v2.5?node-id=0%3A1), write content, learn and build. I wanted to have something that looked well-developed; I didn't want to disappoint as in this class, we have an audience from around the world and some of my peers were up **very late**.
+From start to v1, I had about a week to [prototype](https://www.figma.com/file/uMRRCvFNkalcPhBOtRyqXX/Portfolio-v2.5?node-id=0%3A1), write content, [learn](https://astro.build/) and build. I wanted to have something that looked well-developed. I also didn't want to disappoint as in this class, we have an audience from around the world and some of my peers were up **very late**.
+
+### Elements that were ready
+
+Through the week, I worked on getting the following items done:
+
+- Home page
+  - Intro
+  - Characteristics
+  - Experience (GitHub projects)
+  - Blog content
+    - Show published blogs only
+    - Show blogs by published date
+    - Show 3 blogs on home screen
+    - Individual blog pages
+  - Outro
+- Looks good on mobile and extra wide screens
+- Header
+- Footer
 
 ### I presented my site
 
-After our lesson, Zell handed over the reigns to me and I presented my portfolio site to my peers. I showed them what I created in Figma (another tool I recently started to take seriously). Then, showed them the home page and pointed out some of the technical aspects, such as the GitHub integration.
+The day came and after our final lesson, Zell handed over the reigns to me. I was ready for this. I presented my portfolio site to my peers. I showed them what I created in Figma. Then, showed them the home page and pointed out some of the technical aspects, such as the GitHub integration and pointing out other technical aspects.
 
 ### Everything was good
 
-From the beginning, I've had a good experience with web developers. I've felt that our community is welcoming and this experience was no different. Everybody was very supportive of my presentation and I received some valuable input:
+The comments in the chat were overwhelmingly good! Everybody had nice compliments about the design and functionality of my site. From the beginning, I've had a good experience with web developers. I've felt that our community is welcoming and this experience was no different. Everybody was very supportive of my presentation and I even received some valuable input:
 
 ```
 Just a little feedback, aligning the cards so that the title, description, date, hyperlinks start and end at the same height would make it more clean.
