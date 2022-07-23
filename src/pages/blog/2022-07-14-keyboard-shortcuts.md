@@ -12,7 +12,7 @@ featuredImageAlt: 'Lego man on keyboard'
 
 ## {frontmatter.description}
 
-While working on a layout for a blog page, I decided I should start making note of the different key commands that I use on a daily (or not so daily) basis.
+While working on a layout for a blog page, I decided I should start making note of the different key commands that I use on a daily basis. This is a running list of keyboard shortcuts.
 
 ## VS Code
 

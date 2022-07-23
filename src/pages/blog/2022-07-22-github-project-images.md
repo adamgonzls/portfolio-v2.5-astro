@@ -58,4 +58,4 @@ const postsWithImages = requestedPosts.map(postObject => {
 
 ### Satisfied with my solution
 
-I'm happy with the way my solution turned out and best of all, I now have images for my GitHub projects! Best of all, I just need to update my .json file with new data as it comes available.
+I'm happy with the way my solution turned out and best of all, I now have images for my GitHub projects! To maintain it, I just need to update my .json file with new data as it comes available.

@@ -17,7 +17,7 @@ featuredImageAlt: 'An online meeting'
 
 ## {frontmatter.description}
 
-I've been taking [Zell Liew's](https://zellwk.com/blog/) Build and Deploy workshop on the [Astro](https://astro.build/) Static Site Generator. _(Aside: this course was a great value as it was an 8-week live workshop with 1 hour instructional time, followed by discussions which could range from 30 minutes to an hour)._ During the course, we started talking about showing what we had built with our newly acquired knowledge. That's when I decided to build this portfolio site and have at least a v1 available for review.
+I've been taking [Zell Liew's](https://zellwk.com/blog/) Build and Deploy workshop on the [Astro](https://astro.build/) Static Site Generator. _(Aside: this course was a great value as it was an 8-week live workshop with 1 hour instructional time, followed by an after-party which was open-discussion which, could range from 30 minutes to an hour)._ During the course, we started talking about showing what we had built with our newly acquired knowledge. That's when I decided to build this portfolio site and have at least a v1 available for review.
 
 ### I worked HARD to prepare
 
