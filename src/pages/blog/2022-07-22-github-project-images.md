@@ -20,16 +20,18 @@ I searched and there is a `Social Preview` described as `an image to customize y
 
 I found a way to [fetch images using GitHub's API](https://stackoverflow.com/questions/59689516/is-there-any-way-to-fetch-images-using-githubs-api). This would result in me having to put a preview image at the same location on all my repos and make separate API calls for each individual repo. I started working on this option to see if it was feasible:
 
-```
-<!--- the following gets me the image -->
+```js
+// the following gets me the image
+const repoImage = await fetch(
+  `https://raw.githubusercontent.com/adamgonzls/color-picker/main/src/favicon.svg`
+)
 
-const repoImage = await fetch(`https://raw.githubusercontent.com/adamgonzls/color-picker/main/src/favicon.svg`)
-
-<!--- then, I'd have to iterate through the original GitHub data (posts) and it'd look something like this: -->
-
+// then, I'd have to iterate through the original GitHub data (posts) and it'd look something like this:
 const gitHubPostsImagesData = await Promise.all(
-  gitHubPostsData.map(post => {
-    return fetch(`https://raw.githubusercontent.com/adamgonzls/{post.name}/main/src/favicon.svg`)
+  gitHubPostsData.map((post) => {
+    return fetch(
+      `https://raw.githubusercontent.com/adamgonzls/{post.name}/main/src/favicon.svg`
+    )
   })
 )
 ```
@@ -42,7 +44,7 @@ Why NOT create a JSON file? I could control the images' data within my portfolio
 
 My JSON:
 
-```
+```json
 {
   "projects": [
     {
@@ -61,13 +63,13 @@ To complete my plan, I used .map() to iterate through the data retrieved from th
 
 The solution:
 
-```
-const postsWithImages = requestedPosts.map(postObject => {
-  gitHubProjectImages.projects.filter(imageObject => {
+```js
+const postsWithImages = requestedPosts.map((postObject) => {
+  gitHubProjectImages.projects.filter((imageObject) => {
     if (imageObject.projectName === postObject.name) {
       postObject.featureImage = imageObject.imageURL
     }
-  });
+  })
   return postObject
 })
 ```

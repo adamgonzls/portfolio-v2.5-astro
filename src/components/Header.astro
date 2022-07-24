@@ -2,7 +2,11 @@
   const navToggle = document.querySelector('.nav-toggle')
   const navLinks = document.querySelectorAll('.nav-items li')
   const pageContainer = document.querySelector('.page-container')
-  
+  const mainNav = document.querySelector('.main-nav')
+
+  window.addEventListener('load', (event) => {
+    mainNav.classList.remove('preload')
+  });
   navToggle.addEventListener('click', () => {
     pageContainer.classList.toggle('nav-open')
   })
@@ -49,7 +53,7 @@ header {
 
 <header class="container--base-padding container--max-width">
   <span class="logo"><a href="/">adamg</a></span>
-  <nav class="main-nav">
+  <nav class="preload main-nav">
     <ul class="nav-items">
       <li>
         <a class="brand-link" href="/">Home</a>
