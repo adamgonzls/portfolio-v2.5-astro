@@ -18,14 +18,20 @@ While working on a layout for a blog page, I decided I should start making note 
 
 `⌘ command + w` - close current window
 
+This has been a game changer - I now close tabs in VS Code when I'm done with them, instead of keeping them open indefinitely (now if only I could practice this in Chrome)
+
 `shift + option + ↓` - duplicate current line down
 
 `⌘ command + alt + ↓` - add another cursor below
+
+`` ^ control + ` `` - open/close integrated terminal
 
 ## Figma
 
 `⌘ command + d` - duplicate current selection
 
-`shift + i` - resources (use this to access plugins quickly)
+`shift + i` - Show components menu
+
+I use this one to access plugins such as Unsplash quickly.
 
 `⌘ command + g` - group
