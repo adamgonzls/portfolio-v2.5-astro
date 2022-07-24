@@ -18,7 +18,23 @@ I searched and there is a `Social Preview` described as `an image to customize y
 
 ### I searched for potential solutions
 
-I found a way to [fetch images using GitHub's API](https://stackoverflow.com/questions/59689516/is-there-any-way-to-fetch-images-using-githubs-api). This would result in me having to put a preview image at the same location on all my repos and make separate API calls for each individual repo. Seems like a lot of moving parts for an image.
+I found a way to [fetch images using GitHub's API](https://stackoverflow.com/questions/59689516/is-there-any-way-to-fetch-images-using-githubs-api). This would result in me having to put a preview image at the same location on all my repos and make separate API calls for each individual repo. I started working on this option to see if it was feasible:
+
+```
+<!--- the following gets me the image -->
+
+const repoImage = await fetch(`https://raw.githubusercontent.com/adamgonzls/color-picker/main/src/favicon.svg`)
+
+<!--- then, I'd have to iterate through the original GitHub data (posts) and it'd look something like this: -->
+
+const gitHubPostsImagesData = await Promise.all(
+  gitHubPostsData.map(post => {
+    return fetch(`https://raw.githubusercontent.com/adamgonzls/{post.name}/main/src/favicon.svg`)
+  })
+)
+```
+
+While certainly possible, it seemed like an over-complicated solution.
 
 ### Then I had an idea - maybe JSON?
 

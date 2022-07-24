@@ -1,7 +1,7 @@
 ---
 layout: '../../layouts/BlogSingle.astro'
 title: Version 2 of my portfolio delivered
-description: Many features have been added
+description: Adding an "Adam Facts" component was part of it
 date: 2022-07-18
 draft: false
 featuredImage: '/images/blog/gardening-transplant.jpg'
