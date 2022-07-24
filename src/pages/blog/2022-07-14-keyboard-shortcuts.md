@@ -26,6 +26,10 @@ This has been a game changer - I now close tabs in VS Code when I'm done with th
 
 `` ^ control + ` `` - open/close integrated terminal
 
+`⌘ command + \` - split the terminal
+
+This is great for when you need to view two files simultaneously in VS Code
+
 ## Figma
 
 `⌘ command + d` - duplicate current selection

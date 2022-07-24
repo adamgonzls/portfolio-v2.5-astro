@@ -12,6 +12,8 @@ featuredImageAlt: 'A dog wearing a jean jacket'
 
 ## {frontmatter.description}
 
+### The issue
+
 In v1 and v2 of my portfolio, I was querying repo data from GitHub and displaying it- with one major (to me) omission... I didn't have any sort of "preview image" (or, "feature image"- still working on the name). GitHub offers a lot of information when querying repos including `name`, `homepage`, `topics`, and a ton of other stuff. But no "project image" (still working on the name).
 
 I searched and there is a `Social Preview` described as `an image to customize your repository’s social media preview`. Unfortunately, through my searching and this [Stack Overflow question](https://stackoverflow.com/questions/60381683/how-to-get-the-social-preview-of-a-github-project) and this [GitHub Community Forum post](https://github.community/t/github-api-how-to-get-social-image/138890), there isn't a way to get the image via API.

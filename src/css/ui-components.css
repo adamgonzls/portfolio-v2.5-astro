@@ -21,10 +21,8 @@
 }
 
 .brand-link,
-.blogPost a {
-  /* border-bottom: 0px solid var(--accent-color);
-  line-height: 1.25;
-  transition: border 0.1s linear; */
+.blogPost a,
+.brand-link.active {
   display: inline-block;
   position: relative;
   z-index: 1;
@@ -32,7 +30,8 @@
 }
 
 .brand-link::after,
-.blogPost a::after {
+.blogPost a::after,
+.brand-link.active::after {
   content: '';
   position: absolute;
   left: 0;
@@ -50,7 +49,8 @@
 }
 
 .brand-link:hover::after,
-.blogPost a:hover::after {
+.blogPost a:hover::after,
+.brand-link.active::after {
   height: 0.2em;
 }
 
