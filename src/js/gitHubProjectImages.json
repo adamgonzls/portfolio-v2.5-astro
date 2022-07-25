@@ -11,6 +11,10 @@
     {
       "projectName": "portfolio-v2.5-astro",
       "imageURL": "/images/project-images/portfolio.jpg"
+    },
+    {
+      "projectName": "quotely",
+      "imageURL": "/images/project-images/quotely-800.jpg"
     }
   ]
 }
