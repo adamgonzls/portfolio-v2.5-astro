@@ -54,12 +54,14 @@
   height: 0.2em;
 }
 
-.brand-link--callout::after {
+.brand-link--callout::after,
+.blogPost .brand-link--callout::after {
   bottom: 0.05em;
   height: 0.2em;
 }
 
-.brand-link--callout:hover::after {
+.brand-link--callout:hover::after,
+.blogPost .brand-link--callout:hover::after {
   height: 100%;
 }
 

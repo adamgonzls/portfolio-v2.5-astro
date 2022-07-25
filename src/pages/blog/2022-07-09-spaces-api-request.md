@@ -22,13 +22,15 @@ In the response, I was able to see all my repos and I could see a `topics` prope
 
 I wasn't sure how to include `featured-repo` in my query.
 
-I did some searching and I found an <a target="_blank" class="brand-link" href="https://fusebit.io/blog/github-search-api">article</a>. In the article, the author gives an example:
+I did some searching and I found an <a target="_blank" class="brand-link" href="https://fusebit.io/blog/github-search-api">article</a> that showed the basic search query syntax. In the article, the author gives an example:
 
 ```js
 q=siddhant in:name type:user
 ```
 
 That looks weird to me... So a quick google search later, I find that spaces can be used. Seeing the spaces created a mental block but, I'm glad to know that they are ok to use (although, I'll probably opt to use the &plus; symbol in the future).
+
+Then, I referenced the GitHub docs and found that you can [search by topic](https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories#search-by-topic). Using this information, I added `topic:featured-repo` to the query string.
 
 ```js
 // My functioning request URL initially looked like this:
@@ -39,3 +41,132 @@ https://api.github.com/search/repositories?q=adamgonzls+in:name+topic:featured-r
 ```
 
 I tested out my query in <a target="_blank" class="brand-link" href="https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client">Thunder Client</a> and success!
+
+### Beautiful data returned
+
+I now had an array of objects that had `topic:featured-repo` assigned to them.
+
+```
+{
+  "total_count": 6,
+  "incomplete_results": false,
+  "items": [
+    {
+      "id": 513339292,
+      "node_id": "R_kgDOHpjvnA",
+      "name": "quotely",
+      "full_name": "adamgonzls/quotely",
+      "private": false,
+      "owner": {
+        "login": "adamgonzls",
+        "id": 13277437,
+        "node_id": "MDQ6VXNlcjEzMjc3NDM3",
+        "avatar_url": "https://avatars.githubusercontent.com/u/13277437?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/adamgonzls",
+        "html_url": "https://github.com/adamgonzls",
+        "followers_url": "https://api.github.com/users/adamgonzls/followers",
+        "following_url": "https://api.github.com/users/adamgonzls/following{/other_user}",
+        "gists_url": "https://api.github.com/users/adamgonzls/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/adamgonzls/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/adamgonzls/subscriptions",
+        "organizations_url": "https://api.github.com/users/adamgonzls/orgs",
+        "repos_url": "https://api.github.com/users/adamgonzls/repos",
+        "events_url": "https://api.github.com/users/adamgonzls/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/adamgonzls/received_events",
+        "type": "User",
+        "site_admin": false
+      },
+      "html_url": "https://github.com/adamgonzls/quotely",
+      "description": "Get inspired through quotes provided by an API laid on top of pleasing background images provided by another API",
+      "fork": false,
+      "url": "https://api.github.com/repos/adamgonzls/quotely",
+      "forks_url": "https://api.github.com/repos/adamgonzls/quotely/forks",
+      "keys_url": "https://api.github.com/repos/adamgonzls/quotely/keys{/key_id}",
+      "collaborators_url": "https://api.github.com/repos/adamgonzls/quotely/collaborators{/collaborator}",
+      "teams_url": "https://api.github.com/repos/adamgonzls/quotely/teams",
+      "hooks_url": "https://api.github.com/repos/adamgonzls/quotely/hooks",
+      "issue_events_url": "https://api.github.com/repos/adamgonzls/quotely/issues/events{/number}",
+      "events_url": "https://api.github.com/repos/adamgonzls/quotely/events",
+      "assignees_url": "https://api.github.com/repos/adamgonzls/quotely/assignees{/user}",
+      "branches_url": "https://api.github.com/repos/adamgonzls/quotely/branches{/branch}",
+      "tags_url": "https://api.github.com/repos/adamgonzls/quotely/tags",
+      "blobs_url": "https://api.github.com/repos/adamgonzls/quotely/git/blobs{/sha}",
+      "git_tags_url": "https://api.github.com/repos/adamgonzls/quotely/git/tags{/sha}",
+      "git_refs_url": "https://api.github.com/repos/adamgonzls/quotely/git/refs{/sha}",
+      "trees_url": "https://api.github.com/repos/adamgonzls/quotely/git/trees{/sha}",
+      "statuses_url": "https://api.github.com/repos/adamgonzls/quotely/statuses/{sha}",
+      "languages_url": "https://api.github.com/repos/adamgonzls/quotely/languages",
+      "stargazers_url": "https://api.github.com/repos/adamgonzls/quotely/stargazers",
+      "contributors_url": "https://api.github.com/repos/adamgonzls/quotely/contributors",
+      "subscribers_url": "https://api.github.com/repos/adamgonzls/quotely/subscribers",
+      "subscription_url": "https://api.github.com/repos/adamgonzls/quotely/subscription",
+      "commits_url": "https://api.github.com/repos/adamgonzls/quotely/commits{/sha}",
+      "git_commits_url": "https://api.github.com/repos/adamgonzls/quotely/git/commits{/sha}",
+      "comments_url": "https://api.github.com/repos/adamgonzls/quotely/comments{/number}",
+      "issue_comment_url": "https://api.github.com/repos/adamgonzls/quotely/issues/comments{/number}",
+      "contents_url": "https://api.github.com/repos/adamgonzls/quotely/contents/{+path}",
+      "compare_url": "https://api.github.com/repos/adamgonzls/quotely/compare/{base}...{head}",
+      "merges_url": "https://api.github.com/repos/adamgonzls/quotely/merges",
+      "archive_url": "https://api.github.com/repos/adamgonzls/quotely/{archive_format}{/ref}",
+      "downloads_url": "https://api.github.com/repos/adamgonzls/quotely/downloads",
+      "issues_url": "https://api.github.com/repos/adamgonzls/quotely/issues{/number}",
+      "pulls_url": "https://api.github.com/repos/adamgonzls/quotely/pulls{/number}",
+      "milestones_url": "https://api.github.com/repos/adamgonzls/quotely/milestones{/number}",
+      "notifications_url": "https://api.github.com/repos/adamgonzls/quotely/notifications{?since,all,participating}",
+      "labels_url": "https://api.github.com/repos/adamgonzls/quotely/labels{/name}",
+      "releases_url": "https://api.github.com/repos/adamgonzls/quotely/releases{/id}",
+      "deployments_url": "https://api.github.com/repos/adamgonzls/quotely/deployments",
+      "created_at": "2022-07-13T01:15:33Z",
+      "updated_at": "2022-07-15T16:58:26Z",
+      "pushed_at": "2022-07-17T23:31:01Z",
+      "git_url": "git://github.com/adamgonzls/quotely.git",
+      "ssh_url": "git@github.com:adamgonzls/quotely.git",
+      "clone_url": "https://github.com/adamgonzls/quotely.git",
+      "svn_url": "https://github.com/adamgonzls/quotely",
+      "homepage": "",
+      "size": 34,
+      "stargazers_count": 0,
+      "watchers_count": 0,
+      "language": "JavaScript",
+      "has_issues": true,
+      "has_projects": true,
+      "has_downloads": true,
+      "has_wiki": true,
+      "has_pages": false,
+      "forks_count": 0,
+      "mirror_url": null,
+      "archived": false,
+      "disabled": false,
+      "open_issues_count": 0,
+      "license": null,
+      "allow_forking": true,
+      "is_template": false,
+      "web_commit_signoff_required": false,
+      "topics": [
+        "css",
+        "featured-repo",
+        "javascript-es6",
+        "json",
+        "react",
+        "rest-api",
+        "vite"
+      ],
+      "visibility": "public",
+      "forks": 0,
+      "open_issues": 0,
+      "watchers": 0,
+      "default_branch": "main",
+      "permissions": {
+        "admin": true,
+        "maintain": true,
+        "push": true,
+        "triage": true,
+        "pull": true
+      },
+      "score": 1.0
+    },
+    ...
+  ]
+}
+```
