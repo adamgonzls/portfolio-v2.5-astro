@@ -30,6 +30,10 @@ This has been a game changer - I now close tabs in VS Code when I'm done with th
 
 This is great for when you need to view two files simultaneously in VS Code
 
+`alt + click and drag file to destination` - duplicate file in VS Code
+
+I did some searching and this was the best solution that didn't require a plug-in.
+
 ## Figma
 
 `⌘ command + d` - duplicate current selection

@@ -24,7 +24,7 @@ I wanted to have a complete functioning navigation (rather than linking to id's 
 
 I then took the time to make the individual blogs more visually appealing, making code snippets look nicer.
 
-I also had a bug with the hamburger menu on the home page... This one was confusing at first because when I'd click on the hamburger button on the home page, the navigation wouldn't appear. When I clicked on the same button on other pages, it was working as expected. After some investigation, and some good ol' `console.log`s, I found the following:
+I also had a bug with the hamburger menu on the home page... This one was confusing at first because when I'd click on the hamburger button on the home page, it performed as expected. When I clicked other anchor tags on the home page, I'd see the mobile navigation menu flash. After some investigation, and some good ol' `console.log`s, I found the following:
 ![Screenshot of an error](/images/blog/hamburger-menu-js-issue.jpg)
 
 After reading the Astro [documentation](https://docs.astro.build/en/core-concepts/astro-components/#client-side-scripts), I modified the script to `type=module` and success, no more issue.
