@@ -12,7 +12,6 @@ const {jobs} = jobData.experience
 
 <style>
   .in-page-nav {
-    margin-bottom: 2.25em;
     padding-left: 0;
     list-style-type: none;
     display: flex;
@@ -33,6 +32,10 @@ const {jobs} = jobData.experience
     margin-bottom: 1em;
   }
 
+  .technology__container {
+    color: var(--white);
+  }
+
   .technology__title {
     margin-bottom: .25em;
   }
@@ -41,7 +44,16 @@ const {jobs} = jobData.experience
     margin-bottom: 1.75em;
   }
 
+  .background--polygon {
+    padding-top: 10%;
+    padding-bottom: 6%;
+    background-color: var(--accent-color);
+    /* clip-path: polygon(50% 0%, 75% 4%, 100% 0, 100% 100%, 71% 92%, 43% 98%, 20% 92%, 0 100%, 0 9%, 16% 0); */
+    clip-path: polygon(100% 0, 100% 95%, 0 100%, 0 5%);
+    box-shadow: var(--brand-box-shadow);
+  }
   .technology__list {
+    padding-left: 0;
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
@@ -85,7 +97,6 @@ const {jobs} = jobData.experience
     flex-wrap: wrap;
     list-style-type: none;
     gap: .25em;
-    /* gap: .5em; */
   }
 
   .work-history__item {
@@ -148,31 +159,36 @@ const {jobs} = jobData.experience
     <div class="container--max-width container--base-padding">
       <h1 class="page__title">My Experience</h1>
       <ul class="in-page-nav">
-        <li><a class="brand-link" href="#technologies">Technical Toolbox</a></li>
+        <li><a class="brand-link" href="#technologySection">Technical Toolbox</a></li>
         <li><a class="brand-link" href="#workHistory">Work History</a></li>
         <li><a class="brand-link" href="#gitHubProjects">GitHub Projects</a></li>
         <li><a class="brand-link" href="#education">Education</a></li>
       </ul>
-      {
-       technologies.map(topic => {
-          return (
-            <h2 id="technologies" class="technology__title">{topic.topic}</h2>
-            <p class="technology__tagline">Languages, technologies, and skills I use to build successful projects:</p>
-            <ul class="technology__list">
-            {topic.languages.map(language => {
-              const {icon, technology, yearsExperience} = language
-              return (
-                <li class="technology__item">
-                  <img class="technology__image" src={icon} alt={technology}>
-                  <span>{technology}</span>
-                </li>
-              )
-            })}
-            </ul>
-          )
-        })
-      }
     </div>
+
+    {
+      technologies.map(topic => {
+        return (
+          <div class="background--polygon">
+            <div class="technology__container container--max-width container--base-padding">
+              <h2 id="technologySection" class="technology__title">{topic.topic}</h2>
+              <p class="technology__tagline">Languages, technologies, and skills I use to build successful projects:</p>
+              <ul class="technology__list ">
+                {topic.languages.map(language => {
+                  const {icon, technology, yearsExperience} = language
+                  return (
+                    <li class="technology__item">
+                      <img class="technology__image" src={icon} alt={technology}>
+                      <span>{technology}</span>
+                    </li>
+                  )
+                })}
+              </ul>
+            </div>
+          </div>
+        )
+      })
+    } 
   </section>
   
   <section class="section--dark">
