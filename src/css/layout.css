@@ -170,7 +170,7 @@
 }
 
 .card__image {
-  border-radius: 9px;
+  border-radius: var(--rounded-corners);
   margin-bottom: 0.75em;
   height: 200px;
   width: 100%;

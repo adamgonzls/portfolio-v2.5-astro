@@ -22,6 +22,8 @@ Name.com had some [resources](https://www.name.com/support/articles/205935517-ad
 
 I added the DNS records from [ForwardEmail](https://forwardemail.net/), then followed their instructions to set up a "Send Mail As" from gmail.
 
+https://forwardemail.net/en/faq#table-dns-management-by-registrar
+
 ### I feel like my email address represents me
 
 some words about how happy I am
