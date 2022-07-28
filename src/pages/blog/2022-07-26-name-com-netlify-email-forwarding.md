@@ -14,7 +14,7 @@ featuredImageAlt: 'A man and a woman high-fiving'
 
 ### New portfolio site, a fun domain name, and... a gmail email address???
 
-Through the last couple of weeks, I've been developing my new website. It's been a fun experience. I created a prototype in Figma, I've queried various API's, heck, I even customized my [404 page](/404). I went through all the work of paying attention to the small details, revising my designs over and over and I was gonna tell people to email me at mygmailaddress<span>@</span>gmail.com??? Not so fast there buddy.
+Through the last couple of weeks, I've been developing my new website. It's been a fun experience. I created a prototype in Figma, I've queried various API's, heck, I even customized my [404 page](/404). I went through all the work of paying attention to the small details, revising my designs over and over and I was gonna tell people to email me at mygmailaddress<span>@</span>gmail.com??? Not on my watch.
 
 ### The situation
 
