@@ -3,8 +3,8 @@
   --off-white: #b8b8b8;
   --shark: #26272f;
   --pomegranate: #fa4032;
-  --caribbean-green: #14cfae;
-  --accent-color: #14cfae;
+  --caribbean-green: hsl(169.4, 82.4%, 44.5%);
+  --accent-color: var(--caribbean-green);
   --darkness: #141414;
   --mine-shaft: #303030;
 
