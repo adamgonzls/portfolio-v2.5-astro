@@ -1,12 +1,15 @@
-const express = require('express')
-const app = express()
+// const express = require('express')
+// import { handler as ssrHandler } from './dist/server/entry.mjs'
 
-const PORT = 3000
+// const app = express()
+// app.use(ssrHandler)
 
-app.get('/', (req, res) => {
-  res.send('hello')
-})
+// const PORT = process.env.PORT || 5000
 
-app.listen(PORT, () => {
-  console.log(`server running on port ${PORT}`)
-})
+// app.get('/', (req, res) => {
+//   res.send('hello there')
+// })
+
+// app.listen(PORT, () => {
+//   console.log(`server running on port ${PORT}`)
+// })

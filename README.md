@@ -11,18 +11,18 @@ Check it out: [Adam's Portfolio](https://adamgonzales.netlify.app/)
 - Astro
 - JavaScript (ES6)
 - REST API
+- JSON
 - Markdown
-  <!-- - localStorage -->
 - CSS
 - npm
 
-<!-- Colors and combinations returned via JSON API [Color Picker API](https://www.thecolorapi.com/) -->
+GitHub repository information via [GitHub REST API](https://docs.github.com/en/rest)
 
 [Figma design file](https://www.figma.com/file/uMRRCvFNkalcPhBOtRyqXX/Portfolio-v2.5?node-id=2%3A3)
 
 Icons from [iconify](https://icon-sets.iconify.design/)
 
-Deployed via [netlify](https://www.netlify.com/)
+Deployed via [Netlify](https://www.netlify.com/)
 
 ## 🧞 Commands
 
@@ -35,9 +35,4 @@ All commands are run from the root of the project, from a terminal:
 
 ## 🚀 Deployment
 
-| Command             | Action                                       |
-| :------------------ | :------------------------------------------- |
-| `npm run build`     | Build your production site to `./dist/`      |
-| `npm run preview`   | Preview your build locally, before deploying |
-| `ntl deploy`        | Deploy to a unique preview URL               |
-| `ntl deploy --prod` | Deploy the site into production              |
+Push or merge to main and deployment is handled by Netlify
