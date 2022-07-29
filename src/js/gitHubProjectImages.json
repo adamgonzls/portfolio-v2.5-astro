@@ -6,15 +6,15 @@
     },
     {
       "projectName": "quizzical",
-      "imageURL": "src/assets/images/project-images/quizzical.jpg"
+      "imageURL": "/assets/images/project-images/quizzical.jpg"
     },
     {
       "projectName": "portfolio-v2.5-astro",
-      "imageURL": "src/assets/images/project-images/portfolio.jpg"
+      "imageURL": "./assets/images/project-images/portfolio.jpg"
     },
     {
       "projectName": "quotely",
-      "imageURL": "src/assets/images/project-images/quotely-800.jpg"
+      "imageURL": "../assets/images/project-images/quotely-800.jpg"
     }
   ]
 }
