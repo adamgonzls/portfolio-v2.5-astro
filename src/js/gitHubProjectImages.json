@@ -2,19 +2,19 @@
   "projects": [
     {
       "projectName": "color-picker",
-      "imageURL": "src/assets/images/project-images/color-scheme.jpg"
+      "imageURL": "/images/project-images/color-scheme.jpg"
     },
     {
       "projectName": "quizzical",
-      "imageURL": "/assets/images/project-images/quizzical.jpg"
+      "imageURL": "/images/project-images/quizzical.jpg"
     },
     {
       "projectName": "portfolio-v2.5-astro",
-      "imageURL": "./assets/images/project-images/portfolio.jpg"
+      "imageURL": "/images/project-images/portfolio.jpg"
     },
     {
       "projectName": "quotely",
-      "imageURL": "../assets/images/quotely-800.jpg"
+      "imageURL": "/images/project-images/quotely-800.jpg"
     }
   ]
 }
