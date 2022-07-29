@@ -4,7 +4,7 @@ title: How I got image previews for GitHub projects on my portfolio
 description: Out-of-the-box problem-solving for programmatically getting images
 date: 2022-07-22
 draft: false
-featuredImage: '/images/concerned-dog-640.jpg'
+featuredImage: '/images/blog/concerned-dog-640.jpg'
 featuredImageAlt: 'A dog wearing a jean jacket'
 ---
 
