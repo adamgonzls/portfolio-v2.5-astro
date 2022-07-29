@@ -4,7 +4,7 @@ title: Keyboard shortcuts
 description: A running list of some important keyboard shortcuts
 date: 2022-07-14
 draft: false
-featuredImage: '/images/keyboard-lego-640.jpg'
+featuredImage: '/images/blog/keyboard-lego-640.jpg'
 featuredImageAlt: 'Lego man on keyboard'
 ---
 

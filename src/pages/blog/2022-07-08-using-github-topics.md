@@ -4,7 +4,7 @@ title: Using GitHub Topics to my website's desire
 description: I used GitHub Topics to query GitHub's API
 date: 2022-07-08
 draft: false
-featuredImage: '/images/github-octocat-640.jpg'
+featuredImage: '/images/blog/github-octocat-640.jpg'
 featuredImageAlt: 'Octocat figurine next to Groot figurine'
 ---
 

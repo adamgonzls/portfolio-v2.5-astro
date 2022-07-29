@@ -4,7 +4,7 @@ title: I presented my new portfolio to my fellow devs
 description: I had high-standards to meet and I had a week to prepare
 date: 2022-07-15
 draft: false
-featuredImage: '/images/zoom-meeting-640.jpg'
+featuredImage: '/images/blog/zoom-meeting-640.jpg'
 featuredImageAlt: 'An online meeting'
 ---
 
