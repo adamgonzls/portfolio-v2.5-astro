@@ -1,0 +1,54 @@
+<script>
+  const contactForm = document.getElementById('contactForm')
+  
+  const handleSubmit = e => {
+    e.preventDefault()
+    console.log('submitted')
+  }
+  
+  contactForm.addEventListener("submit", handleSubmit)
+</script>
+
+<style>
+  input, textarea {
+    padding: .75em;
+    display: block;
+    width: 100%;
+    border-radius: var(--rounded-corners);
+  }
+  input {
+
+  }
+  .brand-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+</style>
+
+<section class="home-section">
+  <div class="container--max-width">
+    <h2 class="section__title">This is the contact form</h2>
+    <form id="contactForm" class="brand-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="contact" />
+      <div>
+        <label for="fullName">Name:</label>
+        <input id="fullName" type="text" aria-placeholder="Your full name" placeholder="First Name Last Name">
+      </div>
+      <div class="hidden">
+        <label>
+          Don't fill this out if you're human: <input name="bot-field" />
+        </label>
+      </div>
+      <div>
+        <label for="emailAddress">Email Address:</label>
+        <input id="emailAddress" type="email" aria-placeholder="Your email address" placeholder="name@domain.com">
+      </div>
+      <div>
+        <label for="message">Your Message</label>
+        <textarea name="message" id="message" cols="30" rows="5" placeholder="Your message"></textarea>
+      </div>
+      <button class="brand-button">Send Message</button>
+    </form>
+  </div>
+</section>
