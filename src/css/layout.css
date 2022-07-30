@@ -156,15 +156,6 @@
   color: var(--accent-color);
 }
 
-.home-section .blog__row {
-  margin-bottom: 2em;
-}
-
-.home-section .blog__row .articleCard {
-  background-color: var(--darkness);
-  padding: 1em;
-}
-
 .page__title {
   color: var(--accent-color);
 }
@@ -215,9 +206,15 @@
   margin-left: auto;
 }
 
-.myExperience__gitHub {
+.card__row {
   margin-bottom: 2em;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1em;
+}
+
+@media screen and (min-width: 700px) {
+  .card__row {
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+  }
 }

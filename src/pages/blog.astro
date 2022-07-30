@@ -26,7 +26,7 @@ const firstPost = sortedPosts.shift()
       grid-template-columns: repeat(2, 1fr);
       grid-template-areas:
         "featureImage featureText"
-        "blogRow      blogRow";
+        "cardRow      cardRow";
     }
     .blog-feature__img {
       height: 350px;
@@ -37,8 +37,8 @@ const firstPost = sortedPosts.shift()
       margin-bottom: unset;
       grid-area: featureText;
     }
-    .blog__row {
-      grid-area: blogRow;
+    .card__row {
+      grid-area: cardRow;
     }
   }
 </style>
@@ -54,7 +54,7 @@ const firstPost = sortedPosts.shift()
         <p>{firstPost.frontmatter.description}</p>
         <a class="brand-link brand-link--callout" href={firstPost.url}>Read More</a>
       </div>
-      <div class="blog__row">
+      <div class="card__row">
         {sortedPosts.map(post => <BlogArticle {post} />)}
       </div>
     </div>

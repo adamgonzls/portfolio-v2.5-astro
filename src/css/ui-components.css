@@ -119,13 +119,10 @@
 }
 
 @media screen and (min-width: 500px) {
-  .blog__row {
-    display: grid;
-    gap: 1em;
-    justify-content: space-between;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  }
   .traits__card {
+    margin-bottom: 0;
+  }
+  .traits__copy {
     margin-bottom: 0;
   }
 }

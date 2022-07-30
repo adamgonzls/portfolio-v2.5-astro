@@ -21,7 +21,7 @@ const postsWithImages = requestedPosts.map(postObject => {
 })
 ---
 
-<div class="myExperience__gitHub">
+<div class="myExperience__gitHub card__row">
   {postsWithImages.map(item => {
     return (
       <Card {item} cardTheme={cardTheme} />

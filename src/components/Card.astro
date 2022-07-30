@@ -21,6 +21,13 @@ const filteredTopics = topicsArray.filter(value => value !== 'featured-repo')
     min-width: 200px;
     transition: box-shadow 200ms ease-in-out;
     box-shadow: var(--brand-box-shadow);
+    display: flex;
+    flex-direction: column;
+  }
+  @media screen and (min-width: 500px) {
+    .card__title {
+      height: 55px;
+    }
   }
   .card:hover {
     box-shadow: var(--brand-box-shadow-hovered);
@@ -32,15 +39,23 @@ const filteredTopics = topicsArray.filter(value => value !== 'featured-repo')
     font-size: .9rem;
     margin-bottom: .75em;
   }
+  .topic__row {
+    padding-left: 0;
+  }
+  .card__links-container {
+    margin-top: auto;
+  }
 </style>
 
 <div class="card" data-theme={theme}>
   <h3 class="card__title"><a class="brand-link" target="_blank" href={item.html_url}>{normalizeGitHubRepoName(item.name)}</a></h3>
-  <a href={item.homepage ? item.homepage : item.html_url}><img class="card__image" src={item.featureImage ? item.featureImage: gitHubPlaceholder} alt=""></a>
+  <a class="card__image-container" href={item.homepage ? item.homepage : item.html_url}><img class="card__image" src={item.featureImage ? item.featureImage: gitHubPlaceholder} alt=""></a>
   <p class="card__desc">{item.description}</p>
   <ul class='topic__row'>
     {filteredTopics.map(topic => <li class='topic__badge'>{topic}</li>)}
   </ul>
-  {item.homepage && <a class="card__link brand-link" target="_blank" href={item.homepage}>Visit Site</a><br />}
-  <a class="card__link brand-link brand-link--callout" target="_blank" href={item.html_url}>View Code</a>
+  <div class="card__links-container">
+    {item.homepage && <a class="card__link brand-link" target="_blank" href={item.homepage}>Visit Site</a><br />}
+    <a class="card__link brand-link brand-link--callout" target="_blank" href={item.html_url}>View Code</a>
+  </div>
 </div>
