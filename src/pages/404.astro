@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro'
+import cactusImage from '../assets/images/pinnacle-peak-cactus-800.jpg'
 ---
 
 <style>
@@ -29,7 +30,7 @@ import Base from '../layouts/Base.astro'
     <h1 class="page__title">404 - Sorry, that page doesn't exist.</h1>
     <p class="h2">Not all who wander are lost, but you are most definitely lost. <a class="brand-link brand-link--callout" href="/">Go to home page</a></p>
     <figure>
-      <img class="not-found__image" src="src/assets/images/pinnacle-peak-cactus-800.jpg" alt="A cactus towering over a rocky landscape">
+      <img class="not-found__image" src={cactusImage} alt="A cactus towering over a rocky landscape">
       <figcaption>Pinnacle Peak, Scottsdale, AZ</figcaption>
     </figure>
   </div>
