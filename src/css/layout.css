@@ -197,7 +197,8 @@
   margin-bottom: 0.75em;
 }
 
-.blogPost ul {
+.blogPost ul,
+.blogPost ol {
   margin-bottom: 1em;
 }
 
