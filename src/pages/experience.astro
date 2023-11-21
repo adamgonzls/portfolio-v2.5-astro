@@ -71,7 +71,10 @@ const {jobs} = jobData.experience
     margin-right: auto;
     margin-bottom: 1em;
     margin-left: auto;
-    height: 4.5rem;
+    border-radius: .25em;
+    background-color: var(--white);
+    padding: .25em;
+    height: 4.75rem;
   }
   
   .technology__image + span {
@@ -112,6 +115,10 @@ const {jobs} = jobData.experience
 
   .work-history__company-name {
     margin-bottom: 0;
+  }
+
+  .work-history__company-location {
+    font-size: var(--fs-h5)
   }
   
   @media screen and (min-width: 500px) {
@@ -175,7 +182,7 @@ const {jobs} = jobData.experience
               <p class="technology__tagline">Languages, technologies, and skills I use to build successful projects:</p>
               <ul class="technology__list ">
                 {topic.languages.map(language => {
-                  const {icon, technology, yearsExperience} = language
+                  const {icon, technology} = language
                   return (
                     <li class="technology__item">
                       <img class="technology__image" src={icon} alt={technology}>
@@ -198,20 +205,22 @@ const {jobs} = jobData.experience
         <a class="brand-button" href={Resume} download>Download Resume</a>
       </div>
       {jobs.map(job => {
-        const {jobTitle, companyName, technologyUsed, responsibilities, timeEmployed} = job
+        const {jobTitle, companyName, companyLocation, technologyUsed, responsibilities, timeEmployed} = job
         return (
           <div class="work-history__item">
             <div class="work-history__section">
               <h3 class="text--underline">{jobTitle}</h3>
               <div class="work-history__tenure">
-                <h4 class="work-history__company-name">{companyName}</h4>
+                <h4 class="work-history__company-name">{companyName}, <span class="work-history__company-location">{companyLocation}</span></h4>
                 <span>{timeEmployed}</span>
               </div>
             </div>
             <div class="work-history__section">
               <h5 class="text--underline">Technologies Used:</h5>
               <ul class="work-history__technology">
-                {technologyUsed.map(tech => <li>{tech}</li>)}
+                {technologyUsed.map((tech, i, {length}) => {
+                  return i === length -1 ? <li>{tech}</li> : <li>{tech},</li>
+                })}
               </ul>
             </div>
             <div class="work-history__section">

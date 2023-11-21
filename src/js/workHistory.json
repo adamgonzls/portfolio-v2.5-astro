@@ -3,6 +3,7 @@
     "jobs": [
       {
         "companyName": "Tether Tools",
+        "companyLocation": "Phoenix, AZ",
         "timeEmployed": "November 2016 - May 2022",
         "jobTitle": "Lead Web Developer",
         "technologyUsed": [
@@ -31,6 +32,7 @@
       },
       {
         "companyName": "atmosol",
+        "companyLocation": "Chandler, AZ",
         "timeEmployed": "March - November 2016",
         "jobTitle": "Web Developer",
         "technologyUsed": [
@@ -51,6 +53,7 @@
       },
       {
         "companyName": "Experience Scottsdale",
+        "companyLocation": "Scottsdale, AZ",
         "timeEmployed": "June 2007 - September 2015",
         "jobTitle": "Technical Support Specialist",
         "technologyUsed": [

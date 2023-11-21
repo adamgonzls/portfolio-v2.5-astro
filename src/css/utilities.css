@@ -19,3 +19,7 @@
 .preload {
   transition: none !important;
 }
+
+.mb-0 {
+  margin-bottom: 0;
+}

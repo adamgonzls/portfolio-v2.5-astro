@@ -10,6 +10,11 @@
           "yearStarted": 2015
         },
         {
+          "technology": "Node.js",
+          "icon": "/images/icons/nodejs.svg",
+          "yearStarted": 2015
+        },
+        {
           "technology": "React",
           "icon": "/images/icons/react.svg",
           "yearsExperience": 1,
@@ -94,6 +99,11 @@
           "yearStarted": 2015
         },
         {
+          "technology": "MongoDB",
+          "icon": "/images/icons/mongodb.svg",
+          "yearStarted": 2023
+        },
+        {
           "technology": "JSON",
           "icon": "/images/icons/json.svg",
           "yearsExperience": 5,
@@ -103,6 +113,11 @@
           "technology": "Git",
           "icon": "/images/icons/git.svg",
           "yearsExperience": 5,
+          "yearStarted": 2015
+        },
+        {
+          "technology": "GitHub",
+          "icon": "/images/icons/github.svg",
           "yearStarted": 2015
         },
         {
