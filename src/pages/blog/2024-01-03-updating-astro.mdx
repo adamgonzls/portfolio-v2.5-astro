@@ -1,0 +1,55 @@
+---
+layout: '../../layouts/BlogSingle.astro'
+title: Updating Astro Core Files
+description: All I wanted to do was reuse some code
+date: 2024-01-03
+draft: false
+featuredImage: '/images/blog/wrench-640.jpg'
+featuredImageAlt: 'A wrench'
+---
+
+import { readableDate } from '../../js/utilities'
+
+<p class='articleCard__date'>{readableDate(frontmatter.date)}</p>
+
+<img src={frontmatter.featuredImage} alt={frontmatter.featuredImageAlt} />
+
+## {frontmatter.description}
+
+### How it all started:
+
+I decided that I wanted to have the date of my blog articles appear in the article (scroll up to see it in all it's glory). Once I displayed the date, I decided that I wanted it to appear in a specific format: **1st MonthAbbreviation Year**.
+
+Luckily, I wrote a utility function that could do exactly that:
+
+```js
+export function readableDate(date) {
+  return dateFns.format(new Date(date), 'do MMM yyyy')
+}
+```
+
+The problem is that my blog articles are written in Markdown (.md) files and I can't use imports and exports in that file type. Hmmm how to import my function...
+
+### Luckily Astro supports MDX in addition to Markdown
+
+Looking through the Astro docs, I found that Astro supports MDX with the installation of the [MDX integration](https://docs.astro.build/en/guides/markdown-content/).
+
+### Adding the integration seemed easy enough...
+
+The [Astro docs](https://docs.astro.build/en/guides/integrations-guide/mdx/) explain how to add the integration, and it seems simple enough: `npx astro add mdx`
+
+### I needed to update Node and Astro
+
+After typing the command in my terminal, I was prompted with an error: `Node.js v18.4.0 is not supported by Astro! Please upgrade Node.js to a supported version: ">=18.14.1"`
+
+So, I updated Node using [NVM](https://github.com/nvm-sh/nvm/blob/master/README.md)
+
+### I'm not sure exactly when it happened but my Astro version got updated
+
+I started using Astro before there was a version 1. When I checked my version of Astro after updating Node via NVM, I was on Astro version 4. I launched my dev environment and some of my images were't working but other than that everything seemed fairly intact.
+
+For many of my images which I imported, I now need to use `variableName.src` in the src of `<img />` tags (it was simply `variableName` before).
+
+### Conclusion
+
+Overall, I'm glad I finally updated my version of Astro to something more current. I'm still trying to figure out how to get my Markdown and MDX files to recognize images in `src/images` but in the meantime, having blog images in `/public` is ok.

@@ -6,7 +6,7 @@ const randomFact = data.facts[Math.floor(Math.random() * data.facts.length)]
 ---
 
 <div class="fact__row">
-  <img class="fact__img" src={avatarImg} alt="Adam">
+  <img class="fact__img" src={avatarImg.src} alt="Adam">
   <div>
     <h4 class="mb-0">Adam facts:</h4>
     <p class="fact__text">{randomFact ? randomFact : "Adam is a Web Developer in Texas"}</p>

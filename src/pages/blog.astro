@@ -2,9 +2,9 @@
 import Base from '../layouts/Base.astro'
 import BlogArticle from '../components/homepage/BlogArticle.astro'
 import AuthorFact from '../components/AuthorFact.astro'
-import {sortPosts, getPublishedPosts} from '../js/utilities'
+import {sortPosts, getPublishedPosts, readableDate} from '../js/utilities'
 
-const posts = await Astro.glob('./blog/*.md')
+const posts = await Astro.glob('./blog/*.md*')
 const publishedPosts = getPublishedPosts(posts)
 const sortedPosts = sortPosts(publishedPosts)
 const firstPost = sortedPosts.shift()
@@ -51,6 +51,7 @@ const firstPost = sortedPosts.shift()
       <a href={firstPost.url}><img class="blog-feature__img card__image" src={firstPost.frontmatter.featuredImage} alt={firstPost.frontmatter.featuredImageAlt}/></a>
       <div class="blog-feature__text">
         <h3><a class="brand-link" href={firstPost.url}>{firstPost.frontmatter.title}</a></h3>
+        <small class="articleCard__date">{readableDate(firstPost.frontmatter.date)}</small>
         <p>{firstPost.frontmatter.description}</p>
         <a class="brand-link brand-link--callout" href={firstPost.url}>Read More</a>
       </div>

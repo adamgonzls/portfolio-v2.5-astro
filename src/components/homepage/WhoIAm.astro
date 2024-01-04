@@ -1,0 +1,67 @@
+---
+import PageLink from './PageLink.astro'
+import adamImage from '../../assets/images/2022-04-adam-purple-wall-1-800-1067.jpg'
+---
+
+<style>
+  img {
+    border-radius: var(--rounded-corners);
+    box-shadow: var(--brand-box-shadow);
+  }
+
+  .outro {
+    margin-bottom: 2em;
+    text-align: center;
+  }
+
+  @media screen and (min-width: 600px) {
+    .outro {
+      margin-left: auto;
+      text-align: unset;
+      display: grid;
+      align-items: center;
+      grid-template-areas: 
+        "title        img"
+        "subtitle     img"
+        "description  img";
+      grid-column-gap: 2em;
+      grid-template-columns: 1fr 250px;
+    }
+    h2 {
+      grid-area: title;
+      margin-bottom: 0;
+      text-align: start;
+    }
+    img {
+      position: relative;
+      grid-area: img;
+      min-width: 250px;
+      max-width: 100%;
+      z-index: 2;
+    }
+    .about__subtitle {
+      padding-left: 2em;
+      position: relative;
+      grid-column: 1 / -1;
+      grid-row: 2;
+      left: -2em;
+      width: calc(100% + 4em);
+    }
+
+  }
+</style>
+
+<section id="myAbout" class="home-section">
+  <div class="container--max-width">
+    <div class="outro">
+      <h2 class="section__title">Who I am</h2>
+      <p class="about__subtitle">Developer &amp; Designer</p>
+      <div>
+        <p>Hi I'm Adam, I'm a web developer who is passionate for web development, user experience, and continuous growth.</p>
+        <p>I appreciate good design, nature, and stimulating conversation.</p>
+      </div>
+      <img src={adamImage.src} alt="Adam">
+    </div>
+    <PageLink class="pageLink" path='/about' text='About Me'/>
+  </div>
+</section>

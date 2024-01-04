@@ -3,7 +3,7 @@ import BlogArticle from "./BlogArticle.astro"
 import PageLink from "./PageLink.astro"
 import {sortPosts, getPublishedPosts} from '../../js/utilities'
 
-const posts = await Astro.glob('../../pages/blog/*.md')
+const posts = await Astro.glob('../../pages/blog/*.md*')
 const publishedPosts = getPublishedPosts(posts)
 const sortedPosts = sortPosts(publishedPosts)
 const threeMostRecentPosts = sortedPosts.slice(0, 3)
