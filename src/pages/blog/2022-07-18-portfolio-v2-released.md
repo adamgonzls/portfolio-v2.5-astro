@@ -8,10 +8,6 @@ featuredImage: '/images/blog/gardening-transplant.jpg'
 featuredImageAlt: 'Gardening'
 ---
 
-<img src={frontmatter.featuredImage} alt={frontmatter.featuredImageAlt} />
-
-## {frontmatter.description}
-
 Last week, I presented version 1 of my portfolio as documented [here](./2022-07-15-presented-my-portfolio.md). After a weekend of focused work, I released version 2 of my portfolio.
 
 ### I had to make choices

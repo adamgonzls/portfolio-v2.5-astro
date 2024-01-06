@@ -205,7 +205,9 @@ const {jobs} = jobData.experience
         <a class="brand-button" href={Resume} download>Download Resume</a>
       </div>
       {jobs.map(job => {
-        const {jobTitle, companyName, companyLocation, technologyUsed, responsibilities, timeEmployed} = job
+        const {jobTitle, companyName, companyLocation, technologyUsed, responsibilities, additionalResponsibilities, timeEmployed} = job
+        
+        {console.log(additionalResponsibilities)}
         return (
           <div class="work-history__item">
             <div class="work-history__section">
@@ -229,6 +231,13 @@ const {jobs} = jobData.experience
                 {responsibilities.map(responsibility => <li>{responsibility}</li>)}
               </ul>
             </div>
+            { additionalResponsibilities && (
+              <h5 class="text--underline">Additional Responsibilities:</h5>
+              <ul class="work-history__responsibilities">
+                {additionalResponsibilities.map(responsibility => <li>{responsibility}</li>)}
+              </ul>
+              )
+            }
           </div>
         )
       })}

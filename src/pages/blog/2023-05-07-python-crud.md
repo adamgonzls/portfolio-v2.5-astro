@@ -8,10 +8,6 @@ featuredImage: '/images/blog/post-it-notes-640.jpg'
 featuredImageAlt: 'Post-it Notes on a window'
 ---
 
-<img src={frontmatter.featuredImage} alt={frontmatter.featuredImageAlt} />
-
-## {frontmatter.description}
-
 ### Requirements
 
 1. Be able to view movie list items

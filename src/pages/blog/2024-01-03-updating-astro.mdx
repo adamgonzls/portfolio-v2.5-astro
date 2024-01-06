@@ -8,14 +8,6 @@ featuredImage: '/images/blog/wrench-640.jpg'
 featuredImageAlt: 'A wrench'
 ---
 
-import { readableDate } from '../../js/utilities'
-
-<p class='articleCard__date'>{readableDate(frontmatter.date)}</p>
-
-<img src={frontmatter.featuredImage} alt={frontmatter.featuredImageAlt} />
-
-## {frontmatter.description}
-
 ### How it all started:
 
 I decided that I wanted to have the date of my blog articles appear in the article (scroll up to see it in all it's glory). Once I displayed the date, I decided that I wanted it to appear in a specific format: **1st MonthAbbreviation Year**.

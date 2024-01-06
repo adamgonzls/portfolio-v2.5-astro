@@ -186,7 +186,7 @@
   }
 }
 
-.blogPost h1 + img {
+.blogPost_articleImage {
   height: 400px;
   width: 100%;
   object-fit: cover;

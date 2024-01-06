@@ -17,17 +17,22 @@
           "Gulp",
           "SQL",
           "API's",
-          "Photoshop",
+          "Adobe Creative Cloud",
           "Salesforce",
           "Google Analytics",
           "Google Optimize"
         ],
         "responsibilities": [
           "Write custom plugins to add capabilities and enhance functionality of websites. Features added included communicating with API's for licensing and email campaigns, creating custom post types for hardware compatibility database and software distribution, and centralizing reusable UI elements for visual continuity and improved maintenance.",
-          "Utilize HTML, CSS, JavaScript, PHP, and SQL to add content and features to websites. Added features include shopping cart integrations, creating dashboards to allow website updates by non-developers, and added abilities to the backend such as setting a product to 'discontinued' and modifying the appearance on the frontend based on that data.",
+          "Utilize HTML, CSS, JavaScript, PHP, and SQL to add content and features to websites. Added features include shopping cart integrations, creating dashboards to allow website updates by non-developers, and added abilities to the backend such as setting product status and modifying the appearance on the frontend based on that data.",
           "Research and test features using Google Optimize. Implement features based on tests to improve user experience and increase sales; In one two-year period, increased web sales by 280%.",
           "Manage and migrate multiple web properties, including production and development environments. Management of sites includes code optimization, researching and updating plugins, adding new features, and utilizing Git/GitLab for version control.",
           "Partner with team members across organization to accomplish varying goals. Accomplishments include better/automated coordination of inventory with Operations team, simplified navigation of products for Sales team, dealer partners, and distributors, and training customer service on custom-written job-oriented tools."
+        ],
+        "additionalResponsibilities": [
+          "Launch email campaigns via 3rd-party marketing tools (Salesforce Marketing Cloud, Mailchimp)",
+          "Developed responsive HTML email templates",
+          "Implemented version control (Git, GitHub, GitLab, Bitbucket) on all web assets"
         ]
       },
       {

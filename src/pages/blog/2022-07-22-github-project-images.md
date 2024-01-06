@@ -8,10 +8,6 @@ featuredImage: '/images/blog/concerned-dog-640.jpg'
 featuredImageAlt: 'A dog wearing a jean jacket'
 ---
 
-<img src={frontmatter.featuredImage} alt={frontmatter.featuredImageAlt} />
-
-## {frontmatter.description}
-
 ### The issue
 
 In v1 and v2 of my portfolio, I was querying repo data from GitHub and displaying it- with one major (to me) omission... I didn't have any sort of "preview image" (or, "feature image"- still working on the name). GitHub offers a lot of information when querying repos including `name`, `homepage`, `topics`, and a ton of other stuff. But no "project image" (still working on the name).
