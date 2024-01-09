@@ -1,6 +1,7 @@
 ---
-const urlPath = new URL(Astro.request.url).pathname
-const currentPath = urlPath.substring(1)
+const urlPath = Astro.url.pathname
+const currentPath = urlPath.split('/')[1]
+console.log(currentPath)
 ---
 
 <style>
