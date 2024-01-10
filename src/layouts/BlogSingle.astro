@@ -2,8 +2,8 @@
 import Base from './Base.astro'
 import AuthorFact from '../components/AuthorFact.astro'
 import { readableDate } from '../js/utilities'
-const props = Astro.props.content
-const {title, date, featuredImage, featuredImageAlt, description} = props
+const {frontmatter} = Astro.props
+const {title, date, featuredImage, description} = frontmatter
 ---
 
 <style>
@@ -12,17 +12,15 @@ const {title, date, featuredImage, featuredImageAlt, description} = props
 }
 </style>
 
-
-
-<Base {...props}>
+<Base>
   <div class="container--max-width container--base-padding">
     <article class="blogPost">
       <h1 class="page__title">{title}</h1>
-      <p class='articleCard__date'>{readableDate(date)}</p>
+      <p class="articleCard__date">{readableDate(date)}</p>
       <img
         class='blogPost_articleImage'
-        src={featuredImage}
-        alt={featuredImageAlt}
+        src={featuredImage.url}
+        alt={featuredImage.alt}
       />
       <h2>{description}</h2>
       <slot>Default Blog Content</slot>

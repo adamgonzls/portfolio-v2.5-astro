@@ -4,8 +4,9 @@ title: Python Movie App
 description: Flask/ WTForms/ SQLite/ SQLAlchemy
 date: 2023-05-07
 draft: true
-featuredImage: '/images/blog/post-it-notes-640.jpg'
-featuredImageAlt: 'Post-it Notes on a window'
+featuredImage:
+  url: '../src/assets/images/blog/post-it-notes-640.jpg'
+  alt: 'Post-it Notes on a window'
 ---
 
 ### Requirements
@@ -18,7 +19,7 @@ featuredImageAlt: 'Post-it Notes on a window'
 
 ### A preview of the app
 
-<img src="/images/blog/python-movie-app-preview.gif" alt={frontmatter.featuredImageAlt} />
+<img src="../../assets/images/blog/python-movie-app-preview.gif" alt={frontmatter.featuredImageAlt} />
 
 ### Useful links
 
