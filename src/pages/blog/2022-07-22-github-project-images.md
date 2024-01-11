@@ -5,7 +5,7 @@ description: Out-of-the-box problem-solving for retrieving images programmatical
 date: 2022-07-22
 draft: false
 featuredImage:
-  url: '../src/assets/images/blog/concerned-dog-640.jpg'
+  url: '/images/blog/concerned-dog-640.jpg'
   alt: 'A dog wearing a jean jacket'
 ---
 

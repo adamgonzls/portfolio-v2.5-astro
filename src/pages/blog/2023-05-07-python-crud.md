@@ -5,7 +5,7 @@ description: Flask/ WTForms/ SQLite/ SQLAlchemy
 date: 2023-05-07
 draft: true
 featuredImage:
-  url: '../src/assets/images/blog/post-it-notes-640.jpg'
+  url: '/images/blog/post-it-notes-640.jpg'
   alt: 'Post-it Notes on a window'
 ---
 
@@ -19,7 +19,7 @@ featuredImage:
 
 ### A preview of the app
 
-<img src="../../assets/images/blog/python-movie-app-preview.gif" alt={frontmatter.featuredImageAlt} />
+<img src="/images/blog/python-movie-app-preview.gif" alt={frontmatter.featuredImageAlt} />
 
 ### Useful links
 
