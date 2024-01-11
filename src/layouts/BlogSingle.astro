@@ -19,7 +19,7 @@ const {title, date, featuredImage, description} = frontmatter
       <p class="articleCard__date">{readableDate(date)}</p>
       <img
         class='blogPost_articleImage'
-        src={featuredImage.url}
+        src={`./${featuredImage.url}`}
         alt={featuredImage.alt}
       />
       <h2>{description}</h2>
