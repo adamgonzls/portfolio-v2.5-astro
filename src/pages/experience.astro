@@ -8,6 +8,7 @@ import jobData from '../js/workHistory.json'
 
 const {technologies} = data
 const {jobs} = jobData.experience
+const pageTitle="Experience"
 ---
 
 <style>
@@ -161,7 +162,7 @@ const {jobs} = jobData.experience
   }
 </style>
 
-<Base title="Experience">
+<Base pageTitle={pageTitle}>
   <section>
     <div class="container--max-width container--base-padding">
       <h1 class="page__title">My Experience</h1>

@@ -8,6 +8,7 @@ const posts = await Astro.glob('./blog/*.md*')
 const publishedPosts = getPublishedPosts(posts)
 const sortedPosts = sortPosts(publishedPosts)
 const firstPost = sortedPosts.shift()
+const pageTitle = "Blog"
 ---
 
 <style>
@@ -43,14 +44,14 @@ const firstPost = sortedPosts.shift()
   }
 </style>
 
-<Base>
+<Base pageTitle={pageTitle}>
   <div class="container--max-width container--base-padding">
     <h1 class="page__title">My Thoughts</h1>
     <h2>My experiences in my own words</h2>
     <div class="blog-feature">
       <a href={firstPost.url}><img class="blog-feature__img card__image" src={firstPost.frontmatter.featuredImage.url} alt={firstPost.frontmatter.featuredImage.alt}/></a>
       <div class="blog-feature__text">
-        <h3><a class="brand-link" href={firstPost.url}>{firstPost.frontmatter.title}</a></h3>
+        <h3><a class="brand-link" href={firstPost.url}>{firstPost.frontmatter.pageTitle}</a></h3>
         <small class="articleCard__date">{readableDate(firstPost.frontmatter.date)}</small>
         <p>{firstPost.frontmatter.description}</p>
         <a class="brand-link brand-link--callout" href={firstPost.url}>Read More</a>

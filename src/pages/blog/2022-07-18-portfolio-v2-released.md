@@ -1,12 +1,13 @@
 ---
 layout: '../../layouts/BlogSingle.astro'
-title: Version 2 of my portfolio delivered
+pageTitle: Version 2 of my portfolio delivered
 description: Adding an "Adam Facts" component was part of it
 date: 2022-07-18
 draft: false
 featuredImage:
   url: '/images/blog/gardening-transplant.jpg'
   alt: 'Gardening'
+tags: ['portfolio', 'astro']
 ---
 
 Last week, I presented version 1 of my portfolio as documented [here](./2022-07-15-presented-my-portfolio.md). After a weekend of focused work, I released version 2 of my portfolio.

@@ -15,6 +15,10 @@
   border-bottom: 0.1em solid rgba(20, 207, 174, 0.5);
 }
 
+.text--center {
+  text-align: center;
+}
+
 /* fix bug with mobile navigation flashing on load  */
 .preload {
   transition: none !important;

@@ -1,12 +1,13 @@
 ---
 layout: '../../layouts/BlogSingle.astro'
-title: How I got image previews for GitHub projects on my portfolio
+pageTitle: How I got image previews for GitHub projects on my portfolio
 description: Out-of-the-box problem-solving for retrieving images programmatically
 date: 2022-07-22
 draft: false
 featuredImage:
   url: '/images/blog/concerned-dog-640.jpg'
   alt: 'A dog wearing a jean jacket'
+tags: ['github', 'api', 'portfolio']
 ---
 
 ### The issue

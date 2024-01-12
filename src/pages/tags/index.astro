@@ -1,0 +1,30 @@
+---
+import Base from '../../layouts/base.astro'
+import { getPublishedPosts } from '../../js/utilities'
+const allPosts = await Astro.glob("../blog/*.md*")
+const publishedPosts = getPublishedPosts(allPosts)
+const tags = [...new Set(publishedPosts.map((post) => post.frontmatter.tags).flat())].sort()
+
+const pageTitle = "Tags"
+---
+
+<style>
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25em;
+}
+.tag {
+  border: dotted 2px var(--off-white);
+  border-radius: var(--rounded-corners);
+  padding: .25em 1em;
+  background-color: #bee5de;
+}
+</style>
+
+<Base pageTitle={pageTitle}>
+  <div class="container--max-width container--base-padding">
+    <h1 class="page__title">{pageTitle}</h1>
+    <div class="tags">{tags.map((tag) => <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>)}</div>
+  </div>
+</Base>

@@ -3,7 +3,7 @@ import {readableDate} from '../../js/utilities'
 import fallbackImage from '../../assets/images/simple-mac-desktop-640-360.jpg'
 
 const {post} = Astro.props
-const {title, description, date, featuredImage} = post.frontmatter
+const {pageTitle, description, date, featuredImage} = post.frontmatter
 ---
 
 <style>
@@ -30,7 +30,7 @@ const {title, description, date, featuredImage} = post.frontmatter
   <a href={post.url}>
     <img class="articleCard__image card__image" src={featuredImage.url ? featuredImage.url : fallbackImage} alt={featuredImage.alt ? featuredImage.alt : "A laptop workstation"}>
   </a>
-  <h3 class="articleCard__title"><a class="brand-link" href={post.url}>{title}</a></h3>
+  <h3 class="articleCard__title"><a class="brand-link" href={post.url}>{pageTitle}</a></h3>
   <small class="articleCard__date">{readableDate(date)}</small>
   <p class="articleCard__description">{description}</p>
   <a class="brand-link brand-link--callout" href={post.url}>Read More</a>

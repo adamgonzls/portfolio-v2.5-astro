@@ -3,19 +3,30 @@ import Base from './Base.astro'
 import AuthorFact from '../components/AuthorFact.astro'
 import { readableDate } from '../js/utilities'
 const {frontmatter} = Astro.props
-const {title, date, featuredImage, description} = frontmatter
+const {pageTitle, date, featuredImage, description, tags} = frontmatter
 ---
 
 <style>
 .blogPost {
   margin-bottom: 2em;
 }
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25em;
+}
+.tag {
+  border: dotted 2px var(--off-white);
+  border-radius: var(--rounded-corners);
+  padding: .25em 1em;
+  background-color: #bee5de;
+}
 </style>
 
-<Base>
+<Base pageTitle={pageTitle}>
   <div class="container--max-width container--base-padding">
     <article class="blogPost">
-      <h1 class="page__title">{title}</h1>
+      <h1 class="page__title">{pageTitle}</h1>
       <p class="articleCard__date">{readableDate(date)}</p>
       <img
         class='blogPost_articleImage'
@@ -24,6 +35,8 @@ const {title, date, featuredImage, description} = frontmatter
       />
       <h2>{description}</h2>
       <slot>Default Blog Content</slot>
+      <h3>Tags:</h3>
+      <div class="tags">{tags.map((tag) => <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>)}</div>
     </article>
     <AuthorFact />
   </div>

@@ -1,19 +1,25 @@
 ---
 import Base from '../layouts/Base.astro'
+const pageTitle = "Style Guide"
 ---
 
 
 
-<Base title="About">
+<Base pageTitle={pageTitle}>
   <div class="container--max-width container--base-padding">
-    <h1 class="page__title">Style Guide</h1>
+    <h1 class="page__title">{pageTitle}</h1>
     <div class="style__content">
       <div class="style__copy">
-        <h2>Title:</h2>
-        <p>Front-end Developer</p>
+        <h2>Professional Title:</h2>
+        <p><a target="_blank" class="brand-link" href="https://css-tricks.com/poll-results-front-end-front-end/">Front-end Developer</a></p>
+        <small></small>
         <h2>Technology Names:</h2>
         <ul>
-          <li><a target="_blank" class="brand-link" href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a></li>
+          <li>
+            <p>YES ✅: CSS</p>
+            <p>No ❌: CSS3</p>
+            <p>Reference: <a target="_blank" class="brand-link" href="https://developer.mozilla.org/en-US/docs/Web/CSS">Mozilla.org - CSS</a></p>
+          </li>
           <li>GitHub</li>
           <li><a target="_blank" class="brand-link" href="https://developer.mozilla.org/en-US/docs/Glossary/HTML">HTML</a></li>
           <li><a target="_blank" class="brand-link" href="https://www.glassdoor.com/about/newsroom/">Glassdoor</a></li>
