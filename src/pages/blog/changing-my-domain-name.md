@@ -1,37 +1,23 @@
 ---
 layout: '../../layouts/BlogSingle.astro'
-pageTitle: >
-  Updating Astro: How a Small Change on My Website Grew in Scope
-description: Code reuse took me down a rabbit hole of Node and Astro updates
-pubDate: 2024-01-03
-updatedDate: 2024-01-12
-draft: false
+pageTitle: Changing My Domain Name to CodedByAdam.com
+description: A marketing problem
+pubDate: 2024-01-12
+updatedDate:
+draft: true
 featuredImage:
-  url: '/images/blog/wrench-640.jpg'
-  alt: 'A wrench'
-tags: ['astro', 'debugging', 'portfolio', 'netlify']
+  url: '/images/blog/unpredictable-door-640.jpg'
+  alt: 'Keep back. This door is unpredictable.'
+tags: ['astro', 'portfolio', 'dns']
 ---
 
-### How it all started:
+### A-Damn-Good-Coder:
 
-I decided that I wanted to have the date of my blog articles appear in the article (scroll up to see it in all it's glory). I wanted to do this because sometimes when I'm reading articles, when it was written can be important. Since I like to practice what I preach, I decided to implement this on my site.
-Adding the date to display in my Markdown (later MDX) was easy enough:
+When I went through the process of rebuilding my portfolio, I wanted a punny domain name. I fell in love with `adamgoodcoder.com`. Get it? **a-damn-good-coder**. I love it. People that I articulated it to love it, too. But, I think I have to change it...
 
-```js
-<p class='articleCard__date'>{pubDate}</p>
-```
+### The problem
 
-Once I displayed the date, I decided that I wanted it to appear in a specific format: **Date MonthAbbreviation Year**.
-
-Luckily, I previously wrote a utility function that could do exactly that:
-
-```js
-export function readableDate(date) {
-  return dateFns.format(new Date(date), 'do MMM yyyy')
-}
-```
-
-The problem is that my blog articles are written in Markdown (.md) files and I can't use imports and exports in that file type. Hmmm how to import my function...
+I think **a-damn-good-coder** is a great domain... When pronounced like that. The problem I've observed is that people read it as "adam-good-coder" which... sounds awkward.
 
 ### Luckily Astro supports MDX in addition to Markdown
 
