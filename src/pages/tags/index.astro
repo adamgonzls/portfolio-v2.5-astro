@@ -1,5 +1,5 @@
 ---
-import Base from '../../layouts/base.astro'
+import Base from '../../layouts/Base.astro'
 import { getPublishedPosts } from '../../js/utilities'
 const allPosts = await Astro.glob("../blog/*.md*")
 const publishedPosts = getPublishedPosts(allPosts)
