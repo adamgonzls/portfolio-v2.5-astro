@@ -1,20 +1,29 @@
 ---
 layout: '../../layouts/BlogSingle.astro'
-pageTitle: Updating Astro Core Files
+pageTitle: >
+  Updating Astro: How a Small Change on My Website Grew in Scope
 description: Code reuse took me down a rabbit hole of Node and Astro updates
-date: 2024-01-03
+pubDate: 2024-01-03
+updatedDate: 2024-01-12
 draft: false
 featuredImage:
   url: '/images/blog/wrench-640.jpg'
   alt: 'A wrench'
-tags: ['astro', 'debugging', 'portfolio']
+tags: ['astro', 'debugging', 'portfolio', 'netlify']
 ---
 
 ### How it all started:
 
-I decided that I wanted to have the date of my blog articles appear in the article (scroll up to see it in all it's glory). Once I displayed the date, I decided that I wanted it to appear in a specific format: **1st MonthAbbreviation Year**.
+I decided that I wanted to have the date of my blog articles appear in the article (scroll up to see it in all it's glory). I wanted to do this because sometimes when I'm reading articles, when it was written can be important. Since I like to practice what I preach, I decided to implement this.
+Adding the date to display in my Markdown (later MDX) was easy enough:
 
-Luckily, I wrote a utility function that could do exactly that:
+```js
+<p class='articleCard__date'>{pubDate}</p>
+```
+
+Once I displayed the date, I decided that I wanted it to appear in a specific format: **Date MonthAbbreviation Year**.
+
+Luckily, I previously wrote a utility function that could do exactly that:
 
 ```js
 export function readableDate(date) {
@@ -34,20 +43,41 @@ The [Astro docs](https://docs.astro.build/en/guides/integrations-guide/mdx/) exp
 
 ### I needed to update Node and Astro
 
-After typing the command in my terminal, I was prompted with an error: `Node.js v18.4.0 is not supported by Astro! Please upgrade Node.js to a supported version: ">=18.14.1"`
+After typing the command in my terminal, I was prompted with an error:
+
+```
+Node.js v18.4.0 is not supported by Astro! Please upgrade Node.js to a supported version: ">=18.14.1"
+```
 
 So, I updated Node using [NVM](https://github.com/nvm-sh/nvm/blob/master/README.md)
 
-### I'm not sure exactly when it happened but my Astro version got updated
+### Astro was then updated
 
-I started using Astro before there was a version 1. When I checked my version of Astro after updating Node via NVM, I was on Astro version 4. I launched my dev environment and some of my images were't working but other than that everything seemed fairly intact.
+I started using Astro before there was a version 1. I checked my version of Astro after updating Node via NVM, I was on Astro version 4. I launched my dev environment and saw that some of my images were't working but other than that everything seemed fairly intact.
 
 For many of my images which I imported, I now need to use `variableName.src` in the src of `<img />` tags (it was simply `variableName` before).
 
-### Conclusion
+### Conclusion: I'm glad I updated Astro
 
 Overall, I'm glad I finally updated my version of Astro to something more current. I'm still trying to figure out how to get my Markdown and MDX files to recognize images in `src/images` but in the meantime, having blog images in `/public` is ok.
 
-### Conclusion part 2
+### Conclusion part 2: An error deploying to Netlify
 
-When I deployed my site to Netlify, the build failed, luckily [Netlify had some documentation for that, too](https://docs.netlify.com/configure-builds/manage-dependencies/)
+When I deployed my site to Netlify, the build failed with the following error:
+
+```
+Failed during stage 'building site': Build script returned non-zero exit code: 2
+```
+
+I thought back to the fact that I updated Node on my local environment and thought a likely culprit was that perhaps I needed to update Node in the site configuration on Netlify. I checked the deploy log and found some evidence to support that theory:
+
+```
+Node.js v16.20.2 is not supported by Astro!
+Please upgrade Node.js to supported version: ">=18.14.1"
+```
+
+What a clue right? Sure enough, I updated the Node.js dependency to 20.x, redeployed and got my site up and running again.
+
+### Useful links
+
+[Netlify Manage Dependencies](https://docs.netlify.com/configure-builds/manage-dependencies/)

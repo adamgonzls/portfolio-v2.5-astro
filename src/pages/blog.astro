@@ -52,7 +52,7 @@ const pageTitle = "Blog"
       <a href={firstPost.url}><img class="blog-feature__img card__image" src={firstPost.frontmatter.featuredImage.url} alt={firstPost.frontmatter.featuredImage.alt}/></a>
       <div class="blog-feature__text">
         <h3><a class="brand-link" href={firstPost.url}>{firstPost.frontmatter.pageTitle}</a></h3>
-        <small class="articleCard__date">{readableDate(firstPost.frontmatter.date)}</small>
+        <small class="articleCard__date">{readableDate(firstPost.frontmatter.pubDate)}</small>
         <p>{firstPost.frontmatter.description}</p>
         <a class="brand-link brand-link--callout" href={firstPost.url}>Read More</a>
       </div>

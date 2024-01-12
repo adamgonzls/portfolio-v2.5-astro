@@ -3,7 +3,7 @@ import Base from './Base.astro'
 import AuthorFact from '../components/AuthorFact.astro'
 import { readableDate } from '../js/utilities'
 const {frontmatter} = Astro.props
-const {pageTitle, date, featuredImage, description, tags} = frontmatter
+const {pageTitle, pubDate, featuredImage, description, tags} = frontmatter
 ---
 
 <style>
@@ -27,7 +27,7 @@ const {pageTitle, date, featuredImage, description, tags} = frontmatter
   <div class="container--max-width container--base-padding">
     <article class="blogPost">
       <h1 class="page__title">{pageTitle}</h1>
-      <p class="articleCard__date">{readableDate(date)}</p>
+      <p class="articleCard__date">{readableDate(pubDate)}</p>
       <img
         class='blogPost_articleImage'
         src={featuredImage.url}

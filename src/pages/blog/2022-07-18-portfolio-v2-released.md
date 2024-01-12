@@ -2,7 +2,8 @@
 layout: '../../layouts/BlogSingle.astro'
 pageTitle: Version 2 of my portfolio delivered
 description: Adding an "Adam Facts" component was part of it
-date: 2022-07-18
+pubDate: 2022-07-18
+updatedDate:
 draft: false
 featuredImage:
   url: '/images/blog/gardening-transplant.jpg'

@@ -2,7 +2,8 @@
 layout: '../../layouts/BlogSingle.astro'
 pageTitle: Python Movie App
 description: Flask/ WTForms/ SQLite/ SQLAlchemy
-date: 2023-05-07
+pubDate: 2023-05-07
+updatedDate:
 draft: true
 featuredImage:
   url: '/images/blog/post-it-notes-640.jpg'

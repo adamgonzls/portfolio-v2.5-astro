@@ -2,8 +2,8 @@ import dateFns from 'date-fns'
 
 export function sortPosts(posts) {
   return posts.sort((a, b) => {
-    const aDate = new Date(a.frontmatter.date)
-    const bDate = new Date(b.frontmatter.date)
+    const aDate = new Date(a.frontmatter.pubDate)
+    const bDate = new Date(b.frontmatter.pubDate)
 
     return bDate.getTime() - aDate.getTime()
   })
