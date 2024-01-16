@@ -27,7 +27,7 @@ const {pageTitle, pubDate, updatedDate, featuredImage, description, tags} = fron
   <div class="container--max-width container--base-padding">
     <article class="blogPost">
       <h1 class="page__title">{pageTitle}</h1>
-      <p class="articleCard__date">{readableDate(pubDate)} {!!updatedDate && ` (Updated on ${readableDate(updatedDate)})`}</p>
+      <p class="articleCard__date">{readableDate(pubDate)} {(updatedDate !== null) && ` (Updated on ${readableDate(updatedDate)})`}</p>
       <img
         class='blogPost_articleImage'
         src={featuredImage.url}

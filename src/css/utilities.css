@@ -11,12 +11,28 @@
   padding-bottom: 2em;
 }
 
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.mb-1 {
+  margin-bottom: 1em;
+}
+
+.pl-0 {
+  padding-left: 0;
+}
+
 .text--underline {
   border-bottom: 0.1em solid rgba(20, 207, 174, 0.5);
 }
 
 .text--center {
   text-align: center;
+}
+
+.list--no-type {
+  list-style-type: none;
 }
 
 .font--mono {
@@ -26,8 +42,4 @@
 /* fix bug with mobile navigation flashing on load  */
 .preload {
   transition: none !important;
-}
-
-.mb-0 {
-  margin-bottom: 0;
 }
