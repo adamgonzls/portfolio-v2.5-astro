@@ -33,5 +33,5 @@ const {pageTitle, description, pubDate, featuredImage} = post.frontmatter
   <h3 class="articleCard__title"><a class="brand-link" href={post.url}>{pageTitle}</a></h3>
   <small class="articleCard__date">{readableDate(pubDate)}</small>
   <p class="articleCard__description">{description}</p>
-  <a class="brand-link brand-link--callout" href={post.url}>Read More</a>
+  <a class="brand-link brand-link--callout" href={post.url} aria-label={pageTitle}>Read More</a>
 </article>
