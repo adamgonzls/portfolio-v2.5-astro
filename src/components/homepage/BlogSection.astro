@@ -2,6 +2,7 @@
 import BlogArticle from "./BlogArticle.astro"
 import PageLink from "./PageLink.astro"
 import {sortPosts, getPublishedPosts} from '../../js/utilities'
+import '../../css/utilities.css'
 
 const posts = await Astro.glob('../../pages/blog/*.md*')
 const publishedPosts = getPublishedPosts(posts)
@@ -24,10 +25,10 @@ const threeMostRecentPosts = sortedPosts.slice(0, 3)
 
 <section id="myBlog" class="home-section">
   <div class="container--max-width">
-    <h2 class="section__title">My Thoughts</h2>
+    <h2 class="section__title">Dev Diaries</h2>
     <div class="card__row">
       {threeMostRecentPosts.map(post => <BlogArticle {post} />)}
     </div>
   </div>
-  <PageLink path='/blog' text='See more blog posts' />
+  <PageLink style="color: red;" path='/blog' text='See more blog posts!' />
 </section>

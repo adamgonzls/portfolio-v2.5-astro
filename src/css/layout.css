@@ -186,6 +186,10 @@
   }
 }
 
+#myBlog .pageLink .brand-button {
+  color: var(--darkness);
+}
+
 .blogPost_articleImage {
   height: 400px;
   width: 100%;

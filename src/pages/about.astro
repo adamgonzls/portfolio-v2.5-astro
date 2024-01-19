@@ -1,6 +1,8 @@
 ---
 import Base from '../layouts/Base.astro'
 import adamImage from '../assets/images/2022-04-adam-purple-wall-662-756.jpg'
+const pageTitle = "About Me"
+const description = "About Adam Gonzales, a web developer"
 ---
 
 <style>  
@@ -26,9 +28,9 @@ import adamImage from '../assets/images/2022-04-adam-purple-wall-662-756.jpg'
   }
 </style>
 
-<Base title="About">
+<Base pageTitle={pageTitle} description={description}>
   <div class="container--max-width container--base-padding">
-    <h1 class="page__title">About Me</h1>
+    <h1 class="page__title">{pageTitle}</h1>
     <div class="about__content">
       <div class="about__copy">
         <h2>Hi, I'm Adam</h2>

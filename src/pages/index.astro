@@ -5,9 +5,11 @@ import TraitsSection from '../components/homepage/TraitsSection.astro'
 import WhoIAm from '../components/homepage/WhoIAm.astro'
 import ExperienceSection from '../components/homepage/ExperienceSection.astro'
 import BlogSection from '../components/homepage/BlogSection.astro'
+const pageTitle="Adam Gonzales Web Developer"
+const description = "Home page for Adam Gonzales' personal web development portfolio. This website contains a blog with articles, GitHub projects, work experience and much more."
 ---
 
-<Base>
+<Base pageTitle={pageTitle} description={description}>
   <Intro />
   <TraitsSection />
   <ExperienceSection />
