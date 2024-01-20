@@ -1,6 +1,6 @@
 ---
 layout: '../../layouts/BlogSingle.astro'
-pageTitle: Changing My Domain Name to CodedByAdam.com
+pageTitle: Changing My Domain Name to codedbyadam.com
 description: A marketing problem
 pubDate: 2024-01-12
 updatedDate:
@@ -8,14 +8,14 @@ draft: true
 featuredImage:
   url: '/images/blog/unpredictable-door-640.jpg'
   alt: 'Keep back. This door is unpredictable.'
-tags: ['astro', 'portfolio', 'dns']
+tags: ['astro', 'portfolio', 'dns', 'marketing']
 ---
 
 ### A-Damn-Good-Coder:
 
-When I went through the process of rebuilding my portfolio, I wanted a punny domain name. I fell in love with `adamgoodcoder.com`. Get it? **a-damn-good-coder**. I love it. People that I articulated it to love it, too. But, I think I have to change it...
+When I went through the process of rebuilding my portfolio, I wanted a punny domain name. I fell in love with `adamgoodcoder.com`. Get it? **a-damn-good-coder**. I love it. People that I articulated it to love it, too. But, I had to change it...
 
-### The problem
+### The problem: I can't read it to every person that encounters it
 
 I think **a-damn-good-coder** is a great domain... When pronounced like that. The problem I've observed is that people read it as "adam-good-coder" which... sounds awkward.
 
