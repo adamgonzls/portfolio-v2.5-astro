@@ -3,3 +3,9 @@
   to = "codedbyadam.com/:splat"
   status = 301
   force = false
+
+  [[redirects]]
+  from = "https://adamgoodcoder.com/*"
+  to = "https://codedbyadam.com/:splat"
+  status = 301
+  force = true
