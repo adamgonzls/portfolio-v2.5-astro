@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "adamgoodcoder.com/*"
+  to = "codedbyadam.com/:splat"
+  status = 301
+  force = false
