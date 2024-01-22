@@ -2,10 +2,16 @@
   from = "adamgoodcoder.com/*"
   to = "codedbyadam.com/:splat"
   status = 301
-  force = false
+  force = true
 
-  [[redirects]]
+[[redirects]]
   from = "https://adamgoodcoder.com/*"
   to = "https://codedbyadam.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.adamgoodcoder.com/*"
+  to = "https://www.codedbyadam.com/:splat"
   status = 301
   force = true
