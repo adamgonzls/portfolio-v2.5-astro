@@ -3,7 +3,7 @@ layout: '../../layouts/BlogSingle.astro'
 pageTitle: TypeScript Basics
 description: Acquainting myself with Typescript
 pubDate: 2024-01-31
-updatedDate:
+updatedDate: 2024-02-02
 draft: false
 featuredImage:
   url: '/images/blog/typewriter.jpg'
@@ -30,6 +30,97 @@ function showTotalReviews(reviews: number) {
   // display the reviews here
 }
 ```
+
+Assigning types to objects:
+
+<!-- prettier-ignore -->
+```typescript
+const musicFan: {
+  userName: string;
+  isReturning: boolean;
+} = {
+  userName: 'radioheadfan1',
+  isReturning: true,
+}
+```
+
+Assigning types to arrays:
+If an array is going to have just one type, the type can be declared like this:
+
+<!-- prettier-ignore -->
+```typescript
+// ...other properties
+concertsAttended: string[];
+```
+
+If an array has different types, they are declared like this:
+
+<!-- prettier-ignore -->
+```typescript
+const musicFan: {
+  userName: string;
+  isReturning: boolean;
+  concertsAttended: (string | number)[]
+} = {
+  userName: 'radioheadfan1',
+  isReturning: true,
+  concertsAttended: ['Radiohead', 1942, 'Chevelle']
+}
+```
+
+Assigning types to an array of objects:
+
+<!-- prettier-ignore -->
+```typescript
+const rockFans: {
+      firstName: string;
+      lastName: string;
+      age: number;
+      stars: number;
+      loyaltyUser: boolean;
+      date: string;
+  }[] = [
+  {
+      firstName: 'Wayne',
+      lastName: 'Campbell',
+      age: 25,
+      stars: 5,
+      loyaltyUser: true,
+      date: '01-04-2021'
+  },
+  {
+      firstName: 'Garth',
+      lastName: 'Algar',
+      age: 34,
+      stars: 3,
+      loyaltyUser: false,
+      date: '28-03-2021'
+  },
+  {
+      firstName: 'Alice',
+      lastName: 'Cooper',
+      age: 44,
+      stars: 4,
+      loyaltyUser: true,
+      date: '27-03-2021'
+  },
+]
+```
+
+### Tuples
+
+Tuples can be thought of as arrays where the order data is indexed in is important. Think of them as a way to connect some data, but with less syntax than keyed objects.
+
+```typescript
+const concertLocation: [string, string, number] = [
+  'Madison Square Garden',
+  '7:30pm',
+  19500,
+]
+footer.innerHTML = `${currentLocation[0]} ${currentLocation[1]} ${currentLocation[2]}`
+```
+
+<!-- ### Enum -->
 
 ### Type Conversion
 
@@ -71,10 +162,18 @@ More info on [Type Assertions](https://www.typescriptlang.org/docs/handbook/2/ev
 
 ### Narrowing
 
+In the following function call, I was getting an error under `firstInput.value` and `secondInput.value` stating `Argument of type 'string' is not assignable to parameter of type 'number'`.
+
 ```typescript
 button.addEventListener('click', () =>
   addNumbers(firstInput.value, secondInput.value)
 )
 ```
 
-In the preceding function call, I was getting an error under `firstInput.value` and `secondInput.value` stating `Argument of type 'string' is not assignable to parameter of type 'number'`. I was able to correct this by using the `parseInt()` JavaScript function around each of the arguments.
+I was able to correct this by using the `parseInt()` JavaScript function around each of the arguments.
+
+```typescript
+button.addEventListener('click', () =>
+  addNumbers(parseInt(firstInput.value), parseInt(secondInput.value))
+)
+```
