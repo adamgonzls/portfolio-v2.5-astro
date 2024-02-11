@@ -8,7 +8,7 @@ const posts = await Astro.glob('./blog/*.md*')
 const publishedPosts = getPublishedPosts(posts)
 const sortedPosts = sortPosts(publishedPosts)
 const firstPost = sortedPosts.shift()
-const pageTitle = "Dev Diaries"
+const pageTitle = "Developer Diaries"
 const description = "A blog page of articles writtten by Adam Gonzales regarding his web development experiences"
 ---
 
