@@ -1,8 +1,8 @@
-@import './reset.css';
-@import './variables.css';
-@import './utilities.css';
-@import './layout.css';
-@import './ui-components.css';
+@import "./reset.css";
+@import "./variables.css";
+@import "./utilities.css";
+@import "./layout.css";
+@import "./ui-components.css";
 
 html {
   scroll-behavior: smooth;
@@ -12,6 +12,8 @@ body {
   font-family: var(--ff-primary);
   font-size: var(--fs-body);
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1,
