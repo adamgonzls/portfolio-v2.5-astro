@@ -15,17 +15,29 @@ tags: ["typescript", "CSS", "tailwind", "remix"]
 
 First of all, HOORAY! 🎉 I recently accepted a position as a web developer at a great company. As my first assignment, my boss gave me a high-quality mockup in Figma and asked me to build it in code. He said all decisions where mine to make, except he did ask that I use Tailwind.
 
-I could have built the layout with HTML and CSS but, thinking about the possibility that this ad-hoc page could turn into more pages or possibly a full-on site, I thought a framework wouldn't be a bad idea. Seeing the opportunity to experience a new framework while I built this page was an added bonus.
+I could have built the layout with HTML and CSS but, thinking about the possibility that this ad-hoc page could turn into more pages or possibly a full-on site, I thought a framework wouldn't be a bad idea. Seizing the opportunity to experience a new framework while I built this page was an added bonus.
 
 ## The Task: Build a Complex Layout Using Technology of my Choice
 
 The page was static but the layout was rather intricate with many small details.
 
-## Using Remix, Tailwind, and TypeScript
+## Remix, Tailwind, and TypeScript
 
 I decided to use [Remix](https://remix.run/) to build the page. Another benefit of choosing a framework for this project is that it future- and feature-proofs our page should we need to add to it. Now that that decision has been made, I started to break down the page into digestible pieces.
 
 I made components out of similar functioning and looking pieces and passed props containing the unique information for each.
+
+The basic component usage:
+
+```jsx
+// index.tsx
+<SectionHeader
+  headerText="Patient Satisfaction"
+  imgSrc={blueEgg}
+  bodyCopy="Our patients rate us the highest in the industry"
+  tileClass="tile--light"
+/>
+```
 
 The basic component structure:
 
@@ -48,18 +60,6 @@ export default function SectionHeader(props: {
     </div>
   )
 }
-```
-
-The basic component usage:
-
-```jsx
-// index.tsx
-<SectionHeader
-  headerText="Patient Satisfaction"
-  imgSrc={blueEgg}
-  bodyCopy="Our patients rate us the highest in the industry"
-  tileClass="tile--light"
-/>
 ```
 
 This strategy worked on the mobile view, building the layout piece-by-piece but I got a sense of foreshadowing when I added and used the `tileClass` prop. When I focused more on the desktop view, which I felt would be best positioned using `grid` (more on that learning experience later) I noticed I needed to pass more props for those uniquely positioned items.
