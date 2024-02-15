@@ -3,7 +3,7 @@ layout: "../../layouts/BlogSingle.astro"
 pageTitle: My First Remix Project
 description: Lessons while Building with Remix, Tailwind and TypeScript
 pubDate: 2024-02-10
-updatedDate: 2024-02-14
+updatedDate: 2024-02-15
 draft: false
 featuredImage:
   url: "/images/blog/rebuild.jpg"
@@ -26,6 +26,31 @@ The page was static but the layout was rather intricate with many small details.
 I decided to use [Remix](https://remix.run/) to build the page. Another benefit of choosing a framework for this project is that it future- and feature-proofs our page should we need to add to it. Now that that decision has been made, I started to break down the page into digestible pieces.
 
 I made components out of similar functioning and looking pieces and passed props containing the unique information for each.
+
+The basic component structure:
+
+```jsx
+// SectionHeader.tsx
+export default function SectionHeader(props: {
+  headerText: string,
+  imgSrc: string,
+  bodyCopy: string,
+  tileClass: string,
+}) {
+  const theme = props.tileClass ? props.tileClass : ""
+  return (
+    <div className={theme}>
+      <div className="py-[3.125rem] md:py-[5.125rem] flex flex-col items-center px-4">
+        <h2 className="text-2xl/[130%]">{props.headerText}</h2>
+        <img className="mt-3.5 h-[30px]" src={props.imgSrc} alt="" />
+        <p className="mt-4 text-center">{props.bodyCopy}</p>
+      </div>
+    </div>
+  )
+}
+```
+
+The basic component usage:
 
 ```jsx
 // index.tsx
