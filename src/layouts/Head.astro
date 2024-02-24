@@ -9,12 +9,12 @@ const {pageTitle, description} = Astro.props
   <link rel="icon" type="image/png" sizes="32x32" href={ 
     import.meta.env.MODE === 'production' 
     ? '/favicon.ico' 
-    : './favicon-dev.ico'
+    : '/favicon-dev.ico'
   }>
   <link rel="icon" type="image/svg+xml" href={
     import.meta.env.MODE === 'production'
     ? "/favicon.svg"
-    : "./favicon-dev.svg"
+    : "/favicon-dev.svg"
   }>
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
