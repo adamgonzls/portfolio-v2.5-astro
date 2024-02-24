@@ -6,7 +6,7 @@ pubDate: 2024-02-10
 updatedDate: 2024-02-15
 draft: false
 featuredImage:
-  url: "/images/blog/rebuild.jpg"
+  url: "/images/blog/boombox-640w.jpg"
   alt: "A construction zone"
 tags: ["typescript", "CSS", "tailwind", "remix"]
 ---
