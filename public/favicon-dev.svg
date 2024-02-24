@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools -->
+
+<svg
+   width="800px"
+   height="800px"
+   viewBox="0 0 24 24"
+   fill="none"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="modified-icon.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.295"
+     inkscape:cx="398.30508"
+     inkscape:cy="400"
+     inkscape:window-width="1456"
+     inkscape:window-height="779"
+     inkscape:window-x="0"
+     inkscape:window-y="808"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="SVGRepo_iconCarrier" />
+  <g
+     id="SVGRepo_bgCarrier"
+     stroke-width="0" />
+  <g
+     id="SVGRepo_tracerCarrier"
+     stroke-linecap="round"
+     stroke-linejoin="round" />
+  <g
+     id="SVGRepo_iconCarrier"
+     transform="matrix(1.3050843,0,0,1.3050843,-3.6610148,-3.6610148)">
+    <path
+       fill-rule="evenodd"
+       clip-rule="evenodd"
+       d="M 14.9703,3.3437 C 13.0166,2.88543 10.9834,2.88543 9.02975,3.3437 6.20842,4.00549 4.0055,6.20841 3.3437,9.02974 c -0.45827,1.95366 -0.45827,3.98686 0,5.94056 0.6618,2.8213 2.86472,5.0242 5.68605,5.686 1.95365,0.4583 3.98685,0.4583 5.94055,0 2.8213,-0.6618 5.0242,-2.8647 5.686,-5.686 0.4583,-1.9537 0.4583,-3.9869 0,-5.94055 C 19.9945,6.20842 17.7916,4.00549 14.9703,3.3437 Z M 7.72959,9.23905 C 7.93266,8.99536 8.29484,8.96244 8.53853,9.16551 l 1.98937,1.65779 c 0.7348,0.6124 0.7348,1.741 0,2.3533 L 8.53853,14.8344 C 8.29484,15.0375 7.93266,15.0046 7.72959,14.7609 7.52651,14.5172 7.55943,14.155 7.80313,13.9519 L 9.7925,12.2941 c 0.1837,-0.1531 0.1837,-0.4352 0,-0.5883 L 7.80313,10.048 C 7.55943,9.84493 7.52651,9.48275 7.72959,9.23905 Z m 4.74901,4.57975 c -0.3172,0 -0.5744,0.2572 -0.5744,0.5744 0,0.3172 0.2572,0.5744 0.5744,0.5744 h 3.3505 c 0.3172,0 0.5744,-0.2572 0.5744,-0.5744 0,-0.3172 -0.2572,-0.5744 -0.5744,-0.5744 z"
+       fill="#14cfae"
+       id="path1"
+       style="fill:#eecd11;fill-opacity:1" />
+  </g>
+</svg>
