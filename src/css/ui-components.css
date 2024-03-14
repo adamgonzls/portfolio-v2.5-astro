@@ -32,7 +32,7 @@
 .brand-link::after,
 .blogPost a::after,
 .brand-link.active::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   bottom: 0.05em;
