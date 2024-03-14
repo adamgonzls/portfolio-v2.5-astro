@@ -1,4 +1,5 @@
 @import "./reset.css";
+@import "/fonts/stylesheet.css";
 @import "./variables.css";
 @import "./utilities.css";
 @import "./layout.css";
@@ -93,7 +94,8 @@ p > code,
 li > code,
 dd > code,
 td > code {
-  background: #ffeff0;
+  background: #f5d8fc;
+  font-family: var(--ff-mono);
   word-wrap: break-word;
   padding: 0.1rem 0.3rem 0.2rem;
   border-radius: 0.2rem;
