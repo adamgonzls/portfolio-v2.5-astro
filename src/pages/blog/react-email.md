@@ -6,8 +6,8 @@ pubDate: 2024-03-19
 updatedDate:
 draft: false
 featuredImage:
-  url: "/images/blog/stairs-640w.jpg"
-  alt: "An icon of a person walking down stairs"
+  url: "/images/blog/pencils-640w.jpg"
+  alt: "Two pencils"
 tags: ["react", "react email", "template"]
 ---
 
