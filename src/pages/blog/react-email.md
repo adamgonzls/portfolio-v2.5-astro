@@ -4,7 +4,7 @@ pageTitle: Email Templates with React Email
 description: Using a new tool
 pubDate: 2024-03-19
 updatedDate:
-draft: true
+draft: false
 featuredImage:
   url: "/images/blog/stairs-640w.jpg"
   alt: "An icon of a person walking down stairs"
