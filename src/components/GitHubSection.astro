@@ -1,30 +1,33 @@
 ---
-import Card from '../components/Card.astro'
-import gitHubProjectImages from '../js/gitHubProjectImages.json'
+import Card from "../components/Card.astro"
+import gitHubProjectImages from "../js/gitHubProjectImages.json"
 
 const props = Astro.props
-const {cardTheme} = props
-const gitHubResponse = await fetch(`https://api.github.com/search/repositories?q=adamgonzls+in:name+topic:featured-repo`);
-const gitHubData = await gitHubResponse.json();
-const requestedPosts = props.requestedPostAmount ? gitHubData.items.slice(0, props.requestedPostAmount) : gitHubData.items
-
+const { cardTheme } = props
+const gitHubResponse = await fetch(
+  `https://api.github.com/search/repositories?q=adamgonzls+in:name+topic:featured-repo`
+)
+const gitHubData = await gitHubResponse.json()
+const requestedPosts = props.requestedPostAmount
+  ? gitHubData.items.slice(0, props.requestedPostAmount)
+  : gitHubData.items
 // github project images are not available via API
 // local json gitHubProjectImages file, match github repo name
 // update object with new field with image if match
-const postsWithImages = requestedPosts.map(postObject => {
-  gitHubProjectImages.projects.filter(imageObject => {
+const postsWithImages = requestedPosts.map((postObject) => {
+  gitHubProjectImages.projects.filter((imageObject) => {
     if (imageObject.projectName === postObject.name) {
       postObject.featureImage = imageObject.imageURL
     }
-  });
+  })
   return postObject
 })
 ---
 
 <div class="myExperience__gitHub card__row">
-  {postsWithImages.map(item => {
-    return (
-      <Card {item} cardTheme={cardTheme} />
-    )
-  })}
+  {
+    postsWithImages.map((item) => {
+      return <Card {item} cardTheme={cardTheme} />
+    })
+  }
 </div>

@@ -1,7 +1,7 @@
 ---
 layout: "../../layouts/BlogSingle.astro"
-pageTitle: Email Templates with React Email
-description: Using a new tool
+pageTitle: My Experience with React Email
+description: Creating email templates with a new tool
 pubDate: 2024-03-19
 updatedDate:
 draft: false
@@ -11,7 +11,7 @@ featuredImage:
 tags: ["react", "react email", "template"]
 ---
 
-I've been loving my new gig, the work has been rewarding and the tech I've been working with has been very enjoyable. I thought that all was going to change recently when I was asked to create some email templates for one of our departments😬. As I was preparing to kick this project off by crying silently to myself, I was told to use [React Email](https://react.email/) and decided to hold back the tears for now.
+I've been loving my new gig, the work has been rewarding and the tech I've been working with has been very enjoyable. I thought that all was going to change recently when I was asked to create some email templates for one of our departments😬. As I prepared to kick this project off by crying silently to myself, I was told to use [React Email](https://react.email/). Hoping that this tool would make things easier, I decided to supress past experiences of making email templates from scratch and held back the tears for now.
 
 To start off, I was given some high-quality mock-ups, they were close enough to each other visually that I needed to decide if I wanted to create 4 individual templates or one template and conditionally display the unique parts of each.
 

@@ -65,7 +65,7 @@
 
 .hamburger::before,
 .hamburger::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   right: 0;
@@ -153,10 +153,6 @@
 }
 
 .home-section:nth-child(even) .section__title {
-  color: var(--accent-color);
-}
-
-.page__title {
   color: var(--accent-color);
 }
 
