@@ -1,19 +1,23 @@
 ---
-import Base from '../../layouts/Base.astro'
-import BlogArticle from '../../components/homepage/BlogArticle.astro'
-import {getPublishedPosts} from '../../js/utilities'
+import Base from "../../layouts/Base.astro"
+import BlogArticle from "../../components/homepage/BlogArticle.astro"
+import { getPublishedPosts } from "../../js/utilities"
 
 export async function getStaticPaths() {
   const allPosts = await Astro.glob("../blog/*.md*")
   const publishedPosts = getPublishedPosts(allPosts)
-  
-  const uniqueTags = [...new Set(publishedPosts.map((post) => post.frontmatter.tags).flat())]
-  
+
+  const uniqueTags = [
+    ...new Set(publishedPosts.map((post) => post.frontmatter.tags).flat()),
+  ]
+
   return uniqueTags.map((tag) => {
-    const filteredPosts = publishedPosts.filter((post) => post.frontmatter.tags.includes(tag))
+    const filteredPosts = publishedPosts.filter((post) =>
+      post.frontmatter.tags.includes(tag)
+    )
     return {
-      params: {tag},
-      props: {posts: filteredPosts}
+      params: { tag },
+      props: { posts: filteredPosts },
     }
   })
 }
@@ -21,12 +25,25 @@ export async function getStaticPaths() {
 const { tag } = Astro.params
 const { posts } = Astro.props
 const pageTitle = `Posts tagged with ${tag}`
+const description = `Posts tagged with ${tag}`
 ---
-<Base pageTitle={pageTitle}>
+
+<Base pageTitle={pageTitle} description={description}>
   <div class="container--max-width container--base-padding">
     <h1 class="page__title">{pageTitle}</h1>
+    <!-- <h2> -->
+    <a class="brand-link brand-link--callout" href="/tags"
+      >Explore more categories</a
+    >
+    <!-- </h2> -->
     <div class="card__row">
-        {posts.map(post => <BlogArticle {post} />)}
-      </div>
+      {posts.map((post) => <BlogArticle {post} />)}
+    </div>
   </div>
 </Base>
+
+<style>
+  .card__row {
+    margin-top: 1em;
+  }
+</style>
