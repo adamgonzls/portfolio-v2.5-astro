@@ -8,7 +8,7 @@ draft: false
 featuredImage:
   url: "/images/blog/boombox-640w.jpg"
   alt: "A construction zone"
-tags: ["typescript", "CSS", "tailwind", "remix"]
+tags: ["typescript", "css", "tailwind", "remix"]
 ---
 
 ## My First Project in my New Position
