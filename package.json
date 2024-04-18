@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@astrojs/partytown": "^2.0.4",
+    "@astrojs/sitemap": "^3.1.4",
     "date-fns": "^2.28.0"
   }
 }
