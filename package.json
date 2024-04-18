@@ -16,6 +16,7 @@
     "react-dom": "^18.2.0"
   },
   "dependencies": {
+    "@astrojs/partytown": "^2.0.4",
     "date-fns": "^2.28.0"
   }
 }
