@@ -8,106 +8,110 @@ draft: false
 featuredImage:
   url: "/images/blog/searching-records-640w.jpg"
   alt: "Searching for records"
-tags: ["algolia", "astro"]
+tags: ["algolia", "astro", "javascript", "tailwind"]
 ---
 
-Situation: The situation you were in or the task you needed to accomplish
-Task: What your responsibility was in that situation
-Action: What steps you took to address it
-Result: What outcomes your actions achieved
+## Our team needed a way to produce text strings uniformly
 
-## Situation
+I recently created a tool to help standardize data our users enter for our marketing campaigns.
 
-I needed to come up with a more efficient way for users to search for records and create URL strings with UTM parameters.
+What was happening was that users were entering data that would essentially mean the same thing but get reported differently for example:
 
-## Task
-
-I needed to improve the user experience by improving the search bar that would allow users to search for records and create URL strings with UTM parameters.
-
-## Action
-
-I decided to use Algolia to create the search interface.
-
-## Result
-
-The search interface was created and users were able to search
-
-```jsx
-import { Section, Heading, Text, Link } from "@react-email/components"
+```
+utm_source=facebook
+utm_source=facebook.com
 ```
 
-Even though there are native HTML elements for each of the above elements, I used the React Email components whenever I could.
+My tool took the user input and standardized the entered text to:
 
-I styled the elements using embedded stylesheets creating objects that would be imported:
-
-```css
-const faqListStyle = {
-  marginBottom: '0',
-  paddingLeft: '20px',
-  fontWeight: 'bold',
-  color: '#4e4e4e',
-}
-
-const faqItemCopy = {
-  marginTop: '20px',
-  maxWidth: '100%',
-  fontWeight: '300',
-}
-
-const faqItemHeader = {
-  marginTop: '28px',
-}
+```
+{/* the desired string */}
+utm_source=facebook
+{/* the entire string */}
+https://www.example.com/some-name/?utm_source=facebook
 ```
 
-Below is how I used the CSS objects (I particularly liked where I used the spread operator to combine two different CSS objects)
+The tool was a great improvement over the previous method of entering data, but we saw the opportunity to improve the user experience even more.
 
-```jsx
-<ol style={faqListStyle}>
-  <li>
-    <Heading as="h3" style={{ ...baseTextStyle, ...faqItemHeader }}>
-      Do you offer any sort of payment plan?
-    </Heading>
-    <Text style={{ ...baseTextStyle, ...faqItemCopy }}>
-      Yes. We have flexible payment plan options available whether you'd like to
-      use pre-pay or pay as you go.
-    </Text>
-  </li>
-</ol>
+## We decided Algolia InstantSearch would be a great fit
+
+In the recently created tool, a user entered a URL in a text field and the tool would create a URL string with UTM parameters. This was a vast improvement over the previous method and helped ensure data was entered consistently.
+It was determined that we could improve the user experience by improving upon the text input and instead incorporate Algolia InstantSearch. I'd switch the input and instead use a search bar that would allow users to search for the records and use that selected data for the URL string.
+
+## I switched the text input to instead use Algolia
+
+I immediately started researching Algolia InstantSearch and how I could incorporate it into the tool. I found that Algolia had a JavaScript InstantSearch library that would be perfect for my needs.
+
+I started by creating a container with the two elements I needed: the searchbox and the hits (results) container.
+
+```html
+<div class="wrapper">
+  <div id="searchbox"></div>
+  <div id="hits" class="mt-4 border-2 rounded-md"></div>
+</div>
 ```
 
-I spent most of my development time on the 1st template. I thought about creating the other 3 templates by copying the 1st and then adding the unique elements to each but, when I had to make some minor stylistic changes to one of the templates, it became immediately clear that duplicating those changes to other templates would be very tedious (with much potential for errors).
+Next, I imported the API client, UI library, widgets and the necessary app ID, search key, and search index.
 
-As part of my strategy to use one template, I decided to break the template into smaller pieces. This was pretty easy as I went with the natural flow of content and broke the template into pieces that naturally lent themselves to that.
-
-My template started looking like this: (I thought it looked very pretty)
-
-```jsx
-export default function brandWelcome() {
-  return (
-    <Html lang="en" dir="ltr">
-      <Head>
-        <Font
-          fontFamily="Helvetica Neue"
-          fallbackFontFamily="Arial"
-          fontWeight={300}
-        />
-      </Head>
-      <Preview>We have exciting news! 🚀</Preview>
-      <Body style={baseBodyStyle}>
-        <Container style={baseContainerStyle}>
-          <Header />
-          <ActionRequired />
-          <ImportantInfo />
-          <LocationInfo />
-          <BillingFaq />
-          <AdditionalQuestions />
-        </Container>
-      </Body>
-    </Html>
-  )
-}
+```js
+const appId = import.meta.env.PUBLIC_ALGOLIA_APP_ID
+const searchKey = import.meta.env.PUBLIC_ALGOLIA_SEARCH_KEY
+const searchIndex = import.meta.env.PUBLIC_ALGOLIA_SEARCH_INDEX
+import algoliasearch from "algoliasearch"
+import instantsearch from "instantsearch.js"
+import { searchBox, hits, configure } from "instantsearch.js/es/widgets"
 ```
 
-I was thinking of ways where I could choose what content to show. Ideally, I wanted a user interface where the user could choose between some booleans and the appropriate content would appear. Unfortunately, I couldn't find a way to add a layer that wouldn't ultimately be added to the email code. To solve this, I went with a simple solution: add some booleans to the top of the file with the two factors that manipulate the email content. I could use the logical `&&` operator to determine whether certain components show or pass the variable values as props to be used within the component.
+To create the search interface, I used the following code:
 
-The components that use props look like this:
+```js
+const searchClient = algoliasearch(appId, searchKey)
+const search = instantsearch({
+  indexName: searchIndex,
+  searchClient,
+  future: {
+    preserveSharedStateOnUnmount: true,
+  },
+})
+search.addWidgets([
+  searchBox({
+    container: "#searchbox",
+    showSubmit: false,
+    showReset: false,
+    placeholder: "Start typing to search for a record",
+    cssClasses: {
+      form: "border text-primary",
+      input: "p-5 bg-primary block w-full rounded-md border-2 font-semibold",
+    },
+  }),
+  hits({
+    container: "#hits",
+    cssClasses: {
+      item: "border-b-2 border-dashed last:border-none",
+    },
+    templates: {
+      item: (hit, { html }) => html`
+        <div
+          class="flex gap-4 items-center hover:cursor-copy hover:bg-primary p-4"
+          onClick="${() => setSelection(hit)}"
+        >
+          <img
+            class="object-cover rounded-full w-12 h-12"
+            src="${hit.imgSrc}"
+          />
+          <h2 class="text-lg">${hit.name}${" "}${hit.title}</h2>
+        </div>
+      `,
+    },
+  }),
+  configure({
+    hitsPerPage: 50,
+  }),
+])
+
+search.start()
+```
+
+## An elegant solution that makes user's lives easier
+
+The result was a much-improved user experience. Users could now search for records from our database, click the found record, and paste the generated URL String. This was a great quality of life improvement over the previous method of entering data manually and the team is elated.
