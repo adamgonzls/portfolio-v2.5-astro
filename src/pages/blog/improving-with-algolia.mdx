@@ -1,0 +1,113 @@
+---
+layout: "../../layouts/BlogSingle.astro"
+pageTitle: Improving User Experience with Algolia
+description: Searching for records
+pubDate: 2024-04-24
+updatedDate:
+draft: false
+featuredImage:
+  url: "/images/blog/searching-records-640w.jpg"
+  alt: "Searching for records"
+tags: ["algolia", "astro"]
+---
+
+Situation: The situation you were in or the task you needed to accomplish
+Task: What your responsibility was in that situation
+Action: What steps you took to address it
+Result: What outcomes your actions achieved
+
+## Situation
+
+I needed to come up with a more efficient way for users to search for records and create URL strings with UTM parameters.
+
+## Task
+
+I needed to improve the user experience by improving the search bar that would allow users to search for records and create URL strings with UTM parameters.
+
+## Action
+
+I decided to use Algolia to create the search interface.
+
+## Result
+
+The search interface was created and users were able to search
+
+```jsx
+import { Section, Heading, Text, Link } from "@react-email/components"
+```
+
+Even though there are native HTML elements for each of the above elements, I used the React Email components whenever I could.
+
+I styled the elements using embedded stylesheets creating objects that would be imported:
+
+```css
+const faqListStyle = {
+  marginBottom: '0',
+  paddingLeft: '20px',
+  fontWeight: 'bold',
+  color: '#4e4e4e',
+}
+
+const faqItemCopy = {
+  marginTop: '20px',
+  maxWidth: '100%',
+  fontWeight: '300',
+}
+
+const faqItemHeader = {
+  marginTop: '28px',
+}
+```
+
+Below is how I used the CSS objects (I particularly liked where I used the spread operator to combine two different CSS objects)
+
+```jsx
+<ol style={faqListStyle}>
+  <li>
+    <Heading as="h3" style={{ ...baseTextStyle, ...faqItemHeader }}>
+      Do you offer any sort of payment plan?
+    </Heading>
+    <Text style={{ ...baseTextStyle, ...faqItemCopy }}>
+      Yes. We have flexible payment plan options available whether you'd like to
+      use pre-pay or pay as you go.
+    </Text>
+  </li>
+</ol>
+```
+
+I spent most of my development time on the 1st template. I thought about creating the other 3 templates by copying the 1st and then adding the unique elements to each but, when I had to make some minor stylistic changes to one of the templates, it became immediately clear that duplicating those changes to other templates would be very tedious (with much potential for errors).
+
+As part of my strategy to use one template, I decided to break the template into smaller pieces. This was pretty easy as I went with the natural flow of content and broke the template into pieces that naturally lent themselves to that.
+
+My template started looking like this: (I thought it looked very pretty)
+
+```jsx
+export default function brandWelcome() {
+  return (
+    <Html lang="en" dir="ltr">
+      <Head>
+        <Font
+          fontFamily="Helvetica Neue"
+          fallbackFontFamily="Arial"
+          fontWeight={300}
+        />
+      </Head>
+      <Preview>We have exciting news! 🚀</Preview>
+      <Body style={baseBodyStyle}>
+        <Container style={baseContainerStyle}>
+          <Header />
+          <ActionRequired />
+          <ImportantInfo />
+          <LocationInfo />
+          <BillingFaq />
+          <AdditionalQuestions />
+        </Container>
+      </Body>
+    </Html>
+  )
+}
+```
+
+I was thinking of ways where I could choose what content to show. Ideally, I wanted a user interface where the user could choose between some booleans and the appropriate content would appear. Unfortunately, I couldn't find a way to add a layer that wouldn't ultimately be added to the email code. To solve this, I went with a simple solution: add some booleans to the top of the file with the two factors that manipulate the email content. I could use the logical `&&` operator to determine whether certain components show or pass the variable values as props to be used within the component.
+
+The components that use props look like this:
