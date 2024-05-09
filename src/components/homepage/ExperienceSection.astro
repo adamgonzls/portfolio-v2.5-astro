@@ -1,15 +1,15 @@
 ---
-import GitHubSection from '../GitHubSection.astro';
-import PageLink from './PageLink.astro'
+import GitHubSection from "../GitHubSection.astro"
+import PageLink from "./PageLink.astro"
 ---
 
 <style>
   .section__title::after {
-    content: '';
+    content: "";
     display: block;
     width: 3em;
     height: 1px;
-    margin: .75em auto .75em;
+    margin: 0.75em auto 0.75em;
     background: var(--darkness);
     opacity: 0.25;
   }
@@ -27,25 +27,36 @@ import PageLink from './PageLink.astro'
     height: 120px;
     background-image: url();
     background-size: contain;
-    transition: all .1s;
+    transition: all 0.1s;
   }
   .myExperience__avatar-container img:hover {
-    transform: scale(1.05) translateY(-.25rem);
-    outline: .75rem solid var(--accent-color);
+    transform: scale(1.05) translateY(-0.25rem);
+    outline: 0.75rem solid var(--accent-color);
   }
 </style>
 
 <section id="myExperience" class="home-section">
   <div class="container--max-width">
     <h2 class="section__title">My Experience</h2>
-    <p>Through my years of web development experience, I've been part of a variety of projects. I've worked with languages such as <strong>JavaScript</strong>, <strong>SQL</strong>, and <strong>PHP</strong> and technologies including <strong>React</strong>, <strong>Shopify</strong>, and <strong>WooCommerce</strong>.</p>
+    <p>
+      Through my years of web development experience, I've been part of a
+      variety of projects. I've worked with languages such as <strong
+        >JavaScript</strong
+      >, <strong>SQL</strong>, and <strong>PHP</strong> and technologies including
+      <strong>React</strong>, <strong>Shopify</strong>, and <strong
+        >WooCommerce</strong
+      >.
+    </p>
     <div class="myExperience__avatar-container">
       <a target="_blank" href="https://github.com/adamgonzls">
-        <img src="https://avatars.githubusercontent.com/u/13277437?v=4" alt="Adam's GitHub Avatar">
+        <img
+          src="https://avatars.githubusercontent.com/u/13277437?v=4"
+          alt="Adam's GitHub Avatar"
+        />
       </a>
     </div>
     <h3>Some recent GitHub projects:</h3>
     <GitHubSection requestedPostAmount={3} />
-    <PageLink path='/experience' text='See my experience'/>
+    <PageLink path="/experience" text="See my experience" />
   </div>
 </section>
