@@ -14,7 +14,6 @@ gitHubData.items.sort(function (
 ) {
   return new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()
 })
-console.log(gitHubData)
 const requestedPosts = props.requestedPostAmount
   ? gitHubData.items.slice(0, props.requestedPostAmount)
   : gitHubData.items
