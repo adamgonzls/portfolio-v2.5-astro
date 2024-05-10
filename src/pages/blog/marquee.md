@@ -1,122 +1,168 @@
 ---
 layout: "../../layouts/BlogSingle.astro"
 pageTitle: Creating a Scrolling Marquee with HTML and CSS
-description: Challenging myself with more complex components
+description: Hand-coding a marquee component from scratch
 pubDate: 2024-05-08
 updatedDate:
 draft: false
 featuredImage:
-  url: "/images/blog/searching-records-640w.jpg"
+  url: "/images/blog/circleup-header-1092w.jpg"
   alt: "Searching for records"
 tags: ["css", "svelte", "javascript"]
 ---
 
-## Our team needed a way to produce text strings uniformly
+I've been on a mission to complete tasks from [Daily UI](https://www.dailyui.co/). I started doing these challenges when I went through a career change, learning to be a web developer. These challenges, along with other things, must have really done the trick because I've been so busy in my career that I haven't been able to complete all 100 of these challenges in years\*!
 
-I recently created a tool to help standardize data our users enter for our marketing campaigns.
+\*There were several reasons that I haven't completed the Daily UI tasks but one that comes to mind is that I wasn't a huge fan of having 100 different, independent GitHub repositories. Organization was a blocker for me. With the recent development of awesome front-end frameworks such as [Svelte](https://svelte.dev/) and [Astro](https://astro.build/), I saw the opportunity to house all my projects under one main project. So far, I've been happy with the [results](https://uilab.netlify.app/).
 
-What was happening was that users were entering data that would essentially mean the same thing but get reported differently for example:
+## I needed to build a landing page
 
-```
-utm_source=facebook
-utm_source=facebook.com
-```
+The Daily UI task that I decided to focus on this time was creating a landing page. There are plenty of great landing pages on Dribbble but I wanted to create one that was visually appealing, different from what I normally do, and had elements that I would find interesting to develop.
 
-My tool took the user input and standardized the entered text to:
+The design I found was this one:
+![Scrolling marquee mockup](/images/blog/circleup-original-preview.gif)
 
-```
-{/* the desired string */}
-utm_source=facebook
-{/* the entire string */}
-https://www.example.com/some-name/?utm_source=facebook
-```
+## I found a fun but complex design
 
-The tool was a great improvement over the previous method of entering data, but we saw the opportunity to improve the user experience even more.
+The design had familiar elements such as the navigation and hero but the scrolling marquee at the bottom is what caught my attention.
 
-## We decided Algolia InstantSearch would be a great fit
+## I did some research to help me build the scrolling marquee
 
-In the recently created tool, a user entered a URL in a text field and the tool would create a URL string with UTM parameters. This was a vast improvement over the previous method and helped ensure data was entered consistently.
-It was determined that we could improve the user experience by improving upon the text input and instead incorporate Algolia InstantSearch. I'd switch the input and instead use a search bar that would allow users to search for the records and use that selected data for the URL string.
+**To develop the marquee, my thought process was the following:**
 
-## I switched the text input to instead use Algolia
+1. Build the basic shape content containers with divs with flexbox
+2. Figure out the right to left scrolling of the divs
+3. Research how to fit the content in the different-shaped containers
+4. Apply animation to the appropriate content containers
 
-I immediately started researching Algolia InstantSearch and how I could incorporate it into the tool. I found that Algolia had a JavaScript InstantSearch library that would be perfect for my needs.
-
-I started by creating a container with the two elements I needed: the searchbox and the hits (results) container.
+**The basic shape of my marquee:**
 
 ```html
-<div class="wrapper">
-  <div id="searchbox"></div>
-  <div id="hits" class="mt-4 border-2 rounded-md"></div>
+<div class="marquee">
+  <div class="marquee__content">
+    <div>Item 1</div>
+    <div>Item 2</div>
+    <div>Item 3</div>
+  </div>
 </div>
 ```
 
-Next, I imported the API client, UI library, widgets and the necessary app ID, search key, and search index.
-
-```js
-const appId = import.meta.env.PUBLIC_ALGOLIA_APP_ID
-const searchKey = import.meta.env.PUBLIC_ALGOLIA_SEARCH_KEY
-const searchIndex = import.meta.env.PUBLIC_ALGOLIA_SEARCH_INDEX
-import algoliasearch from "algoliasearch"
-import instantsearch from "instantsearch.js"
-import { searchBox, hits, configure } from "instantsearch.js/es/widgets"
+```css
+.marquee {
+  margin-top: 40px;
+  display: flex;
+  gap: 0.5rem;
+  overflow: hidden;
+  position: relative;
+}
 ```
 
-To create the search interface, I used the following code:
+Once I built the basic shape, I needed to scroll `marquee__content`. To figure this part out, I employed this [video](https://www.youtube.com/watch?v=ZMCNin2VjxU) that was quite helpful in getting me to this:
 
-```js
-const searchClient = algoliasearch(appId, searchKey)
-const search = instantsearch({
-  indexName: searchIndex,
-  searchClient,
-  future: {
-    preserveSharedStateOnUnmount: true,
-  },
-})
-search.addWidgets([
-  searchBox({
-    container: "#searchbox",
-    showSubmit: false,
-    showReset: false,
-    placeholder: "Start typing to search for a record",
-    cssClasses: {
-      form: "border text-primary",
-      input: "p-5 bg-primary block w-full rounded-md border-2 font-semibold",
-    },
-  }),
-  hits({
-    container: "#hits",
-    cssClasses: {
-      item: "border-b-2 border-dashed last:border-none",
-    },
-    templates: {
-      item: (hit, { html }) => html`
-        <div
-          class="flex gap-4 items-center hover:cursor-copy hover:bg-primary p-4"
-          onClick="${() => setSelection(hit)}"
-        >
-          <img
-            class="object-cover rounded-full w-12 h-12"
-            src="${hit.imgSrc}"
-          />
-          <h2 class="text-lg">${hit.name}${" "}${hit.title}</h2>
-        </div>
-      `,
-    },
-  }),
-  configure({
-    hitsPerPage: 50,
-  }),
-])
-
-search.start()
+```html
+<div class="marquee">
+  <div class="marquee__content scroll">
+    <div>Item 1</div>
+    <div>Item 2</div>
+    <div>Item 3</div>
+  </div>
+  <div class="marquee__content scroll">
+    <div>Item 1</div>
+    <div>Item 2</div>
+    <div>Item 3</div>
+  </div>
+</div>
 ```
 
-## An elegant solution that makes user's lives easier
+```css
+.marquee {
+  margin-top: 40px;
+  display: flex;
+  gap: 0.5rem;
+  overflow: hidden;
+  position: relative;
+}
+.marquee__content {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-width: 100%;
+  gap: 0.5rem;
+}
+.scroll {
+  animation: scroll 15s linear infinite;
+}
+```
 
-The result was a much-improved user experience. Users could now search for records from our database, click the found record, and paste the generated URL String. This was a great quality of life improvement over the previous method of entering data manually and the team is elated.
+For the different shaped containers, all I needed to do was figure out the layout on one of the content containers then repeat.
 
-### Useful links
+**For the shape of the container:**
 
-[You Can't Find a Better Infinite Marquee](https://www.youtube.com/watch?v=ZMCNin2VjxU)
-[The Shapes of CSS](https://css-tricks.com/the-shapes-of-css/)
+```js
+// Accordion.svelte
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 200 200">
+  <path
+    fill="rgba(245, 215, 254, 1)"
+    d="M0 45.736 50 33l50 12.736L150 33l50 12.736V168l-50-12.736L100 168l-50-12.736L0 168V45.736Z"
+  />
+</svg>
+```
+
+**For the layout of the content within the container:**
+
+```js
+// Collaborative.svelte
+<script>
+  import Accordion from "./Accordion.svelte"
+</script>
+
+<div class="marquee__item marquee__item--accordion">
+  <div class="accordion__container">
+    <Accordion />
+  </div>
+  <h3 class="marquee__text">Collaborative</h3>
+</div>
+
+<style>
+  .marquee__item--accordion {
+    position: relative;
+    height: 200px;
+    width: 200px;
+  }
+  .marquee__text {
+    position: absolute;
+    bottom: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #3f3a72;
+    font-family: var(--header-font);
+    line-height: 1;
+  }
+</style>
+```
+
+**Lastly, I needed to get the containers that are spinning infinitely, to spin:**
+
+```css
+.spin {
+  animation: spin 5s linear infinite;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+```
+
+## I ended up with a slick looking scrolling marquee
+
+Using this methodical approach, I was able to create the scrolling marquee, look at the [final result](https://uilab.netlify.app/03-landing-page)
+
+### Useful links:
+
+- [You Can't Find a Better Infinite Marquee](https://www.youtube.com/watch?v=ZMCNin2VjxU)
+- [The Shapes of CSS](https://css-tricks.com/the-shapes-of-css/)
