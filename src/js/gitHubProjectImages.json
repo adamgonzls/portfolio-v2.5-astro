@@ -1,6 +1,10 @@
 {
   "projects": [
     {
+      "projectName": "ui-lab",
+      "imageURL": "../images/project-images/ui-lab-640w.jpg"
+    },
+    {
       "projectName": "color-picker",
       "imageURL": "../images/project-images/color-scheme.jpg"
     },
