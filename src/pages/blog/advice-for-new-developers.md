@@ -26,7 +26,11 @@ I know this can be controversial and I understand that Macs tend to not be cheap
 
 ## Don't get too distracted by the cool thing
 
-1. Something like "WordPress" doesn't sound as modern and cool as React or Node but, if you see a lot of jobs looking for WordPress developers, don't be afraid of taking a course or tutorial on WordPress.
+1. Something like "WordPress" doesn't sound as modern and cool as React or Node but, if you see a lot of jobs looking for WordPress developers, don't be afraid of taking a course or tutorial on WordPress, you might like it. BTW, According to this [HubSpot blog post](https://blog.hubspot.com/website/wordpress-stats) 45% of all websites on the internet use WordPress.
+
+## Try different languages
+
+This one is a little hard. I was fortunate enough to have a great instructor teach me how to be a frontend developer and lay a path out for me. How do you choose what language to base your career on? Maybe look at local meetup groups and see which languages have the most activity, check job boards like [Glassdoor](https://glassdoor.com/) and [LinkedIn](https://www.linkedin.com/) to see which languages have the most opportunities.
 
 ## Some specific things I recommend learning
 
