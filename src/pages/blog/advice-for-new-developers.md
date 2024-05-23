@@ -6,7 +6,7 @@ pubDate: 2024-05-22
 updatedDate:
 draft: false
 featuredImage:
-  url: "/images/blog/circleup-header-1092w.jpg"
+  url: "/images/blog/study-640w.jpg"
   alt: "Searching for records"
 tags: ["html", "css", "javascript", "learning"]
 ---
@@ -38,11 +38,13 @@ This one is a little hard. I was fortunate enough to have a great instructor tea
 
 ## Some websites I recommend for learning
 
+- [Scrimba](https://v2.scrimba.com/)
 - [Codecademy](https://www.codecademy.com/)
 - [freecodecamp](https://www.freecodecamp.org/)
-- [Scrimba](https://v2.scrimba.com/)
 
 ## Some instructors I like
+
+And courses of theirs I've taken:
 
 - [Wes Bos](https://wesbos.com/)
   - [Command line Power User](https://commandlinepoweruser.com/)
