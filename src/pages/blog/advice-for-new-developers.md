@@ -2,7 +2,7 @@
 layout: "../../layouts/BlogSingle.astro"
 pageTitle: My Advice for a New Developer
 description: Suggestions for learning how to be a new frontend developer
-pubDate: 2024-05-22
+pubDate: 2024-05-23
 updatedDate:
 draft: false
 featuredImage:
