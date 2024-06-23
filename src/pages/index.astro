@@ -1,12 +1,14 @@
 ---
-import Base from '../layouts/Base.astro'
-import Intro from '../components/homepage/Intro.astro'
-import TraitsSection from '../components/homepage/TraitsSection.astro'
-import WhoIAm from '../components/homepage/WhoIAm.astro'
-import ExperienceSection from '../components/homepage/ExperienceSection.astro'
-import BlogSection from '../components/homepage/BlogSection.astro'
-const pageTitle="Adam Gonzales Web Developer"
-const description = "Home page for Adam Gonzales' personal web development portfolio. This website contains a blog with articles, GitHub projects, work experience and much more."
+import Base from "../layouts/Base.astro"
+import Intro from "../components/homepage/Intro.astro"
+import TraitsSection from "../components/homepage/TraitsSection.astro"
+import WhoIAm from "../components/homepage/WhoIAm.astro"
+import ExperienceSection from "../components/homepage/ExperienceSection.astro"
+import BlogSection from "../components/homepage/BlogSection.astro"
+import Contact from "../components/Contact.astro"
+const pageTitle = "Adam Gonzales Web Developer"
+const description =
+  "Home page for Adam Gonzales' personal web development portfolio. This website contains a blog with articles, GitHub projects, work experience and much more."
 ---
 
 <Base pageTitle={pageTitle} description={description}>
@@ -15,4 +17,5 @@ const description = "Home page for Adam Gonzales' personal web development portf
   <ExperienceSection />
   <BlogSection />
   <WhoIAm />
+  <Contact />
 </Base>
