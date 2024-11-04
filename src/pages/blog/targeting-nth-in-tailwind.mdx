@@ -1,0 +1,53 @@
+---
+layout: "../../layouts/BlogSingle.astro"
+pageTitle: Targeting Children of nth-of-type in Tailwind CSS
+description: How to apply different background colors to children of items in a list.
+pubDate: 2024-11-03
+updatedDate:
+draft: false
+featuredImage:
+  url: "/images/blog/tailwind-list-items.jpg"
+  alt: "A list of items with different background colors"
+tags: ["tailwind"]
+---
+
+## Using Tailwind CSS to Target Children Within a List of Items
+
+While working on a recent project that utilized Tailwind CSS, I encountered a challenge: I wanted to apply different background colors to a certain child item in a list created from a `.map` method, repeating the pattern after the 4th item. I knew that the CSS nth-child selector could accomplish this, but I wasn't sure how to target a certain child element with Tailwind CSS.
+
+## Exploring Tailwind Utilities
+
+To solve this problem, I tried several strategies using Tailwind's utilities. My goal was to find a clean and efficient way to apply these styles without writing custom CSS.
+
+## Discovering the Power of the Group Utility
+
+After diving into the Tailwind CSS documentation and several other resources, I discovered the group utility, which allows for targeting child elements based on their parent. By wrapping my list in a div and applying the group class, I could effectively utilize `nth-child` to style every item in the list, repeating the pattern after every 4th item.
+
+Here's how I implemented this solution:
+
+```js
+<div class="mt-20">
+  {valuePropositions.map((valueProposition) => (
+    <div class="valueItem group [&:not(:first-child)]:mt-2.5">
+      <div class="relative flex rounded-xl pt-7 pb-6 bg-neutral justify-center items-center">
+        <h3 class="mb-0 text-lg text-beige font-sans font-bold">
+          {valueProposition.topic}
+        </h3>
+        <ChevronValueItem classes="absolute right-4" />
+      </div>
+      <p class="hidden rounded-b-xl pt-6 pb-5 px-20 text-lg text-[#555a6e] group-[&:nth-of-type(4n+1)]:bg-blue-light group-[&:nth-of-type(4n+2)]:bg-coral-light group-[&:nth-of-type(4n+3)]:bg-green-light group-[&:nth-of-type(4n+4)]:bg-white">
+        {valueProposition.valueProposition}
+      </p>
+    </div>
+  ))}
+</div>
+```
+
+## Achieving Efficient, Pattern-Based Styling with Tailwind
+
+This solution is relevant for developers who want to leverage Tailwind CSS's utility-first approach while still achieving more complex styling scenarios. It demonstrates the flexibility of Tailwind and how it can integrate with JavaScript functionalities like the .map method.
+
+### Useful links:
+
+- [Tailwind nth of type](https://medium.com/@djtamarapavlichek/tailwind-nth-of-type-ed617547f15e)
+- [use nth-child(odd) css selector with Tailwind on the parent element](https://stackoverflow.com/questions/74367340/use-nth-childodd-css-selector-with-tailwind-on-the-parent-element/76739129#76739129)
