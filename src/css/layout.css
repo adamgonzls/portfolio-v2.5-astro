@@ -193,6 +193,20 @@
   margin-bottom: 1em;
 }
 
+.blogPost_tip {
+  margin-bottom: 1em;
+  border-radius: var(--rounded-corners);
+  padding: 0.5em;
+  background: #16b0c6;
+  color: white;
+  span {
+    font-weight: bold;
+  }
+  p {
+    margin-bottom: 0;
+  }
+}
+
 .blogPost h2 {
   margin-bottom: 0.75em;
 }

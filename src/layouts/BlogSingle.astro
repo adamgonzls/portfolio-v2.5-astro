@@ -1,42 +1,57 @@
 ---
-import Base from './Base.astro'
-import AuthorFact from '../components/AuthorFact.astro'
-import { readableDate } from '../js/utilities'
-const {frontmatter} = Astro.props
-const {pageTitle, pubDate, updatedDate, featuredImage, description, tags} = frontmatter
+import Base from "./Base.astro"
+import AuthorFact from "../components/AuthorFact.astro"
+import { readableDate } from "../js/utilities"
+const { frontmatter } = Astro.props
+const { pageTitle, pubDate, updatedDate, featuredImage, description, tags } =
+  frontmatter
 ---
 
 <style>
-.blogPost {
-  margin-bottom: 2em;
-}
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .25em;
-}
-.tag {
-  border: dotted 2px var(--off-white);
-  border-radius: var(--rounded-corners);
-  padding: .25em 1em;
-  background-color: #bee5de;
-}
+  .blogPost {
+    margin-bottom: 2em;
+  }
+  .blogPost__description {
+    font-size: 1.25rem;
+  }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25em;
+  }
+  .tag {
+    border: dotted 2px var(--off-white);
+    border-radius: var(--rounded-corners);
+    padding: 0.25em 1em;
+    background-color: #bee5de;
+  }
 </style>
 
 <Base pageTitle={pageTitle} description={description}>
   <div class="container--max-width container--base-padding">
     <article class="blogPost">
       <h1 class="page__title">{pageTitle}</h1>
-      <p class="articleCard__date">{readableDate(pubDate)} {(updatedDate !== null) && ` (Updated on ${readableDate(updatedDate)})`}</p>
+      <p class="articleCard__date">
+        {readableDate(pubDate)}
+        {updatedDate !== null && ` (Updated on ${readableDate(updatedDate)})`}
+      </p>
       <img
-        class='blogPost_articleImage'
+        class="blogPost_articleImage"
         src={featuredImage.url}
         alt={featuredImage.alt}
       />
-      <h2>{description}</h2>
+      <p class="blogPost__description">{description}</p>
       <slot>Default Blog Content</slot>
       <h3>Tags:</h3>
-      <div class="tags">{tags.map((tag) => <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>)}</div>
+      <div class="tags">
+        {
+          tags.map((tag) => (
+            <p class="tag">
+              <a href={`/tags/${tag}`}>{tag}</a>
+            </p>
+          ))
+        }
+      </div>
     </article>
     <AuthorFact />
   </div>
