@@ -1,14 +1,14 @@
 ---
 layout: "../../layouts/BlogSingle.astro"
-pageTitle: "Keyboard shortcuts: Boost Your Productivity"
-description: A running list of some important keyboard shortcuts
+pageTitle: "Keyboard Shortcuts and Reference Guide"
+description: "A curated list of essential keyboard shortcuts and references to enhance your productivity"
 pubDate: 2022-07-14
 updatedDate: 2024-12-10
 draft: false
 featuredImage:
   url: "/images/blog/keyboard-lego-640.jpg"
   alt: "Lego man on keyboard"
-tags: ["shortcuts"]
+tags: ["figma", "mac", "shortcuts", "tailwind", "vscode"]
 ---
 
 While working on a layout for a blog page, I decided I should start making note of the different key commands that I use on a daily basis. This is a running list of keyboard shortcuts that allow me to work more efficiently.
@@ -72,3 +72,33 @@ I use this one to access plugins such as Unsplash quickly.
 ### Group selection
 
 `⌘ command + g`
+
+## ✈️ Tailwind CSS
+
+### Text shadow
+
+```html
+<h2
+  class="mt-8 lg:mt-0 mb-0 text-center font-normal text-3xl lg:text-[44px] lg:text-white -tracking-[.6px] lg:-tracking-[0.88px] leading-normal lg:leading-normal lg:[text-shadow:_0_4px_4px_rgba(0_0_0_/_0.25)]"
+>
+  Submit your blog pitch here!
+</h2>
+```
+
+### Inline ternary operator
+
+```js
+<div
+  class={`relative rounded-xl pt-3.5 md:pt-7 px-5 pb-[10px] md:pb-[22px] bg-neutral ${
+    index === 0 ? "rounded-bl-none rounded-br-none" : ""
+  }`}
+></div>
+```
+
+### Background image
+
+```html
+<div
+  class="h-[218px] lg:h-[234px] lg:rounded-3xl bg-dark bg-[url('../images/blogSubmission/laptop-medium-shot-923w.png')] bg-no-repeat bg-center bg-cover"
+></div>
+```
