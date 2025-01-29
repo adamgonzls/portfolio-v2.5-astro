@@ -1,0 +1,78 @@
+---
+layout: "../../layouts/BlogSingle.astro"
+pageTitle: "Ditch the Dots: How to Add Aliases to Svelte Projects"
+description: Making my project easier to maintain and read by using aliases
+pubDate: 2025-01-28
+updatedDate:
+draft: false
+featuredImage:
+  url: "/images/blog/file-mischief-640.jpg"
+  alt: "A cartoon file folder with a mischievous face"
+tags: ["svelte", "javascript"]
+---
+
+## While working on my Svelte project, I found myself drowning in ../../../ import paths.
+
+Traversing one or two directories isn't so bad on smaller projects but when you start refactoring and moving files around, it can get messy.
+
+```javascript
+// Going from this:
+import SomeComponent from "../../SomeComponent.svelte"
+
+// To this:
+import SomeComponent from "../../components/SomeComponent.svelte"
+```
+
+## I wanted to clean up my import paths by setting up aliases to make my code more readable and maintainable.
+
+After doing some refactoring and reorganization and getting tired (and confused) of the endless dots, I decided to set up aliases in my SvelteKit project.
+
+## I updated the svelte.config.js
+
+Checkout the `alias` property in the `kit` object:
+
+```javascript
+import adapter from "@sveltejs/adapter-netlify"
+import { vitePreprocess } from "@sveltejs/vite-plugin-svelte"
+
+/** @type {import('@sveltejs/kit').Config} */
+const config = {
+  // Consult https://kit.svelte.dev/docs/integrations#preprocessors
+  // for more information about preprocessors
+  preprocess: vitePreprocess(),
+
+  kit: {
+    // adapter-auto only supports some environments, see https://kit.svelte.dev/docs/adapter-auto for a list.
+    // If your environment is not supported or you settled on a specific environment, switch out the adapter.
+    // See https://kit.svelte.dev/docs/adapters for more information about adapters.
+    adapter: adapter(),
+    alias: {
+      $components: "src/components",
+    },
+  },
+}
+
+export default config
+```
+
+The magic happens in the line I set my alias to `$components` and pointed it to the `src/components` directory.
+
+## With aliases, my import paths are cleaner and easier to read. No more endless dots to navigate folders!
+
+Now I can import components like this:
+
+```javascript
+import SomeComponent from "$components/SomeComponent.svelte"
+```
+
+That's it! This has made my project easier to maintain and read, especially after moving things around. One of the best things about using aliases is that if I move the file importing and using the component (that was imported using the alias), I don't need to update the import because that stays the same!
+
+### Key Takeaways
+
+- **Updating the config file:** This only takes a few minutes to do.
+- **Updating existing imports** The syntax is straight forward and easy to implement.
+
+### Useful links:
+
+- [Adding New Path Alias in SvelteKit](https://medium.com/@rizqyhi/adding-new-path-alias-in-sveltekit-1127a1138e7)
+- [Svelte Docs: alias](https://svelte.dev/docs/kit/configuration#alias)
