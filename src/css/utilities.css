@@ -51,3 +51,7 @@
 .preload {
   transition: none !important;
 }
+
+.cp_embed_wrapper {
+  margin-bottom: 1em;
+}
