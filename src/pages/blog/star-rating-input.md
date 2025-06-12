@@ -55,11 +55,7 @@ The custom star rating UI improved the user experience significantly. It looked 
 
 If you're looking to elevate your form UI, replacing default radio buttons with a star rating is a quick win. It’s approachable even for beginners, and with just a bit of CSS and JavaScript, you can build something that looks and feels polished.
 
-### Key Takeaways
-
-- **Updating the config file:** This only takes a few minutes to do.
-- **Updating existing imports** The syntax is straight forward and easy to implement.
-
 ### Useful links:
 
 - <a href="https://www.youtube.com/watch?v=0q6neX8jd44" target="_blank">How To Create A Simple Star Rating Using HTML &amp; CSS</a>
+- <a href="https://www.youtube.com/watch?v=q1xhbc-oKnc" target="_blank">How to Create Star Rating in HTML CSS &amp; JavaScript</a>
