@@ -1,10 +1,4 @@
 [[redirects]]
-  from = "adamgoodcoder.com/*"
-  to = "codedbyadam.com/:splat"
-  status = 301
-  force = true
-
-[[redirects]]
   from = "https://adamgoodcoder.com/*"
   to = "https://codedbyadam.com/:splat"
   status = 301
@@ -12,6 +6,6 @@
 
 [[redirects]]
   from = "https://www.adamgoodcoder.com/*"
-  to = "https://www.codedbyadam.com/:splat"
+  to = "https://codedbyadam.com/:splat"
   status = 301
   force = true
