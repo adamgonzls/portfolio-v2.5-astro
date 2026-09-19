@@ -76,7 +76,6 @@ pre code {
   padding: 0.5em 0.5em;
   display: block;
   background: none;
-  overflow-x: scroll;
   max-width: 100%;
   min-width: 100px;
   word-wrap: break-word;
