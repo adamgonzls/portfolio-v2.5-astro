@@ -1,0 +1,381 @@
+---
+layout: "../../layouts/BlogSingle.astro"
+pageTitle: "My MacBook Pro M5 Setup: A Developer's Configuration Guide"
+description: A developer's opinionated guide to setting up a MacBook Pro from scratch
+pubDate: 2026-05-07
+updatedDate:
+draft: false
+featuredImage:
+  url: "/images/blog/macbook-ghibli.jpg"
+  alt: "A cheerful MacBook Pro character confidently lifts a barbell in a bright, airy gym."
+tags: ["macos", "vscode", "terminal"]
+---
+
+A clean, opinionated setup guide for developers — and a reference for future me.
+
+## A New Machine is a Fresh Start
+
+Every developer has their own way of working. Over the years I've refined mine — the tools I reach for, the settings that keep me in flow, and the small tweaks that make a big difference. When I set up a new machine, I don't want to spend days rediscovering what I already figured out.
+
+## My Old Setup Didn't Follow Me Automatically
+
+When I got my MacBook Pro M5, I wanted to get back to full productivity as fast as possible without cutting corners. I also realized I'd never written any of this down in a way that was easy to follow — my old notes were scattered across Evernote, Gists, and memory.
+
+## I Documented Everything, With the Why
+
+Here's exactly how I set up my machine — the steps, the tools I chose, and why I chose them.
+
+## macOS Updates
+
+**Apply all updates:**
+
+Apple icon > System Settings > Software Update — apply everything before touching anything else.
+
+## macOS Settings
+
+### Appearance
+
+**System Settings > Appearance**
+
+- Appearance > Auto
+- Show scroll bars > Always
+
+### Menu Bar
+
+**System Settings > Menu Bar**
+
+- Check `Bluetooth`
+
+### Notifications
+
+**System Settings > Notifications**
+
+- Show previews > Never
+- Application notifications > Turn off all
+
+### Privacy & Security
+
+**System Settings > Privacy & Security**
+
+Screen & System Audio Recording for >
+
+- Google Chrome
+- Zoom
+- TechSmith Capture
+
+### Keyboard
+
+**System Settings > Keyboard**
+
+Text Input > Edit
+
+- Capitalize words automatically > Off
+- Double quotes > `"abc"`
+- Single quotes > `'abc'`
+
+### Trackpad
+
+**System Settings > Trackpad**
+
+- Tap to click > Tap with one finger
+- Look up & data detectors > Off
+- Click > Lightest
+
+## Finder
+
+Finder > Settings > General >
+
+- Check Hard disks
+- New Finder windows show > Macintosh HD
+
+Advanced >
+
+- Show all filename extensions
+- Remove items from the Trash after 30 days
+
+## Dock
+
+- Remove most of the applications from Dock
+- Automatically hide and show the Dock
+- Show suggested and recent apps in Dock > Off
+- Show indicators for open applications > On
+- Click and drag the Applications folder in Finder to the right side of the Dock
+
+Add to Dock:
+
+- Evernote
+- Google Chrome
+- iTerm (iTerm2)
+- Visual Studio Code
+
+## Prevent Power-On When Opening the Lid
+
+This command will disable power-on when opening the lid
+
+```bash
+sudo nvram BootPreference=%00
+```
+
+Currently there is no way to disable power-on when any key is pressed
+
+## Command Line Tasks
+
+### Install Command Line Tools for Xcode
+
+Open the command line and run the following line:
+
+```bash
+xcode-select --install
+```
+
+### Install Homebrew
+
+Homebrew is the backbone of my Mac setup — almost everything gets installed through it.
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+**Important:** Be sure to follow any commands after the install `Run these two commands in your terminal to add Homebrew to your PATH:` More info: [Homebrew Installation](https://brew.sh/)
+
+**Install core apps in one command:**
+
+```bash
+brew install --cask \
+  affinity \
+  evernote \
+  figma \
+  firefox \
+  google-chrome \
+  iterm2 \
+  local \
+  rectangle \
+  spotify \
+  visual-studio-code \
+  zoom
+```
+
+**Note:** Applications can also be installed one-at-a-time using this format:
+
+```bash
+  brew install --cask rectangle
+```
+
+**Other apps to install as needed:**
+
+```bash
+brew install wp-cli
+brew install macos-trash
+brew install --cask adobe-creative-cloud
+brew install --cask discord
+brew install --cask slack
+```
+
+### A Note on Affinity vs. Adobe
+
+I use the **Affinity Suite** (Designer, Photo, Publisher) as my primary design tools. They've never slowed me down, and I reach for Adobe Creative Cloud only when a project specifically requires it. Both are available via Homebrew.
+
+## Other Applications
+
+- **Amphetamine** — App Store _(keeps my Mac awake during deploys, presentations, etc.)_
+- **Dropbox** — [dropbox.com/install](https://www.dropbox.com/install)
+- **Toggl Desktop** — App Store _(time tracking)_
+
+## Screenshots
+
+I like my screenshots organized and named cleanly. These terminal commands set that up:
+
+**Change screenshot destination:**
+_This will create a folder called "Screenshots" in your home directory_
+
+```bash
+defaults write com.apple.screencapture location ~/Screenshots
+```
+
+**Remove the default filename:**
+
+```bash
+defaults write com.apple.screencapture name ""
+```
+
+**Change screenshot format to JPG:**
+
+```bash
+defaults write com.apple.screencapture type jpg
+```
+
+**More info:** [How to change screenshot location on Mac using Terminal](https://www.tomsguide.com/how-to/how-to-change-the-screenshot-location-on-mac#how-to-change-screenshot-location-on-mac-using-terminal-3)
+
+## Terminal
+
+I use **iTerm2** over the default Terminal for its customization options.
+
+### Install iTerm2:
+
+```bash
+brew install --cask iterm2
+```
+
+Close the default Terminal app and open iTerm from the Applications folder
+
+**More info:** [iTerm2](https://github.com/gnachman/iTerm2)
+
+**iTerm2 Settings I change:**
+
+- General > Window: Uncheck Native full screen windows
+- Appearance > Hide scrollbars
+- Appearance > Unselect Show tab bar in fullscreen
+- Appearance > Dim inactive split panes + Dim background windows
+- Profiles > Window: Transparency 0, Style: Normal
+
+**Install Oh My Zsh:**
+
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+### Cobalt2 Theme
+
+I've been using [Wes Bos' Cobalt2 theme](https://github.com/wesbos/cobalt2-iterm) for years. It's easy on the eyes and makes the terminal feel like a place I want to spend time.
+
+1. Download files from [Wes Bos' GitHub](https://github.com/wesbos/cobalt2-iterm)
+2. Drop `cobalt2.zsh-theme` into `~/.oh-my-zsh/themes/`
+3. Open `~/.zshrc` and set: `ZSH_THEME="cobalt2"`
+4. Install [Powerline fonts](https://github.com/powerline/fonts):
+
+```bash
+git clone https://github.com/powerline/fonts
+cd fonts
+./install.sh
+```
+
+5. In iTerm2: Preferences > Profiles > Colors > Color Presets > Import the Cobalt2 file
+6. Preferences > Profiles > Text > Set font to your installed Powerline font
+
+## VS Code
+
+```bash
+brew install --cask visual-studio-code
+```
+
+**Settings I configure:**
+
+1. Set spaces over tabs, tab size 2
+2. Enable Format on Save
+3. Enable Word Wrap: `bounded` at 80 columns
+4. Disable Compact Folders
+5. Enable Wrapped Tabs
+
+**My user settings JSON:**
+
+```json
+{
+  "explorer.compactFolders": false,
+  "editor.cursorWidth": 2,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
+  "editor.wordWrap": "bounded",
+  "editor.wordWrapColumn": 80,
+  "prettier.semi": false,
+  "svelte.enable-ts-plugin": true,
+  "indentRainbow.colors": [
+    "rgba(247, 37, 133,0.15)",
+    "rgba(181, 23, 158,0.15)",
+    "rgba(114, 9, 183, 0.15)",
+    "rgba(86, 11, 173,0.15)",
+    "rgba(72, 12, 168,0.15)",
+    "rgba(58, 12, 163,0.15)",
+    "rgba(63, 55, 201,0.15)",
+    "rgba(63, 55, 201,0.1)",
+    "rgba(63, 55, 201,0.05)",
+    "rgba(63, 55, 201,0.025)"
+  ],
+  "workbench.editorAssociations": {
+    "*.svg": "default"
+  }
+}
+```
+
+### VS Code Extensions
+
+**Always install:**
+
+1. **Astro** — Language support for Astro
+2. **Auto Rename Tag** — Auto rename paired HTML/XML tags
+3. **Code Spell Checker** — Catches typos in code and comments
+4. **Color Highlight** — Visualizes color values inline
+5. **ESLint** — JavaScript linting
+6. **GitHub Copilot Chat** — AI-assisted coding
+7. **Highlight Matching Tag** — Makes tag pairs easy to spot
+8. **indent-rainbow** — Color-coded indentation levels
+9. **MDX** — Language support for MDX
+10. **Prettier** — Code formatting (set as default formatter)
+11. **Pretty TypeScript Errors** — Makes TS errors actually readable
+12. **Svelte for VS Code** — Svelte language support
+
+**Install as needed:**
+
+1. EJS language support
+2. EJS Snippets
+3. ES7+ React/Redux/React-Native snippets
+4. Live Server
+5. Lorem ipsum
+6. Thunder Client — Lightweight REST API client
+
+## Node: Install via nvm
+
+I always install Node through **nvm** rather than globally — it makes switching versions between projects seamless.
+
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+```
+
+**Auto-switch Node versions based on `.nvmrc`** — add this to your `~/.zshrc`:
+
+```bash
+autoload -U add-zsh-hook
+
+load-nvmrc() {
+  local nvmrc_path
+  nvmrc_path="$(nvm_find_nvmrc)"
+
+  if [ -n "$nvmrc_path" ]; then
+    local nvmrc_node_version
+    nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+
+    if [ "$nvmrc_node_version" = "N/A" ]; then
+      nvm install
+    elif [ "$nvmrc_node_version" != "$(nvm version)" ]; then
+      nvm use
+    fi
+  elif [ -n "$(PWD=$OLDPWD nvm_find_nvmrc)" ] && [ "$(nvm version)" != "$(nvm version default)" ]; then
+    echo "Reverting to nvm default version"
+    nvm use default
+  fi
+}
+
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
+```
+
+## SSH Key
+
+Follow GitHub's official guides:
+
+- [Generate a new SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key)
+- [Add SSH key to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account#adding-a-new-ssh-key-to-your-account)
+
+## Make VS Code Your Git Editor
+
+```bash
+git config --global core.editor "code --wait"
+```
+
+## A Setup That Gets Out of My Way
+
+The goal of all of this isn't complexity — it's the opposite. Every setting here exists so that my tools disappear and I can focus on building. Whether you're setting up your first Mac or your fifth, I hope this saves you a few hours of rediscovery.
+
+The [full Gist](https://gist.github.com/adamgonzls/30decdbe65292e43ef6371cddb57dffc) is also available on GitHub if you want a raw reference version.
