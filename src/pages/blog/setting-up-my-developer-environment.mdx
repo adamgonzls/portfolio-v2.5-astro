@@ -25,8 +25,6 @@ When I got my MacBook Pro M5, I wanted to get back to full productivity as fast 
 
 Here's exactly how I set up my machine — the steps, the tools I chose, and why I chose them.
 
----
-
 ## macOS Updates
 
 **Apply all updates:**
@@ -35,21 +33,29 @@ Apple icon > System Settings > Software Update — apply everything before touch
 
 ## macOS Settings
 
-**Appearance**
+### Appearance
+
+**System Settings > Appearance**
 
 - Appearance > Auto
 - Show scroll bars > Always
 
-**Menu Bar**
+### Menu Bar
+
+**System Settings > Menu Bar**
 
 - Check `Bluetooth`
 
-**Notifications**
+### Notifications
+
+**System Settings > Notifications**
 
 - Show previews > Never
 - Application notifications > Turn off all
 
-**Privacy & Security**
+### Privacy & Security
+
+**System Settings > Privacy & Security**
 
 Screen & System Audio Recording for >
 
@@ -57,7 +63,9 @@ Screen & System Audio Recording for >
 - Zoom
 - TechSmith Capture
 
-**Keyboard**
+### Keyboard
+
+**System Settings > Keyboard**
 
 Text Input > Edit
 
@@ -65,13 +73,15 @@ Text Input > Edit
 - Double quotes > `"abc"`
 - Single quotes > `'abc'`
 
-**Trackpad**
+### Trackpad
+
+**System Settings > Trackpad**
 
 - Tap to click > Tap with one finger
 - Look up & data detectors > Off
 - Click > Lightest
 
-**Finder**
+## Finder
 
 Finder > Settings > General >
 
@@ -83,7 +93,7 @@ Advanced >
 - Show all filename extensions
 - Remove items from the Trash after 30 days
 
-**Dock**
+## Dock
 
 - Remove most of the applications from Dock
 - Automatically hide and show the Dock
@@ -98,7 +108,7 @@ Add to Dock:
 - iTerm (iTerm2)
 - Visual Studio Code
 
-### Prevent Power-On When Opening the Lid
+## Prevent Power-On When Opening the Lid
 
 This command will disable power-on when opening the lid
 
@@ -107,8 +117,6 @@ sudo nvram BootPreference=%00
 ```
 
 Currently there is no way to disable power-on when any key is pressed
-
----
 
 ## Command Line Tasks
 
@@ -167,15 +175,11 @@ brew install --cask slack
 
 I use the **Affinity Suite** (Designer, Photo, Publisher) as my primary design tools. They've never slowed me down, and I reach for Adobe Creative Cloud only when a project specifically requires it. Both are available via Homebrew.
 
----
-
 ## Other Applications
 
 - **Amphetamine** — App Store _(keeps my Mac awake during deploys, presentations, etc.)_
 - **Dropbox** — [dropbox.com/install](https://www.dropbox.com/install)
 - **Toggl Desktop** — App Store _(time tracking)_
-
----
 
 ## Screenshots
 
@@ -247,8 +251,6 @@ cd fonts
 
 5. In iTerm2: Preferences > Profiles > Colors > Color Presets > Import the Cobalt2 file
 6. Preferences > Profiles > Text > Set font to your installed Powerline font
-
----
 
 ## VS Code
 
@@ -323,8 +325,6 @@ brew install --cask visual-studio-code
 5. Lorem ipsum
 6. Thunder Client — Lightweight REST API client
 
----
-
 ## Node: Install via nvm
 
 I always install Node through **nvm** rather than globally — it makes switching versions between projects seamless.
@@ -361,8 +361,6 @@ add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 ```
 
----
-
 ## SSH Key
 
 Follow GitHub's official guides:
@@ -370,15 +368,11 @@ Follow GitHub's official guides:
 - [Generate a new SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key)
 - [Add SSH key to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account#adding-a-new-ssh-key-to-your-account)
 
----
-
 ## Make VS Code Your Git Editor
 
 ```bash
 git config --global core.editor "code --wait"
 ```
-
----
 
 ## A Setup That Gets Out of My Way
 
